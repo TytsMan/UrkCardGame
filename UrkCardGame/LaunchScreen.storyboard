@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Semibold.otf">
+            <string>SFCompactRounded-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="W5O-3j-QXT">
+                                <rect key="frame" x="91.333333333333329" y="276.66666666666663" width="192.33333333333337" height="268.66666666666663"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_ua_flag" translatesAutoresizingMaskIntoConstraints="NO" id="KFo-YS-U4r">
+                                        <rect key="frame" x="0.0" y="0.0" width="192.33333333333334" height="174"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гра для тих  хто перемагає!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZc-EJ-jc0">
+                                        <rect key="frame" x="0.0" y="204" width="192.33333333333334" height="64.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="27"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern_top" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-aL-TIG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="SWF-JS-DU7">
+                                <rect key="frame" x="0.0" y="734" width="375" height="78"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SWF-JS-DU7" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="6GW-gJ-Rzu"/>
+                            <constraint firstAttribute="bottom" secondItem="SWF-JS-DU7" secondAttribute="bottom" id="CUf-kK-def"/>
+                            <constraint firstItem="ICh-aL-TIG" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="EeT-Kg-8hl"/>
+                            <constraint firstItem="SWF-JS-DU7" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="abR-2x-j4O"/>
+                            <constraint firstItem="ICh-aL-TIG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="bjK-J3-k0K"/>
+                            <constraint firstItem="ICh-aL-TIG" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="n7f-9w-rTW"/>
+                            <constraint firstItem="W5O-3j-QXT" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="oBM-GJ-u6h"/>
+                            <constraint firstItem="W5O-3j-QXT" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="wWQ-2M-krw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart_ua_flag" width="174" height="174"/>
+        <image name="pattern_bottom" width="414" height="78"/>
+        <image name="pattern_top" width="414" height="78"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

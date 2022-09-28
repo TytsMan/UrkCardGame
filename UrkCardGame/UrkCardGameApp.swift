@@ -11,7 +11,17 @@ import SwiftUI
 struct UrkCardGameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
+
+enum Const {
+    
+    static let secondsInRound = 30
+    
+}
+
+
+
+

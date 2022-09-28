@@ -7,18 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C01554928E44E6C001962E0 /* SF-Compact-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554028E44E6C001962E0 /* SF-Compact-Rounded-Medium.otf */; };
+		2C01554A28E44E6C001962E0 /* SF-Compact-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554128E44E6C001962E0 /* SF-Compact-Rounded-Regular.otf */; };
+		2C01554B28E44E6C001962E0 /* SF-Compact-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554228E44E6C001962E0 /* SF-Compact-Rounded-Light.otf */; };
+		2C01554C28E44E6C001962E0 /* SF-Compact-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554328E44E6C001962E0 /* SF-Compact-Rounded-Semibold.otf */; };
+		2C01554D28E44E6C001962E0 /* SF-Compact-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554428E44E6C001962E0 /* SF-Compact-Rounded-Thin.otf */; };
+		2C01554E28E44E6C001962E0 /* SF-Compact-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554528E44E6C001962E0 /* SF-Compact-Rounded-Ultralight.otf */; };
+		2C01554F28E44E6C001962E0 /* SF-Compact-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554628E44E6C001962E0 /* SF-Compact-Rounded-Bold.otf */; };
+		2C01555028E44E6C001962E0 /* SF-Compact-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554728E44E6C001962E0 /* SF-Compact-Rounded-Heavy.otf */; };
+		2C01555128E44E6C001962E0 /* SF-Compact-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C01554828E44E6C001962E0 /* SF-Compact-Rounded-Black.otf */; };
+		2C01555328E45095001962E0 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C01555228E45095001962E0 /* MainButton.swift */; };
+		2C021ACD28E4453F009E4C9A /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C021ACC28E4453F009E4C9A /* BackButton.swift */; };
+		2C021AD128E44B67009E4C9A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C021AD028E44B67009E4C9A /* Fonts.swift */; };
+		2C1F65A828E30C5B0019FE49 /* PlayesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F65A728E30C5B0019FE49 /* PlayesListView.swift */; };
+		2C1F65AA28E321770019FE49 /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F65A928E321770019FE49 /* AddPlayerView.swift */; };
+		2C1F65AC28E340FC0019FE49 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F65AB28E340FC0019FE49 /* GameView.swift */; };
+		2C3D885A28E345DF00FF717D /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D885928E345DF00FF717D /* swiftgen.yml */; };
+		2C3D886428E3533500FF717D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D886328E3533500FF717D /* Assets.swift */; };
+		2C3D886728E3608B00FF717D /* GameBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D886628E3608B00FF717D /* GameBackgroundView.swift */; };
+		2C3D886828E366CA00FF717D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D886A28E366CA00FF717D /* Localizable.strings */; };
 		2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */; };
-		2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6E28E2E9F40091575B /* ContentView.swift */; };
 		2C734B7128E2E9F60091575B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7028E2E9F60091575B /* Assets.xcassets */; };
 		2C734B7428E2E9F60091575B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7328E2E9F60091575B /* Preview Assets.xcassets */; };
+		2C734B7D28E2EC320091575B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7C28E2EC320091575B /* LaunchScreen.storyboard */; };
+		2C734B7F28E2F12A0091575B /* MenuBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B7E28E2F12A0091575B /* MenuBackgroundView.swift */; };
+		2C734B8128E2F6E80091575B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B8028E2F6E80091575B /* HomeView.swift */; };
+		2CE7D57428E4673C00D5DF0B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7D57328E4673C00D5DF0B /* Question.swift */; };
+		2CE7D57628E4675C00D5DF0B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7D57528E4675C00D5DF0B /* Player.swift */; };
+		2CE7D57828E46D3B00D5DF0B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7D57728E46D3B00D5DF0B /* GameViewModel.swift */; };
+		2CE7D57B28E4A4DC00D5DF0B /* GameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7D57A28E4A4DC00D5DF0B /* GameDataProvider.swift */; };
+		2CE7D57D28E4A66600D5DF0B /* Penalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7D57C28E4A66600D5DF0B /* Penalty.swift */; };
+		2CE7D58128E4A7E000D5DF0B /* Blame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7D58028E4A7E000D5DF0B /* Blame.swift */; };
+		2CE7D58428E4AC0500D5DF0B /* Penalties.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CE7D58228E4AC0400D5DF0B /* Penalties.txt */; };
+		2CE7D58528E4AC0500D5DF0B /* Questions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CE7D58328E4AC0500D5DF0B /* Questions.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C01554028E44E6C001962E0 /* SF-Compact-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		2C01554128E44E6C001962E0 /* SF-Compact-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		2C01554228E44E6C001962E0 /* SF-Compact-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Light.otf"; sourceTree = "<group>"; };
+		2C01554328E44E6C001962E0 /* SF-Compact-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Semibold.otf"; sourceTree = "<group>"; };
+		2C01554428E44E6C001962E0 /* SF-Compact-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.otf"; sourceTree = "<group>"; };
+		2C01554528E44E6C001962E0 /* SF-Compact-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		2C01554628E44E6C001962E0 /* SF-Compact-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		2C01554728E44E6C001962E0 /* SF-Compact-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Heavy.otf"; sourceTree = "<group>"; };
+		2C01554828E44E6C001962E0 /* SF-Compact-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Black.otf"; sourceTree = "<group>"; };
+		2C01555228E45095001962E0 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		2C021ACC28E4453F009E4C9A /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		2C021AD028E44B67009E4C9A /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		2C1F65A728E30C5B0019FE49 /* PlayesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayesListView.swift; sourceTree = "<group>"; };
+		2C1F65A928E321770019FE49 /* AddPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerView.swift; sourceTree = "<group>"; };
+		2C1F65AB28E340FC0019FE49 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		2C3D885928E345DF00FF717D /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		2C3D886328E3533500FF717D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		2C3D886628E3608B00FF717D /* GameBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundView.swift; sourceTree = "<group>"; };
+		2C3D886928E366CA00FF717D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C734B6928E2E9F40091575B /* UrkCardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrkCardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrkCardGameApp.swift; sourceTree = "<group>"; };
-		2C734B6E28E2E9F40091575B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C734B7028E2E9F60091575B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C734B7328E2E9F60091575B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2C734B7C28E2EC320091575B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C734B7E28E2F12A0091575B /* MenuBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBackgroundView.swift; sourceTree = "<group>"; };
+		2C734B8028E2F6E80091575B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2CE7D57328E4673C00D5DF0B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		2CE7D57528E4675C00D5DF0B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		2CE7D57728E46D3B00D5DF0B /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		2CE7D57A28E4A4DC00D5DF0B /* GameDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataProvider.swift; sourceTree = "<group>"; };
+		2CE7D57C28E4A66600D5DF0B /* Penalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penalty.swift; sourceTree = "<group>"; };
+		2CE7D58028E4A7E000D5DF0B /* Blame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blame.swift; sourceTree = "<group>"; };
+		2CE7D58228E4AC0400D5DF0B /* Penalties.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Penalties.txt; sourceTree = "<group>"; };
+		2CE7D58328E4AC0500D5DF0B /* Questions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Questions.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,9 +90,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C021ACF28E44B03009E4C9A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2C01554828E44E6C001962E0 /* SF-Compact-Rounded-Black.otf */,
+				2C01554628E44E6C001962E0 /* SF-Compact-Rounded-Bold.otf */,
+				2C01554728E44E6C001962E0 /* SF-Compact-Rounded-Heavy.otf */,
+				2C01554228E44E6C001962E0 /* SF-Compact-Rounded-Light.otf */,
+				2C01554028E44E6C001962E0 /* SF-Compact-Rounded-Medium.otf */,
+				2C01554128E44E6C001962E0 /* SF-Compact-Rounded-Regular.otf */,
+				2C01554328E44E6C001962E0 /* SF-Compact-Rounded-Semibold.otf */,
+				2C01554428E44E6C001962E0 /* SF-Compact-Rounded-Thin.otf */,
+				2C01554528E44E6C001962E0 /* SF-Compact-Rounded-Ultralight.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2C3D885C28E348A000FF717D /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D886328E3533500FF717D /* Assets.swift */,
+				2C021AD028E44B67009E4C9A /* Fonts.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		2C3D886528E3607900FF717D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2C734B7E28E2F12A0091575B /* MenuBackgroundView.swift */,
+				2C3D886628E3608B00FF717D /* GameBackgroundView.swift */,
+				2C021ACC28E4453F009E4C9A /* BackButton.swift */,
+				2C01555228E45095001962E0 /* MainButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2C734B6028E2E9F40091575B = {
 			isa = PBXGroup;
 			children = (
+				2C3D885928E345DF00FF717D /* swiftgen.yml */,
 				2C734B6B28E2E9F40091575B /* UrkCardGame */,
 				2C734B6A28E2E9F40091575B /* Products */,
 			);
@@ -51,20 +146,52 @@
 		2C734B6B28E2E9F40091575B /* UrkCardGame */ = {
 			isa = PBXGroup;
 			children = (
+				2CB2522E28E3446A0023F7DC /* Resources */,
+				2C3D885C28E348A000FF717D /* Generated */,
+				2CE7D57228E4672800D5DF0B /* Models */,
+				2C3D886528E3607900FF717D /* Components */,
+				2CE7D57928E4A4A300D5DF0B /* Services */,
+				2C734B7C28E2EC320091575B /* LaunchScreen.storyboard */,
 				2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */,
-				2C734B6E28E2E9F40091575B /* ContentView.swift */,
-				2C734B7028E2E9F60091575B /* Assets.xcassets */,
-				2C734B7228E2E9F60091575B /* Preview Content */,
+				2C734B8028E2F6E80091575B /* HomeView.swift */,
+				2C1F65A728E30C5B0019FE49 /* PlayesListView.swift */,
+				2C1F65A928E321770019FE49 /* AddPlayerView.swift */,
+				2C1F65AB28E340FC0019FE49 /* GameView.swift */,
+				2CE7D57728E46D3B00D5DF0B /* GameViewModel.swift */,
 			);
 			path = UrkCardGame;
 			sourceTree = "<group>";
 		};
-		2C734B7228E2E9F60091575B /* Preview Content */ = {
+		2CB2522E28E3446A0023F7DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C021ACF28E44B03009E4C9A /* Fonts */,
+				2C734B7028E2E9F60091575B /* Assets.xcassets */,
 				2C734B7328E2E9F60091575B /* Preview Assets.xcassets */,
+				2C3D886A28E366CA00FF717D /* Localizable.strings */,
+				2CE7D58228E4AC0400D5DF0B /* Penalties.txt */,
+				2CE7D58328E4AC0500D5DF0B /* Questions.txt */,
 			);
-			path = "Preview Content";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CE7D57228E4672800D5DF0B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7D57328E4673C00D5DF0B /* Question.swift */,
+				2CE7D57528E4675C00D5DF0B /* Player.swift */,
+				2CE7D57C28E4A66600D5DF0B /* Penalty.swift */,
+				2CE7D58028E4A7E000D5DF0B /* Blame.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2CE7D57928E4A4A300D5DF0B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7D57A28E4A4DC00D5DF0B /* GameDataProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +204,7 @@
 				2C734B6528E2E9F40091575B /* Sources */,
 				2C734B6628E2E9F40091575B /* Frameworks */,
 				2C734B6728E2E9F40091575B /* Resources */,
+				2C3D885B28E3462700FF717D /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -125,24 +253,85 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C01554C28E44E6C001962E0 /* SF-Compact-Rounded-Semibold.otf in Resources */,
+				2CE7D58428E4AC0500D5DF0B /* Penalties.txt in Resources */,
+				2C734B7D28E2EC320091575B /* LaunchScreen.storyboard in Resources */,
+				2C3D886828E366CA00FF717D /* Localizable.strings in Resources */,
+				2C01555028E44E6C001962E0 /* SF-Compact-Rounded-Heavy.otf in Resources */,
+				2C01554F28E44E6C001962E0 /* SF-Compact-Rounded-Bold.otf in Resources */,
+				2CE7D58528E4AC0500D5DF0B /* Questions.txt in Resources */,
 				2C734B7428E2E9F60091575B /* Preview Assets.xcassets in Resources */,
+				2C01554B28E44E6C001962E0 /* SF-Compact-Rounded-Light.otf in Resources */,
+				2C01554928E44E6C001962E0 /* SF-Compact-Rounded-Medium.otf in Resources */,
 				2C734B7128E2E9F60091575B /* Assets.xcassets in Resources */,
+				2C01554D28E44E6C001962E0 /* SF-Compact-Rounded-Thin.otf in Resources */,
+				2C01555128E44E6C001962E0 /* SF-Compact-Rounded-Black.otf in Resources */,
+				2C3D885A28E345DF00FF717D /* swiftgen.yml in Resources */,
+				2C01554A28E44E6C001962E0 /* SF-Compact-Rounded-Regular.otf in Resources */,
+				2C01554E28E44E6C001962E0 /* SF-Compact-Rounded-Ultralight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C3D885B28E3462700FF717D /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C734B6528E2E9F40091575B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */,
+				2C1F65AA28E321770019FE49 /* AddPlayerView.swift in Sources */,
+				2CE7D58128E4A7E000D5DF0B /* Blame.swift in Sources */,
+				2CE7D57428E4673C00D5DF0B /* Question.swift in Sources */,
+				2C021ACD28E4453F009E4C9A /* BackButton.swift in Sources */,
+				2C3D886728E3608B00FF717D /* GameBackgroundView.swift in Sources */,
+				2C021AD128E44B67009E4C9A /* Fonts.swift in Sources */,
+				2CE7D57D28E4A66600D5DF0B /* Penalty.swift in Sources */,
 				2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */,
+				2CE7D57828E46D3B00D5DF0B /* GameViewModel.swift in Sources */,
+				2C1F65A828E30C5B0019FE49 /* PlayesListView.swift in Sources */,
+				2CE7D57B28E4A4DC00D5DF0B /* GameDataProvider.swift in Sources */,
+				2C734B7F28E2F12A0091575B /* MenuBackgroundView.swift in Sources */,
+				2C734B8128E2F6E80091575B /* HomeView.swift in Sources */,
+				2C1F65AC28E340FC0019FE49 /* GameView.swift in Sources */,
+				2C01555328E45095001962E0 /* MainButton.swift in Sources */,
+				2CE7D57628E4675C00D5DF0B /* Player.swift in Sources */,
+				2C3D886428E3533500FF717D /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C3D886A28E366CA00FF717D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C3D886928E366CA00FF717D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2C734B7528E2E9F60091575B /* Debug */ = {
@@ -195,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = "15.0   ";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = "15.0   ";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -266,13 +455,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UrkCardGame/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UrkCardGame/Resources\"";
 				DEVELOPMENT_TEAM = JDMQBR6RR6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -295,13 +486,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UrkCardGame/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UrkCardGame/Resources\"";
 				DEVELOPMENT_TEAM = JDMQBR6RR6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

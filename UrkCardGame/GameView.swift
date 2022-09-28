@@ -1,0 +1,293 @@
+//
+//  GameView.swift
+//  UrkCardGame
+//
+//  Created by Ivan on 27/09/2022.
+//
+
+import SwiftUI
+
+struct GameView: View {
+    
+    @StateObject var viewModel: GameViewModel
+    
+    var body: some View {
+        ZStack {
+            GameBackgroundView()
+            VStack(spacing: 10) {
+                HStack {
+                    BackButton(tintColor: Assets.Colors.secondaryColor.swiftUIColor) {
+                        print("back action")
+                    }
+                    Spacer()
+                }
+                CurrentPlayerView(player: viewModel.currentPlayer)
+                Assets.GameScreen.gameCanvas.swiftUIImage
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .overlay {
+                        
+                        content(for: viewModel.state)
+                            .padding(.horizontal, 30)
+//                        switch viewModel.state {
+//                        case .initial:
+//                            StartGameView {
+//                                viewModel.start()
+//                            }
+//                        case .quiz(let quiz):
+//                            QuizView(quiz: currentQuiz, state: $state)
+//                        case .right:
+//                            <#code#>
+//                        case .wrong:
+//                            <#code#>
+//                        case .end:
+//                            <#code#>
+//                        }
+//
+//                        QuizView(quiz: currentQuiz, state: $state)
+//                        StartGameView(action: {
+//
+//                        })
+//                            .offset(x: 0, y: -10)
+                    }
+                
+//                QuizView(quiz: currentQuiz, state: $state)
+//                    .background {
+//                        Assets.GameScreen.gameCanvas.swiftUIImage
+//                    }
+            }
+            .padding(.horizontal, 30)
+        }
+        .ignoresSafeArea()
+        .navigationBarHidden(true)
+    }
+    
+    func content(for state: GameViewModel.GameState) -> AnyView {
+        switch state {
+        case .initial:
+            return AnyView(StartGameView {
+                viewModel.startNextRound()
+            })
+        case .question(let quiz):
+            return AnyView(QuizView(
+                quiz: quiz,
+                correctAnswerAction: viewModel.correctAnswerSelected,
+                wrongAnswerAction: viewModel.wrongAnswerSelected
+            ))
+        case .nextPlayer:
+            return AnyView(NextPlayerView(
+                player: viewModel.currentPlayer,
+                action: viewModel.startNextRound))
+        case .wrongAnswer:
+            return AnyView(FailView(action: viewModel.openPenaltyTask))
+        case .penaltyTask:
+            return AnyView(TaskView(action: viewModel.penaltyTaskDone))
+        }
+    }
+        
+    struct MemeView: View {
+        
+        let title: String
+        let description: String
+        let buttonTitle: String
+        let buttonAction: () -> Void
+        
+        
+        let stickers: [String] = [
+            Assets.Stickers.sticker1.name
+        ]
+        
+        var body: some View {
+            VStack(spacing: 40) {
+                Image(stickers.randomElement()!)
+                VStack(spacing: 10) {
+                    Text(title)
+                        .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
+                    Text(description)
+                        .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 20))
+                }
+                MainButton(text: buttonTitle) {
+                    buttonAction()
+                }
+            }
+            .multilineTextAlignment(.center)
+        }
+    }
+    
+    struct StartGameView: View {
+        
+        let action: () -> Void
+        
+        var body: some View {
+            MemeView(
+                title: "Почнемо!",
+                description: "Наберіть більше правильних відповідей чим ваш суперник",
+                buttonTitle: "Старт",
+                buttonAction: action)
+        }
+    }
+    
+    struct NextPlayerView: View {
+        
+        let player: Player
+        let action: () -> Void
+        
+        var body: some View {
+            MemeView(
+                title: "Так тримати!",
+                description: "Передай телефон наступному гравцеві\n **\(player.nickname)**",
+                buttonTitle: "Старт",
+                buttonAction: action
+            )
+        }
+    }
+    
+    struct FailView: View {
+        
+        let action: () -> Void
+        
+        let titles: [String] = [
+            "А ти точно не сэпар?",
+            "Навіть Арестович в шоці",
+            "Знущаєшся?",
+            "Тобі не соромно?",
+            "Знову невдало!",
+            "Сідай Два!",
+            "Тримайся!"
+        ]
+        
+        let descriptions: [String] = [
+            "Виконай завдання щоб довести протилежне 🇺🇦",
+            "Виконай завдання зараз, а не через “2-3 недели”😂",
+            "Мені соромно за тебе, ану бігом виконувати завдання",
+            "Виконуй завдання скоріш!",
+            "Так виглядає полуниця? Виконуй завдання бігом!",
+            "Це нікуди не годиться, ану бігом завдання виконувать",
+            "Невдачі роблять тебе сильніше, а поки виконуй завдання"
+        ]
+        
+        var body: some View {
+            MemeView(
+                title: titles.randomElement()!,
+                description: descriptions.randomElement()!,
+                buttonTitle: "Завдання",
+                buttonAction: action
+            )
+        }
+    }
+    
+    struct TaskView: View {
+        
+        let action: () -> Void
+        
+        let tasks: [String] = [
+            "Подзвони зараз на будь який номер та скажи що путін здох"
+        ]
+        
+        var body: some View {
+            MemeView(
+                title: tasks.randomElement()!,
+                description: "",
+                buttonTitle: "Зарахувати",
+                buttonAction: action
+            )
+        }
+    }
+}
+
+struct GameView_Previews: PreviewProvider {
+    
+    static let player = Player(nickname: "John", avatar: Assets.Avatars.avatarMale2.name)
+    static let quiz = Question(text: "Як прозвали російського солдата , який став мемом? Ч...")
+    static let viewModel = GameViewModel(players: [player])
+     
+    static var previews: some View {
+        GameView(viewModel: viewModel)
+            .previewInterfaceOrientation(.portraitUpsideDown)
+        GameView(viewModel: viewModel)
+            .previewDevice(PreviewDevice(rawValue: "iPhone 13 mini"))
+        GameView(viewModel: viewModel)
+            .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
+    }
+}
+
+// MARK: - CurrentPlayerView
+
+extension GameView {
+    
+    struct CurrentPlayerView: View {
+        
+        let player: Player
+        
+        var body: some View {
+            HStack {
+                
+                Image(player.avatar)
+                    .resizable()
+                    .frame(width: 30, height: 30, alignment: .center)
+                    .padding(.horizontal, 17)
+                    .padding(.vertical, 8)
+                
+                Text("**\(player.nickname)** твоя черга!")
+                    .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 20))
+                    .padding(.trailing, 17)
+                
+            }
+            .background(Assets.Colors.secondaryColor.swiftUIColor)
+            .cornerRadius(17)
+        }
+    }
+}
+
+// MARK: - QuizView
+
+extension GameView {
+    
+    struct QuizView: View {
+        
+        let quiz: Question
+        
+        let correctAnswerAction: () -> Void
+        let wrongAnswerAction: () -> Void
+        
+        @State var timer: Int = Const.secondsInRound
+        
+        var body: some View {
+            VStack (spacing: 40) {
+                Text("\(timer)")
+                    .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 44))
+                    .foregroundColor(Assets.Colors.redColor.swiftUIColor)
+                Text(quiz.text)
+                    .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
+                    .foregroundColor(.black)
+                VStack(spacing: 25) {
+                    VStack(spacing: 10) {
+                        MainButton(text: "Зарахувати", action: correctAnswerAction)
+                        MainButton(
+                            text: "Не знаю",
+                            backgroundColor: Assets.Colors.redColor.swiftUIColor,
+                            action: wrongAnswerAction
+                        )
+                    }
+                    Text("За неправильну відповідь ти отримуєш завдання яке треба виконати")
+                        .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 13))
+                        .foregroundColor(.black)
+                }
+            }
+            .multilineTextAlignment(.center)
+            .background()
+        }
+    }
+}
+
+// MARK: - -
+
+extension GameView {
+    
+}
+
+// MARK: - -
+
+extension GameView {
+    
+}
