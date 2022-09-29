@@ -29,32 +29,7 @@ struct GameView: View {
                         
                         content(for: viewModel.state)
                             .padding(.horizontal, 30)
-//                        switch viewModel.state {
-//                        case .initial:
-//                            StartGameView {
-//                                viewModel.start()
-//                            }
-//                        case .quiz(let quiz):
-//                            QuizView(quiz: currentQuiz, state: $state)
-//                        case .right:
-//                            <#code#>
-//                        case .wrong:
-//                            <#code#>
-//                        case .end:
-//                            <#code#>
-//                        }
-//
-//                        QuizView(quiz: currentQuiz, state: $state)
-//                        StartGameView(action: {
-//
-//                        })
-//                            .offset(x: 0, y: -10)
                     }
-                
-//                QuizView(quiz: currentQuiz, state: $state)
-//                    .background {
-//                        Assets.GameScreen.gameCanvas.swiftUIImage
-//                    }
             }
             .padding(.horizontal, 30)
         }
@@ -80,8 +55,8 @@ struct GameView: View {
                 action: viewModel.startNextRound))
         case .wrongAnswer:
             return AnyView(FailView(action: viewModel.openPenaltyTask))
-        case .penaltyTask:
-            return AnyView(TaskView(action: viewModel.penaltyTaskDone))
+        case .penaltyTask(let penaltyTask):
+            return AnyView(TaskView(penaltyTask: penaltyTask, action: viewModel.penaltyTaskDone))
         }
     }
         
@@ -94,7 +69,18 @@ struct GameView: View {
         
         
         let stickers: [String] = [
-            Assets.Stickers.sticker1.name
+            Assets.Stickers.sticker1.name,
+            Assets.Stickers.sticker2.name,
+            Assets.Stickers.sticker3.name,
+            Assets.Stickers.sticker4.name,
+            Assets.Stickers.sticker5.name,
+            Assets.Stickers.sticker6.name,
+            Assets.Stickers.sticker7.name,
+            Assets.Stickers.sticker8.name,
+            Assets.Stickers.sticker9.name,
+            Assets.Stickers.sticker10.name,
+            Assets.Stickers.sticker11.name,
+            Assets.Stickers.sticker12.name
         ]
         
         var body: some View {
@@ -178,15 +164,12 @@ struct GameView: View {
     
     struct TaskView: View {
         
+        let penaltyTask: Penalty
         let action: () -> Void
-        
-        let tasks: [String] = [
-            "Подзвони зараз на будь який номер та скажи що путін здох"
-        ]
         
         var body: some View {
             MemeView(
-                title: tasks.randomElement()!,
+                title: penaltyTask.text,
                 description: "",
                 buttonTitle: "Зарахувати",
                 buttonAction: action
@@ -203,7 +186,7 @@ struct GameView_Previews: PreviewProvider {
      
     static var previews: some View {
         GameView(viewModel: viewModel)
-            .previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.portrait)
         GameView(viewModel: viewModel)
             .previewDevice(PreviewDevice(rawValue: "iPhone 13 mini"))
         GameView(viewModel: viewModel)

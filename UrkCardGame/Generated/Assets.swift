@@ -63,8 +63,19 @@ internal enum Assets {
     internal static let traktor = ImageAsset(name: "traktor")
     internal static let woodSign = ImageAsset(name: "wood_sign")
   }
-  internal enum Stickers: CaseIterable {
+  internal enum Stickers {
     internal static let sticker1 = ImageAsset(name: "Sticker_1")
+    internal static let sticker10 = ImageAsset(name: "sticker_10")
+    internal static let sticker11 = ImageAsset(name: "sticker_11")
+    internal static let sticker12 = ImageAsset(name: "sticker_12")
+    internal static let sticker2 = ImageAsset(name: "sticker_2")
+    internal static let sticker3 = ImageAsset(name: "sticker_3")
+    internal static let sticker4 = ImageAsset(name: "sticker_4")
+    internal static let sticker5 = ImageAsset(name: "sticker_5")
+    internal static let sticker6 = ImageAsset(name: "sticker_6")
+    internal static let sticker7 = ImageAsset(name: "sticker_7")
+    internal static let sticker8 = ImageAsset(name: "sticker_8")
+    internal static let sticker9 = ImageAsset(name: "sticker_9")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

@@ -20,6 +20,8 @@ class GameViewModel: ObservableObject {
     let gameDataProvider: GameDataProviderProtocol = GameDataProvider()
     
     private let players: [Player]
+    private var platersIterator: IndexingIterator<[Player]>
+    
     private let questions: [Question]
     private let penalties: [Penalty]
     private let blames: [Blame]
@@ -31,6 +33,7 @@ class GameViewModel: ObservableObject {
         players: [Player]
     ) {
         self.players = players
+        self.platersIterator = players.makeIterator()
         self.currentPlayer = players.first!
         
         questions = gameDataProvider.getQuestions()
@@ -45,6 +48,7 @@ class GameViewModel: ObservableObject {
     
     func correctAnswerSelected() {
         let player = getNextPlayer()
+        currentPlayer = player
         state = .nextPlayer(player)
     }
     
@@ -68,7 +72,12 @@ class GameViewModel: ObservableObject {
     }
     
     private func getNextPlayer() -> Player {
-        return players.randomElement()!
+        if let player = platersIterator.next() {
+            return player
+        }
+        
+        platersIterator = players.makeIterator()
+        return getNextPlayer()
     }
     
     private func getNextPenaltyTask() -> Penalty {
