@@ -9,15 +9,21 @@ import SwiftUI
 
 struct GameView: View {
     
-    @StateObject var viewModel: GameViewModel
+    @Environment(\.rootPresentation) var rootPresentation: Binding<Bool>
     
+    @StateObject var viewModel: GameViewModel
+
+    @State var countDownTimer: Int = Const.secondsInRound
+    @State var timerRunning: Bool = false
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var body: some View {
         ZStack {
             GameBackgroundView()
             VStack(spacing: 10) {
                 HStack {
                     BackButton(tintColor: Assets.Colors.secondaryColor.swiftUIColor) {
-                        print("back action")
+                        rootPresentation.wrappedValue = false
                     }
                     Spacer()
                 }
@@ -26,7 +32,6 @@ struct GameView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .overlay {
-                        
                         content(for: viewModel.state)
                             .padding(.horizontal, 30)
                     }
@@ -35,6 +40,11 @@ struct GameView: View {
         }
         .ignoresSafeArea()
         .navigationBarHidden(true)
+        .onAppear {
+            viewModel.finishGame = {
+                rootPresentation.wrappedValue = false
+            }
+        }
     }
     
     func content(for state: GameViewModel.GameState) -> AnyView {
@@ -47,11 +57,24 @@ struct GameView: View {
             return AnyView(QuizView(
                 quiz: quiz,
                 correctAnswerAction: viewModel.correctAnswerSelected,
-                wrongAnswerAction: viewModel.wrongAnswerSelected
-            ))
-        case .nextPlayer:
+                wrongAnswerAction: viewModel.wrongAnswerSelected,
+                timer: $countDownTimer
+            )
+                .onAppear {
+                    countDownTimer = Const.secondsInRound
+                    timerRunning = true
+                }
+                .onReceive(timer) { _ in
+                    if countDownTimer > -1 && timerRunning {
+                        countDownTimer -= 1
+                    } else {
+                        timerRunning = false
+                    }
+                }
+            )
+        case .nextPlayer(let player):
             return AnyView(NextPlayerView(
-                player: viewModel.currentPlayer,
+                player: player,
                 action: viewModel.startNextRound))
         case .wrongAnswer:
             return AnyView(FailView(action: viewModel.openPenaltyTask))
@@ -182,7 +205,9 @@ struct GameView_Previews: PreviewProvider {
     
     static let player = Player(nickname: "John", avatar: Assets.Avatars.avatarMale2.name)
     static let quiz = Question(text: "Як прозвали російського солдата , який став мемом? Ч...")
-    static let viewModel = GameViewModel(players: [player])
+    static let viewModel = GameViewModel(players: [player]) {
+        
+    }
      
     static var previews: some View {
         GameView(viewModel: viewModel)
@@ -233,7 +258,7 @@ extension GameView {
         let correctAnswerAction: () -> Void
         let wrongAnswerAction: () -> Void
         
-        @State var timer: Int = Const.secondsInRound
+        @Binding var timer: Int
         
         var body: some View {
             VStack (spacing: 40) {

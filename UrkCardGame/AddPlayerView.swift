@@ -89,7 +89,7 @@ struct AddPlayerView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Assets.PlayesScreen.traktor.swiftUIImage
+                        Assets.PlayersScreen.traktor.swiftUIImage
                         Spacer()
                     }
                     HStack {

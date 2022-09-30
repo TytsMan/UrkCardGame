@@ -18,7 +18,7 @@ struct UrkCardGameApp: App {
 
 enum Const {
     
-    static let secondsInRound = 30
+    static let secondsInRound = 20
     
 }
 

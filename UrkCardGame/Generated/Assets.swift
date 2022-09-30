@@ -59,7 +59,7 @@ internal enum Assets {
   internal enum LaunchScreen {
     internal static let heartUaFlag = ImageAsset(name: "heart_ua_flag")
   }
-  internal enum PlayesScreen {
+  internal enum PlayersScreen {
     internal static let traktor = ImageAsset(name: "traktor")
     internal static let woodSign = ImageAsset(name: "wood_sign")
   }

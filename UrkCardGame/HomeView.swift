@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State private var rootPresentation: Bool = false
     
     var body: some View {
         NavigationView {
@@ -26,7 +27,7 @@ struct HomeView: View {
                     VStack {
                         Image("greetings")
                         
-                        NavigationLink {
+                        NavigationLink(isActive: $rootPresentation) {
                             PlayesListView()
                         } label: {
                             StartGameView()
@@ -44,6 +45,7 @@ struct HomeView: View {
             }
             .navigationBarHidden(true)
         }
+        .environment(\.rootPresentation, $rootPresentation)
     }
 
     struct StartGameView: View {

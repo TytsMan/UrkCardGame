@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GameViewModel: ObservableObject {
     
@@ -26,19 +27,35 @@ class GameViewModel: ObservableObject {
     private let penalties: [Penalty]
     private let blames: [Blame]
     
+    private var availableQuestions: [Question]
+    private var availablePenalties: [Penalty]
+    private var availableBlames: [Blame]
+    
     @Published private(set) var state: GameState = .initial
     @Published private(set) var currentPlayer: Player
     
+    var finishGame: (() -> Void)?
+    
     init(
-        players: [Player]
+        players: [Player],
+        finishGame:  (() -> Void)? = nil
     ) {
+        
+        self.finishGame = finishGame
+        
         self.players = players
         self.platersIterator = players.makeIterator()
-        self.currentPlayer = players.first!
         
         questions = gameDataProvider.getQuestions()
         penalties = gameDataProvider.getPenalties()
         blames = gameDataProvider.getBlame()
+        
+        availableQuestions = questions
+        availablePenalties = penalties
+        availableBlames = blames
+        
+        self.currentPlayer = players.first!
+        self.currentPlayer = self.getNextPlayer()
     }
     
     func startNextRound() {
@@ -47,9 +64,14 @@ class GameViewModel: ObservableObject {
     }
     
     func correctAnswerSelected() {
-        let player = getNextPlayer()
-        currentPlayer = player
-        state = .nextPlayer(player)
+        
+        if availableQuestions.isEmpty {
+            finishGame?()
+        } else {
+            let player = getNextPlayer()
+            currentPlayer = player
+            state = .nextPlayer(player)
+        }
     }
     
     func wrongAnswerSelected() {
@@ -63,12 +85,13 @@ class GameViewModel: ObservableObject {
     }
     
     func penaltyTaskDone() {
-        let question = getNextQuestion()
-        state = .question(question)
-    }
-    
-    private func getNextQuestion() -> Question {
-        return questions.randomElement()!
+        
+        if availableQuestions.isEmpty {
+            finishGame?()
+        } else {
+            let question = getNextQuestion()
+            state = .question(question)
+        }
     }
     
     private func getNextPlayer() -> Player {
@@ -80,12 +103,32 @@ class GameViewModel: ObservableObject {
         return getNextPlayer()
     }
     
+    private func getNextQuestion() -> Question {
+        
+        let idx = Int((0..<availableQuestions.count).randomElement()!)
+        let penaltyTask = availableQuestions[idx]
+        availableQuestions.remove(at: idx)
+        return penaltyTask
+    }
+    
     private func getNextPenaltyTask() -> Penalty {
-        return penalties.randomElement()!
+        if availablePenalties.isEmpty {
+            availablePenalties = penalties
+        }
+        let idx = Int((0..<availablePenalties.count).randomElement()!)
+        let penaltyTask = availablePenalties[idx]
+        availablePenalties.remove(at: idx)
+        return penaltyTask
     }
     
     private func getNextBlame() -> Blame {
-        return blames.randomElement()!
+        if availableBlames.isEmpty {
+            availableBlames = blames
+        }
+        let idx = Int((0..<availableBlames.count).randomElement()!)
+        let penaltyTask = availableBlames[idx]
+        availableBlames.remove(at: idx)
+        return penaltyTask
     }
     
 }

@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "GameViewModel.getNextPlayer():GameViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentPlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameViewModel.getNextQuestion():GameViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "availableQuestions">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #2 in closure #2 in closure #1 in PlayesListView.body.getter:PlayesListView.swift">
          <PersistentStrings>
             <PersistentString
@@ -12,6 +28,9 @@
                value = "players.count">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameViewModel.correctAnswerSelected():GameViewModel.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

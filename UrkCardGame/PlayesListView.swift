@@ -9,9 +9,13 @@ import SwiftUI
 
 struct PlayesListView: View {
     
+    @Environment(\.rootPresentation) var rootPresentation: Binding<Bool>
     @Environment(\.presentationMode) var presentationMode
     
-    @State var players: [Player] = []
+    @State var players: [Player] = [
+        Player(nickname: "Steven", avatar: Assets.Avatars.avatarMale1.name),
+        Player(nickname: "Sveta", avatar: Assets.Avatars.avatarFemale1.name)
+    ]
     
     var body: some View {
         ZStack {
@@ -20,7 +24,7 @@ struct PlayesListView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Assets.PlayesScreen.woodSign.swiftUIImage
+                    Assets.PlayersScreen.woodSign.swiftUIImage
                 }
             }
             .ignoresSafeArea()
@@ -70,7 +74,7 @@ struct PlayesListView: View {
                 
                 
                 Spacer()
-                Assets.PlayesScreen.traktor.swiftUIImage
+                Assets.PlayersScreen.traktor.swiftUIImage
                 NavigationLink {
                     GameView(viewModel: GameViewModel(players: players))
                 } label: {
