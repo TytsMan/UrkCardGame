@@ -154,13 +154,7 @@
 				2CE7D57228E4672800D5DF0B /* Models */,
 				2C3D886528E3607900FF717D /* Components */,
 				2CE7D57928E4A4A300D5DF0B /* Services */,
-				2C734B7C28E2EC320091575B /* LaunchScreen.storyboard */,
-				2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */,
-				2C734B8028E2F6E80091575B /* HomeView.swift */,
-				2C1F65A728E30C5B0019FE49 /* PlayesListView.swift */,
-				2C1F65A928E321770019FE49 /* AddPlayerView.swift */,
-				2C1F65AB28E340FC0019FE49 /* GameView.swift */,
-				2CE7D57728E46D3B00D5DF0B /* GameViewModel.swift */,
+				2CA3EA4728E73CB100DC4F1E /* Views */,
 			);
 			path = UrkCardGame;
 			sourceTree = "<group>";
@@ -184,6 +178,20 @@
 				2CE7D58328E4AC0500D5DF0B /* Questions.txt */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		2CA3EA4728E73CB100DC4F1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C734B7C28E2EC320091575B /* LaunchScreen.storyboard */,
+				2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */,
+				2C734B8028E2F6E80091575B /* HomeView.swift */,
+				2C1F65A728E30C5B0019FE49 /* PlayesListView.swift */,
+				2C1F65A928E321770019FE49 /* AddPlayerView.swift */,
+				2C1F65AB28E340FC0019FE49 /* GameView.swift */,
+				2CE7D57728E46D3B00D5DF0B /* GameViewModel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2CE7D57228E4672800D5DF0B /* Models */ = {

@@ -34,7 +34,7 @@
 
 xcassets:
   inputs:
-    - UrkCardGame/Resources/Assets.xcassets
+    - UrkCardGame/Assets.xcassets
   outputs:
     - templateName: swift5
       output: UrkCardGame/Generated/Assets.swift
@@ -45,15 +45,15 @@ xcassets:
 
 fonts:
   inputs:
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Black.otf
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Bold.otf
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Heavy.otf
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Light.otf
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Medium.otf
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Regular.otf
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Semibold.otf
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Thin.otf
-    - UrkCardGame/Resources/Fonts/SF-Compact-Rounded-Ultralight.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Black.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Bold.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Heavy.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Light.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Medium.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Regular.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Semibold.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Thin.otf
+    - UrkCardGame/Fonts/SF-Compact-Rounded-Ultralight.otf
   outputs:
     - templateName: swift5
       output: UrkCardGame/Generated/Fonts.swift
