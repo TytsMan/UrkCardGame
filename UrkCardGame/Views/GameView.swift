@@ -11,7 +11,7 @@ struct GameView: View {
     
     @Environment(\.rootPresentation) var rootPresentation: Binding<Bool>
     
-    @StateObject var viewModel: GameViewModel
+    @ObservedObject var viewModel: GameViewModel
 
     @State var countDownTimer: Int = Const.secondsInRound
     @State var timerRunning: Bool = false
