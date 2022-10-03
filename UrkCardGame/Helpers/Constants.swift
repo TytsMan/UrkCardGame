@@ -10,5 +10,6 @@ import Foundation
 enum Const {
     
     static let secondsInRound = 20
+    static let testVar = 666
     
 }
