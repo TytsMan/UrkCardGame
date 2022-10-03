@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4895DF28EAF0690010DFC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4895DE28EAF0690010DFC7 /* Constants.swift */; };
+		2C4895E128EAF0810010DFC7 /* CustomEnvironmentProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4895E028EAF0810010DFC7 /* CustomEnvironmentProperties.swift */; };
 		2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */; };
 		2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6E28E2E9F40091575B /* ContentView.swift */; };
 		2C734B7128E2E9F60091575B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7028E2E9F60091575B /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4895DE28EAF0690010DFC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C4895E028EAF0810010DFC7 /* CustomEnvironmentProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEnvironmentProperties.swift; sourceTree = "<group>"; };
 		2C734B6928E2E9F40091575B /* UrkCardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrkCardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrkCardGameApp.swift; sourceTree = "<group>"; };
 		2C734B6E28E2E9F40091575B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +36,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4895DD28EAF0580010DFC7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C4895DE28EAF0690010DFC7 /* Constants.swift */,
+				2C4895E028EAF0810010DFC7 /* CustomEnvironmentProperties.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2C734B6028E2E9F40091575B = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +64,7 @@
 		2C734B6B28E2E9F40091575B /* UrkCardGame */ = {
 			isa = PBXGroup;
 			children = (
+				2C4895DD28EAF0580010DFC7 /* Helpers */,
 				2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */,
 				2C734B6E28E2E9F40091575B /* ContentView.swift */,
 				2C734B7028E2E9F60091575B /* Assets.xcassets */,
@@ -139,6 +153,8 @@
 			files = (
 				2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */,
 				2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */,
+				2C4895DF28EAF0690010DFC7 /* Constants.swift in Sources */,
+				2C4895E128EAF0810010DFC7 /* CustomEnvironmentProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
