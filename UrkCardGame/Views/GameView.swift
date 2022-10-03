@@ -113,8 +113,10 @@ struct GameView: View {
                 VStack(spacing: 10) {
                     Text(title)
                         .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
+                        .foregroundColor(Color.black)
                     Text((try? AttributedString(markdown: description)) ?? "")
                         .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 20))
+                        .foregroundColor(Color.black)
                 }
                 Button {
                     buttonAction()
@@ -211,7 +213,6 @@ struct GameView_Previews: PreviewProvider {
     static let viewModel = GameViewModel(players: [player]) {
         
     }
-     
     static var previews: some View {
         GameView(rootIsActive: .constant(false), viewModel: viewModel)
             .previewInterfaceOrientation(.portrait)
@@ -242,6 +243,7 @@ extension GameView {
                 Text("**\(player.nickname)** твоя черга!")
                     .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 20))
                     .padding(.trailing, 17)
+                    .foregroundColor(Color.black)
                 
             }
             .background(Assets.whiteColor.swiftUIColor)
@@ -295,7 +297,7 @@ extension GameView {
                 }
             }
             .multilineTextAlignment(.center)
-            .background()
+            .background(Assets.whiteColor.swiftUIColor)
         }
     }
 }

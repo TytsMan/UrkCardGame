@@ -20,6 +20,7 @@ struct MenuBackgroundView: View {
                 .aspectRatio(contentMode: .fit)
         }
         .ignoresSafeArea()
+        .background(Assets.whiteColor.swiftUIColor)
     }
 }
 

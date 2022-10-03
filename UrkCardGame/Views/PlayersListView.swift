@@ -35,6 +35,7 @@ struct PlayersListView: View {
                     }
                     Text("Додайте гравців")
                         .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
+                        .foregroundColor(Color.black)
                     
                     ScrollView {
                         VStack(alignment: .leading) {
@@ -103,6 +104,7 @@ struct PlayersListView: View {
                 Text("Додати гравця")
                     .font(.system(size: 21))
                     .padding(.trailing, 50)
+                    .foregroundColor(Assets.whiteColor.swiftUIColor)
             }
             .padding(.vertical, 8)
             .background(Assets.accentColor.swiftUIColor)

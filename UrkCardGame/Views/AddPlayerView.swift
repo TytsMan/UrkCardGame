@@ -45,9 +45,10 @@ struct AddPlayerView: View {
                         BackButton()
                         Spacer()
                     }
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Оберіть аватар")
                             .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
+                            .foregroundColor(.black)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
@@ -66,9 +67,10 @@ struct AddPlayerView: View {
                         }
                     }
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Ваше ім’я")
                             .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
+                            .foregroundColor(.black)
                         HStack {
                             Image(avatars[selectedAvatarIdx])
                                 .resizable()
