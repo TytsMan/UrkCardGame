@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		2C4895DF28EAF0690010DFC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4895DE28EAF0690010DFC7 /* Constants.swift */; };
 		2C4895E128EAF0810010DFC7 /* CustomEnvironmentProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4895E028EAF0810010DFC7 /* CustomEnvironmentProperties.swift */; };
+		2C4895E428EAF0C70010DFC7 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4895E328EAF0C70010DFC7 /* BackButton.swift */; };
+		2C4895F428EAF21B0010DFC7 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4895F328EAF21B0010DFC7 /* Assets.swift */; };
+		2C4895F628EAF2520010DFC7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4895F528EAF2520010DFC7 /* Fonts.swift */; };
+		2C48960928EAF4CF0010DFC7 /* SF-Compact-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960028EAF4CF0010DFC7 /* SF-Compact-Rounded-Thin.otf */; };
+		2C48960A28EAF4CF0010DFC7 /* SF-Compact-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960128EAF4CF0010DFC7 /* SF-Compact-Rounded-Bold.otf */; };
+		2C48960B28EAF4CF0010DFC7 /* SF-Compact-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960228EAF4CF0010DFC7 /* SF-Compact-Rounded-Black.otf */; };
+		2C48960C28EAF4CF0010DFC7 /* SF-Compact-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960328EAF4CF0010DFC7 /* SF-Compact-Rounded-Ultralight.otf */; };
+		2C48960D28EAF4CF0010DFC7 /* SF-Compact-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960428EAF4CF0010DFC7 /* SF-Compact-Rounded-Medium.otf */; };
+		2C48960E28EAF4CF0010DFC7 /* SF-Compact-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960528EAF4CF0010DFC7 /* SF-Compact-Rounded-Heavy.otf */; };
+		2C48960F28EAF4CF0010DFC7 /* SF-Compact-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960628EAF4CF0010DFC7 /* SF-Compact-Rounded-Light.otf */; };
+		2C48961028EAF4CF0010DFC7 /* SF-Compact-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960728EAF4CF0010DFC7 /* SF-Compact-Rounded-Semibold.otf */; };
+		2C48961128EAF4CF0010DFC7 /* SF-Compact-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C48960828EAF4CF0010DFC7 /* SF-Compact-Rounded-Regular.otf */; };
+		2C48961328EAF60B0010DFC7 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961228EAF60B0010DFC7 /* ButtonLabel.swift */; };
+		2C48961528EAFA160010DFC7 /* MenuBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961428EAFA160010DFC7 /* MenuBackgroundView.swift */; };
+		2C48961728EAFA420010DFC7 /* GameBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961628EAFA420010DFC7 /* GameBackgroundView.swift */; };
+		2C48961A28EAFA850010DFC7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961928EAFA850010DFC7 /* HomeView.swift */; };
 		2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */; };
 		2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6E28E2E9F40091575B /* ContentView.swift */; };
 		2C734B7128E2E9F60091575B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7028E2E9F60091575B /* Assets.xcassets */; };
@@ -18,6 +34,22 @@
 /* Begin PBXFileReference section */
 		2C4895DE28EAF0690010DFC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C4895E028EAF0810010DFC7 /* CustomEnvironmentProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEnvironmentProperties.swift; sourceTree = "<group>"; };
+		2C4895E328EAF0C70010DFC7 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		2C4895F328EAF21B0010DFC7 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		2C4895F528EAF2520010DFC7 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		2C48960028EAF4CF0010DFC7 /* SF-Compact-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.otf"; sourceTree = "<group>"; };
+		2C48960128EAF4CF0010DFC7 /* SF-Compact-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		2C48960228EAF4CF0010DFC7 /* SF-Compact-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Black.otf"; sourceTree = "<group>"; };
+		2C48960328EAF4CF0010DFC7 /* SF-Compact-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		2C48960428EAF4CF0010DFC7 /* SF-Compact-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		2C48960528EAF4CF0010DFC7 /* SF-Compact-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Heavy.otf"; sourceTree = "<group>"; };
+		2C48960628EAF4CF0010DFC7 /* SF-Compact-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Light.otf"; sourceTree = "<group>"; };
+		2C48960728EAF4CF0010DFC7 /* SF-Compact-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Semibold.otf"; sourceTree = "<group>"; };
+		2C48960828EAF4CF0010DFC7 /* SF-Compact-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		2C48961228EAF60B0010DFC7 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
+		2C48961428EAFA160010DFC7 /* MenuBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBackgroundView.swift; sourceTree = "<group>"; };
+		2C48961628EAFA420010DFC7 /* GameBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundView.swift; sourceTree = "<group>"; };
+		2C48961928EAFA850010DFC7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2C734B6928E2E9F40091575B /* UrkCardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrkCardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrkCardGameApp.swift; sourceTree = "<group>"; };
 		2C734B6E28E2E9F40091575B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +77,58 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		2C4895E228EAF0AF0010DFC7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2C4895E328EAF0C70010DFC7 /* BackButton.swift */,
+				2C48961228EAF60B0010DFC7 /* ButtonLabel.swift */,
+				2C48961428EAFA160010DFC7 /* MenuBackgroundView.swift */,
+				2C48961628EAFA420010DFC7 /* GameBackgroundView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2C4895E528EAF1510010DFC7 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				2C4895F328EAF21B0010DFC7 /* Assets.swift */,
+				2C4895F528EAF2520010DFC7 /* Fonts.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		2C4895E828EAF1860010DFC7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C4895E928EAF18F0010DFC7 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C4895E928EAF18F0010DFC7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2C48960228EAF4CF0010DFC7 /* SF-Compact-Rounded-Black.otf */,
+				2C48960128EAF4CF0010DFC7 /* SF-Compact-Rounded-Bold.otf */,
+				2C48960528EAF4CF0010DFC7 /* SF-Compact-Rounded-Heavy.otf */,
+				2C48960628EAF4CF0010DFC7 /* SF-Compact-Rounded-Light.otf */,
+				2C48960428EAF4CF0010DFC7 /* SF-Compact-Rounded-Medium.otf */,
+				2C48960828EAF4CF0010DFC7 /* SF-Compact-Rounded-Regular.otf */,
+				2C48960728EAF4CF0010DFC7 /* SF-Compact-Rounded-Semibold.otf */,
+				2C48960028EAF4CF0010DFC7 /* SF-Compact-Rounded-Thin.otf */,
+				2C48960328EAF4CF0010DFC7 /* SF-Compact-Rounded-Ultralight.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2C48961828EAFA760010DFC7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C48961928EAFA850010DFC7 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2C734B6028E2E9F40091575B = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +148,11 @@
 		2C734B6B28E2E9F40091575B /* UrkCardGame */ = {
 			isa = PBXGroup;
 			children = (
+				2C4895E828EAF1860010DFC7 /* Resources */,
+				2C4895E528EAF1510010DFC7 /* Generated */,
+				2C4895E228EAF0AF0010DFC7 /* Components */,
 				2C4895DD28EAF0580010DFC7 /* Helpers */,
+				2C48961828EAFA760010DFC7 /* Views */,
 				2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */,
 				2C734B6E28E2E9F40091575B /* ContentView.swift */,
 				2C734B7028E2E9F60091575B /* Assets.xcassets */,
@@ -139,8 +227,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C48960E28EAF4CF0010DFC7 /* SF-Compact-Rounded-Heavy.otf in Resources */,
+				2C48961128EAF4CF0010DFC7 /* SF-Compact-Rounded-Regular.otf in Resources */,
 				2C734B7428E2E9F60091575B /* Preview Assets.xcassets in Resources */,
+				2C48960928EAF4CF0010DFC7 /* SF-Compact-Rounded-Thin.otf in Resources */,
+				2C48960C28EAF4CF0010DFC7 /* SF-Compact-Rounded-Ultralight.otf in Resources */,
 				2C734B7128E2E9F60091575B /* Assets.xcassets in Resources */,
+				2C48960B28EAF4CF0010DFC7 /* SF-Compact-Rounded-Black.otf in Resources */,
+				2C48960F28EAF4CF0010DFC7 /* SF-Compact-Rounded-Light.otf in Resources */,
+				2C48961028EAF4CF0010DFC7 /* SF-Compact-Rounded-Semibold.otf in Resources */,
+				2C48960A28EAF4CF0010DFC7 /* SF-Compact-Rounded-Bold.otf in Resources */,
+				2C48960D28EAF4CF0010DFC7 /* SF-Compact-Rounded-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,10 +248,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C48961328EAF60B0010DFC7 /* ButtonLabel.swift in Sources */,
+				2C4895F628EAF2520010DFC7 /* Fonts.swift in Sources */,
+				2C48961728EAFA420010DFC7 /* GameBackgroundView.swift in Sources */,
 				2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */,
 				2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */,
+				2C48961A28EAFA850010DFC7 /* HomeView.swift in Sources */,
+				2C4895F428EAF21B0010DFC7 /* Assets.swift in Sources */,
 				2C4895DF28EAF0690010DFC7 /* Constants.swift in Sources */,
 				2C4895E128EAF0810010DFC7 /* CustomEnvironmentProperties.swift in Sources */,
+				2C48961528EAFA160010DFC7 /* MenuBackgroundView.swift in Sources */,
+				2C4895E428EAF0C70010DFC7 /* BackButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
