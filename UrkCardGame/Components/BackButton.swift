@@ -9,7 +9,8 @@ import SwiftUI
 
 struct BackButton: View {
     
-    @Environment(\.rootPresentation) var rootPresentation: Binding<Bool>
+    @Environment(\.presentationMode) var presentationMode
+    
     
     let tintColor: Color
     let action: (() -> Void)?
@@ -36,7 +37,7 @@ struct BackButton: View {
         if let action = action {
             action()
         } else {
-            rootPresentation.wrappedValue = false
+            presentationMode.wrappedValue.dismiss()
         }
     }
 }

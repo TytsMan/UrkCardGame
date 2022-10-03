@@ -25,6 +25,17 @@
 		2C48961528EAFA160010DFC7 /* MenuBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961428EAFA160010DFC7 /* MenuBackgroundView.swift */; };
 		2C48961728EAFA420010DFC7 /* GameBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961628EAFA420010DFC7 /* GameBackgroundView.swift */; };
 		2C48961A28EAFA850010DFC7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961928EAFA850010DFC7 /* HomeView.swift */; };
+		2C48961C28EB00F50010DFC7 /* PlayersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961B28EB00F50010DFC7 /* PlayersListView.swift */; };
+		2C48961F28EB01310010DFC7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48961E28EB01310010DFC7 /* Player.swift */; };
+		2C48962128EB01460010DFC7 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962028EB01460010DFC7 /* Question.swift */; };
+		2C48962328EB01600010DFC7 /* Penalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962228EB01600010DFC7 /* Penalty.swift */; };
+		2C48962528EB016F0010DFC7 /* Blame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962428EB016F0010DFC7 /* Blame.swift */; };
+		2C48962728EB09890010DFC7 /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962628EB09890010DFC7 /* AddPlayerView.swift */; };
+		2C48962928EB397C0010DFC7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962828EB397C0010DFC7 /* GameView.swift */; };
+		2C48962B28EB39A70010DFC7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962A28EB39A70010DFC7 /* GameViewModel.swift */; };
+		2C48962E28EB3A010010DFC7 /* GameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962D28EB3A010010DFC7 /* GameDataProvider.swift */; };
+		2C4CED2228EB3BE3000EE935 /* Questions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C4CED2028EB3BE2000EE935 /* Questions.txt */; };
+		2C4CED2328EB3BE3000EE935 /* Penalties.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C4CED2128EB3BE3000EE935 /* Penalties.txt */; };
 		2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */; };
 		2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6E28E2E9F40091575B /* ContentView.swift */; };
 		2C734B7128E2E9F60091575B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7028E2E9F60091575B /* Assets.xcassets */; };
@@ -50,6 +61,17 @@
 		2C48961428EAFA160010DFC7 /* MenuBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBackgroundView.swift; sourceTree = "<group>"; };
 		2C48961628EAFA420010DFC7 /* GameBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundView.swift; sourceTree = "<group>"; };
 		2C48961928EAFA850010DFC7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2C48961B28EB00F50010DFC7 /* PlayersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListView.swift; sourceTree = "<group>"; };
+		2C48961E28EB01310010DFC7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		2C48962028EB01460010DFC7 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		2C48962228EB01600010DFC7 /* Penalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penalty.swift; sourceTree = "<group>"; };
+		2C48962428EB016F0010DFC7 /* Blame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blame.swift; sourceTree = "<group>"; };
+		2C48962628EB09890010DFC7 /* AddPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerView.swift; sourceTree = "<group>"; };
+		2C48962828EB397C0010DFC7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		2C48962A28EB39A70010DFC7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		2C48962D28EB3A010010DFC7 /* GameDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataProvider.swift; sourceTree = "<group>"; };
+		2C4CED2028EB3BE2000EE935 /* Questions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Questions.txt; path = Resources/Questions.txt; sourceTree = "<group>"; };
+		2C4CED2128EB3BE3000EE935 /* Penalties.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Penalties.txt; path = Resources/Penalties.txt; sourceTree = "<group>"; };
 		2C734B6928E2E9F40091575B /* UrkCardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrkCardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C734B6C28E2E9F40091575B /* UrkCardGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrkCardGameApp.swift; sourceTree = "<group>"; };
 		2C734B6E28E2E9F40091575B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,8 +147,31 @@
 			isa = PBXGroup;
 			children = (
 				2C48961928EAFA850010DFC7 /* HomeView.swift */,
+				2C48961B28EB00F50010DFC7 /* PlayersListView.swift */,
+				2C48962628EB09890010DFC7 /* AddPlayerView.swift */,
+				2C48962828EB397C0010DFC7 /* GameView.swift */,
+				2C48962A28EB39A70010DFC7 /* GameViewModel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2C48961D28EB01250010DFC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C48961E28EB01310010DFC7 /* Player.swift */,
+				2C48962028EB01460010DFC7 /* Question.swift */,
+				2C48962228EB01600010DFC7 /* Penalty.swift */,
+				2C48962428EB016F0010DFC7 /* Blame.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C48962C28EB39D20010DFC7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2C48962D28EB3A010010DFC7 /* GameDataProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		2C734B6028E2E9F40091575B = {
@@ -148,7 +193,11 @@
 		2C734B6B28E2E9F40091575B /* UrkCardGame */ = {
 			isa = PBXGroup;
 			children = (
+				2C48962C28EB39D20010DFC7 /* Services */,
+				2C48961D28EB01250010DFC7 /* Models */,
 				2C4895E828EAF1860010DFC7 /* Resources */,
+				2C4CED2128EB3BE3000EE935 /* Penalties.txt */,
+				2C4CED2028EB3BE2000EE935 /* Questions.txt */,
 				2C4895E528EAF1510010DFC7 /* Generated */,
 				2C4895E228EAF0AF0010DFC7 /* Components */,
 				2C4895DD28EAF0580010DFC7 /* Helpers */,
@@ -233,7 +282,9 @@
 				2C48960928EAF4CF0010DFC7 /* SF-Compact-Rounded-Thin.otf in Resources */,
 				2C48960C28EAF4CF0010DFC7 /* SF-Compact-Rounded-Ultralight.otf in Resources */,
 				2C734B7128E2E9F60091575B /* Assets.xcassets in Resources */,
+				2C4CED2228EB3BE3000EE935 /* Questions.txt in Resources */,
 				2C48960B28EAF4CF0010DFC7 /* SF-Compact-Rounded-Black.otf in Resources */,
+				2C4CED2328EB3BE3000EE935 /* Penalties.txt in Resources */,
 				2C48960F28EAF4CF0010DFC7 /* SF-Compact-Rounded-Light.otf in Resources */,
 				2C48961028EAF4CF0010DFC7 /* SF-Compact-Rounded-Semibold.otf in Resources */,
 				2C48960A28EAF4CF0010DFC7 /* SF-Compact-Rounded-Bold.otf in Resources */,
@@ -252,12 +303,21 @@
 				2C4895F628EAF2520010DFC7 /* Fonts.swift in Sources */,
 				2C48961728EAFA420010DFC7 /* GameBackgroundView.swift in Sources */,
 				2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */,
+				2C48962928EB397C0010DFC7 /* GameView.swift in Sources */,
 				2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */,
+				2C48962128EB01460010DFC7 /* Question.swift in Sources */,
+				2C48961F28EB01310010DFC7 /* Player.swift in Sources */,
+				2C48962E28EB3A010010DFC7 /* GameDataProvider.swift in Sources */,
+				2C48962528EB016F0010DFC7 /* Blame.swift in Sources */,
 				2C48961A28EAFA850010DFC7 /* HomeView.swift in Sources */,
 				2C4895F428EAF21B0010DFC7 /* Assets.swift in Sources */,
 				2C4895DF28EAF0690010DFC7 /* Constants.swift in Sources */,
+				2C48961C28EB00F50010DFC7 /* PlayersListView.swift in Sources */,
 				2C4895E128EAF0810010DFC7 /* CustomEnvironmentProperties.swift in Sources */,
 				2C48961528EAFA160010DFC7 /* MenuBackgroundView.swift in Sources */,
+				2C48962B28EB39A70010DFC7 /* GameViewModel.swift in Sources */,
+				2C48962328EB01600010DFC7 /* Penalty.swift in Sources */,
+				2C48962728EB09890010DFC7 /* AddPlayerView.swift in Sources */,
 				2C4895E428EAF0C70010DFC7 /* BackButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

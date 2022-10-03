@@ -26,21 +26,32 @@ struct HomeView: View {
                 VStack(spacing: 30) {
                     VStack {
                         Image("greetings")
-                        
-                        NavigationLink(isActive: $rootPresentation) {
-//                            PlayesListView()
-                        } label: {
-                            ButtonLabel(
-                                text: "Почати гру!",
-                                font: FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 35)
-                            )
-                            .padding(.horizontal, 50)
-                        }
+                        NavigationLink(
+                            destination: PlayersListView(rootIsActive: $rootPresentation),
+                            isActive: $rootPresentation) {
+                                ButtonLabel(
+                                    text: "Почати гру!",
+                                    font: FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 35)
+                                )
+                                .padding(.horizontal, 50)
+                            }
                     }
                     VStack(spacing: 10) {
-                        ButtonLabel(text: "Отримати стікери")
-                        ButtonLabel(text: "Паляниця?")
-                        ButtonLabel(text: "Налаштунки")
+                        NavigationLink() {
+                            //                            PlayesListView()
+                        } label: {
+                            ButtonLabel(text: "Отримати стікери")
+                        }
+                        NavigationLink() {
+                            //                            PlayesListView()
+                        } label: {
+                            ButtonLabel(text: "Паляниця?")
+                        }
+                        NavigationLink() {
+                            //                            PlayesListView()
+                        } label: {
+                            ButtonLabel(text: "Налаштунки")
+                        }
                     }
                     .padding(.horizontal, 80)
                 }

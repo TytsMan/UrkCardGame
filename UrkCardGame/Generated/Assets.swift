@@ -59,6 +59,7 @@ internal enum Assets {
     internal static let traktor = ImageAsset(name: "traktor")
     internal static let woodSign = ImageAsset(name: "wood_sign")
   }
+  internal static let redColor = ColorAsset(name: "RedColor")
   internal enum Stickers {
     internal static let sticker1 = ImageAsset(name: "Sticker_1")
     internal static let sticker10 = ImageAsset(name: "sticker_10")
