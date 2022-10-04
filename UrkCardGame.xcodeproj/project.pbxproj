@@ -42,6 +42,7 @@
 		2C734B7428E2E9F60091575B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7328E2E9F60091575B /* Preview Assets.xcassets */; };
 		2CA9D14528EC22240036A3C8 /* GameRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14428EC22240036A3C8 /* GameRulesView.swift */; };
 		2CA9D14728EC3ECC0036A3C8 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14628EC3ECC0036A3C8 /* RateView.swift */; };
+		2CA9D14928EC420D0036A3C8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14828EC420D0036A3C8 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		2C734B7328E2E9F60091575B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CA9D14428EC22240036A3C8 /* GameRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesView.swift; sourceTree = "<group>"; };
 		2CA9D14628EC3ECC0036A3C8 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		2CA9D14828EC420D0036A3C8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				2C48962A28EB39A70010DFC7 /* GameViewModel.swift */,
 				2CA9D14428EC22240036A3C8 /* GameRulesView.swift */,
 				2CA9D14628EC3ECC0036A3C8 /* RateView.swift */,
+				2CA9D14828EC420D0036A3C8 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C48961328EAF60B0010DFC7 /* ButtonLabel.swift in Sources */,
+				2CA9D14928EC420D0036A3C8 /* SettingsView.swift in Sources */,
 				2C4895F628EAF2520010DFC7 /* Fonts.swift in Sources */,
 				2C48961728EAFA420010DFC7 /* GameBackgroundView.swift in Sources */,
 				2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */,

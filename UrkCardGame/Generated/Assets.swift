@@ -43,6 +43,7 @@ internal enum Assets {
     internal static let negativeColor = ColorAsset(name: "NegativeColor")
     internal static let secondaryColor = ColorAsset(name: "SecondaryColor")
     internal static let textColor = ColorAsset(name: "TextColor")
+    internal static let yellowColor = ColorAsset(name: "YellowColor")
   }
   internal enum GameScreen {
     internal static let gameCanvas = ImageAsset(name: "gameCanvas")
@@ -159,6 +160,7 @@ internal enum Assets {
       internal static let file111043270 = ImageAsset(name: "file_111043270")
       internal static let file111043272 = ImageAsset(name: "file_111043272")
     }
+    internal static let vseBudeDobre = ImageAsset(name: "vse_bude_dobre")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
