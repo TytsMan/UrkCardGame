@@ -66,10 +66,11 @@ struct GameView: View {
                     timerRunning = true
                 }
                 .onReceive(timer) { _ in
-                    if countDownTimer > -1 && timerRunning {
+                    if countDownTimer > 0 && timerRunning {
                         countDownTimer -= 1
                     } else {
                         timerRunning = false
+                        viewModel.wrongAnswerSelected()
                     }
                 }
             )
@@ -284,12 +285,6 @@ extension GameView {
                                 backgroundColor: Assets.redColor.swiftUIColor
                             )
                         }
-//                        MainButton(text: "Зарахувати", action: correctAnswerAction)
-//                        MainButton(
-//                            text: "Не знаю",
-//                            backgroundColor: Assets.Colors.redColor.swiftUIColor,
-//                            action: wrongAnswerAction
-//                        )
                     }
                     Text("За неправильну відповідь ти отримуєш завдання яке треба виконати")
                         .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 13))
