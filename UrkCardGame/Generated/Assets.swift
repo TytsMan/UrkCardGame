@@ -92,6 +92,7 @@ internal enum Assets {
       internal static let file111042883 = ImageAsset(name: "file_111042883")
       internal static let promo = ImageAsset(name: "promo")
     }
+    internal static let pesuk = ImageAsset(name: "pesuk")
     internal enum Rusniahuinia {
       internal static let file111036670 = ImageAsset(name: "file_111036670")
       internal static let file111036673 = ImageAsset(name: "file_111036673")
