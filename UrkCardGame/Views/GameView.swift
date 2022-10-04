@@ -91,41 +91,26 @@ struct GameView: View {
         let description: String
         let buttonTitle: String
         let buttonAction: () -> Void
-        let withSticker: Bool
-        
-        let stickers: [String] = [
-            Assets.Stickers.sticker1.name,
-            Assets.Stickers.sticker2.name,
-            Assets.Stickers.sticker3.name,
-            Assets.Stickers.sticker4.name,
-            Assets.Stickers.sticker5.name,
-            Assets.Stickers.sticker6.name,
-            Assets.Stickers.sticker7.name,
-            Assets.Stickers.sticker8.name,
-            Assets.Stickers.sticker9.name,
-            Assets.Stickers.sticker10.name,
-            Assets.Stickers.sticker11.name,
-            Assets.Stickers.sticker12.name
-        ]
+        let sticker: String?
         
         init(
             title: String,
             description: String,
             buttonTitle: String,
             buttonAction: @escaping () -> Void,
-            withSticker: Bool = true
+            sticker: String? = nil
         ) {
             self.title = title
             self.description = description
             self.buttonTitle = buttonTitle
             self.buttonAction = buttonAction
-            self.withSticker = withSticker
+            self.sticker = sticker
         }
         
         var body: some View {
             VStack(spacing: 40) {
-                if withSticker {
-                    Image(stickers.randomElement()!)
+                if let sticker = sticker {
+                    Image(sticker)
                 }
                 VStack(spacing: 10) {
                     Text(title)
@@ -148,13 +133,16 @@ struct GameView: View {
     struct StartGameView: View {
         
         let action: () -> Void
+        let sticker = Assets.Stickers.sticker1.name
         
         var body: some View {
             MemeView(
                 title: "Почнемо!",
                 description: "Наберіть більше правильних відповідей чим ваш суперник",
                 buttonTitle: "Старт",
-                buttonAction: action)
+                buttonAction: action,
+                sticker: sticker
+            )
         }
     }
     
@@ -163,12 +151,19 @@ struct GameView: View {
         let player: Player
         let action: () -> Void
         
+        let stickers: [String] = [
+            Assets.Stickers.sticker2.name,
+            Assets.Stickers.sticker3.name,
+            Assets.Stickers.sticker4.name
+        ]
+        
         var body: some View {
             MemeView(
                 title: "Так тримати!",
                 description: "Передай телефон наступному гравцеві\n **\(player.nickname)**",
                 buttonTitle: "Старт",
-                buttonAction: action
+                buttonAction: action,
+                sticker: stickers.randomElement()!
             )
         }
     }
@@ -197,12 +192,24 @@ struct GameView: View {
             "Невдачі роблять тебе сильніше, а поки виконуй завдання"
         ]
         
+        let stickers: [String] = [
+            Assets.Stickers.sticker5.name,
+            Assets.Stickers.sticker6.name,
+            Assets.Stickers.sticker7.name,
+            Assets.Stickers.sticker8.name,
+            Assets.Stickers.sticker9.name,
+            Assets.Stickers.sticker10.name,
+            Assets.Stickers.sticker11.name,
+            Assets.Stickers.sticker12.name
+        ]
+        
         var body: some View {
             MemeView(
                 title: titles.randomElement()!,
                 description: descriptions.randomElement()!,
                 buttonTitle: "Завдання",
-                buttonAction: action
+                buttonAction: action,
+                sticker: stickers.randomElement()!
             )
         }
     }
@@ -217,8 +224,7 @@ struct GameView: View {
                 title: penaltyTask.text,
                 description: "",
                 buttonTitle: "Зарахувати",
-                buttonAction: action,
-                withSticker: false
+                buttonAction: action
             )
         }
     }
