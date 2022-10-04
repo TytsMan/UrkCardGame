@@ -80,7 +80,7 @@ struct PlayersListView: View {
                     .padding(.vertical, 10)
                     .padding(.horizontal, 17)
                 Text(player.nickname)
-                    .foregroundColor(Assets.whiteColor.swiftUIColor)
+                    .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
                     .font(.system(size: 21))
                 Spacer()
                 Button(action: removeAction) {
@@ -91,7 +91,7 @@ struct PlayersListView: View {
                         .padding(.horizontal, 17)
                 }
             }
-            .background(Assets.accentColor.swiftUIColor)
+            .background(Assets.Colors.accentColor.swiftUIColor)
             .cornerRadius(17)
         }
     }
@@ -104,11 +104,11 @@ struct PlayersListView: View {
                 Text("Додати гравця")
                     .font(.system(size: 21))
                     .padding(.trailing, 50)
-                    .foregroundColor(Assets.whiteColor.swiftUIColor)
+                    .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
             }
             .padding(.vertical, 8)
-            .background(Assets.accentColor.swiftUIColor)
-            .foregroundColor(Assets.whiteColor.swiftUIColor)
+            .background(Assets.Colors.accentColor.swiftUIColor)
+            .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
             .cornerRadius(17)
         }
     }

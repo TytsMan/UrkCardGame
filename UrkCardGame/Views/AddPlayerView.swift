@@ -80,9 +80,9 @@ struct AddPlayerView: View {
                             TextField("Напишіть імʼя", text: $nickname)
                                 .padding(.trailing, 10)
                                 .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
-                                .foregroundColor(Assets.whiteColor.swiftUIColor)
+                                .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
                         }
-                        .background(Assets.accentColor.swiftUIColor)
+                        .background(Assets.Colors.accentColor.swiftUIColor)
                         .cornerRadius(17)
                     }
                     Spacer()
@@ -125,7 +125,7 @@ struct AddPlayerView: View {
             image
                 .resizable()
                 .frame(width: 91, height: 91)
-                .background(Assets.accentColor.swiftUIColor)
+                .background(Assets.Colors.accentColor.swiftUIColor)
                 .clipShape(Circle())
         }
     }
@@ -137,7 +137,7 @@ struct AddPlayerView: View {
         var body: some View {
             image
                 .resizable()
-                .background(Assets.whiteColor.swiftUIColor)
+                .background(Assets.Colors.secondaryColor.swiftUIColor)
                 .frame(width: 91, height: 91)
                 .clipShape(Circle())
                 .overlay {

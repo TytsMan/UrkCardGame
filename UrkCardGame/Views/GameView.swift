@@ -23,7 +23,7 @@ struct GameView: View {
             GameBackgroundView()
             VStack(spacing: 10) {
                 HStack {
-                    BackButton(tintColor: Assets.whiteColor.swiftUIColor) {
+                    BackButton(tintColor: Assets.Colors.secondaryColor.swiftUIColor) {
                         rootIsActive = false
                     }
                     Spacer()
@@ -270,7 +270,7 @@ extension GameView {
                     .foregroundColor(Color.black)
                 
             }
-            .background(Assets.whiteColor.swiftUIColor)
+            .background(Assets.Colors.secondaryColor.swiftUIColor)
             .cornerRadius(17)
         }
     }
@@ -293,7 +293,7 @@ extension GameView {
             VStack (spacing: 40) {
                 Text("\(timer)")
                     .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 44))
-                    .foregroundColor(Assets.redColor.swiftUIColor)
+                    .foregroundColor(Assets.Colors.negativeColor.swiftUIColor)
                 Text(quiz.text)
                     .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
                     .foregroundColor(.black)
@@ -305,7 +305,7 @@ extension GameView {
                         Button(action: wrongAnswerAction) {
                             ButtonLabel(
                                 text: "Не знаю",
-                                backgroundColor: Assets.redColor.swiftUIColor
+                                backgroundColor: Assets.Colors.negativeColor.swiftUIColor
                             )
                         }
                     }
@@ -315,7 +315,7 @@ extension GameView {
                 }
             }
             .multilineTextAlignment(.center)
-            .background(Assets.whiteColor.swiftUIColor)
+            .background(Assets.Colors.secondaryColor.swiftUIColor)
         }
     }
 }

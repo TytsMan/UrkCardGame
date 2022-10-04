@@ -15,7 +15,7 @@ struct GameBackgroundView: View {
             Assets.Background.patternRight.swiftUIImage
         }
         .ignoresSafeArea()
-        .background(Assets.accentColor.swiftUIColor)
+        .background(Assets.Colors.accentColor.swiftUIColor)
     }
 }
 

@@ -17,7 +17,7 @@ struct ButtonLabel: View {
     init(
         text: String,
         font: SwiftUI.Font = FontFamily.SFCompactRounded.medium.swiftUIFont(size: 20),
-        backgroundColor: Color = Assets.accentColor.swiftUIColor
+        backgroundColor: Color = Assets.Colors.accentColor.swiftUIColor
     ) {
         self.text = text
         self.font = font
@@ -29,7 +29,7 @@ struct ButtonLabel: View {
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .font(font)
                 .padding(.vertical, 18)
-                .foregroundColor(Assets.whiteColor.swiftUIColor)
+                .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
                 .background(backgroundColor)
                 .cornerRadius(20)
     }

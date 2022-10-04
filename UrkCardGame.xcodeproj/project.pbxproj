@@ -40,6 +40,7 @@
 		2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C734B6E28E2E9F40091575B /* ContentView.swift */; };
 		2C734B7128E2E9F60091575B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7028E2E9F60091575B /* Assets.xcassets */; };
 		2C734B7428E2E9F60091575B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C734B7328E2E9F60091575B /* Preview Assets.xcassets */; };
+		2CA9D14528EC22240036A3C8 /* GameRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14428EC22240036A3C8 /* GameRulesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		2C734B6E28E2E9F40091575B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C734B7028E2E9F60091575B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C734B7328E2E9F60091575B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2CA9D14428EC22240036A3C8 /* GameRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				2C48962628EB09890010DFC7 /* AddPlayerView.swift */,
 				2C48962828EB397C0010DFC7 /* GameView.swift */,
 				2C48962A28EB39A70010DFC7 /* GameViewModel.swift */,
+				2CA9D14428EC22240036A3C8 /* GameRulesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				2C4895F628EAF2520010DFC7 /* Fonts.swift in Sources */,
 				2C48961728EAFA420010DFC7 /* GameBackgroundView.swift in Sources */,
 				2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */,
+				2CA9D14528EC22240036A3C8 /* GameRulesView.swift in Sources */,
 				2C48962928EB397C0010DFC7 /* GameView.swift in Sources */,
 				2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */,
 				2C48962128EB01460010DFC7 /* Question.swift in Sources */,

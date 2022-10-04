@@ -24,7 +24,6 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Assets {
-  internal static let accentColor = ColorAsset(name: "AccentColor")
   internal enum Avatars {
     internal static let avatarFemale1 = ImageAsset(name: "avatar_female_1")
     internal static let avatarFemale2 = ImageAsset(name: "avatar_female_2")
@@ -38,6 +37,12 @@ internal enum Assets {
     internal static let patternLeft = ImageAsset(name: "pattern_left")
     internal static let patternRight = ImageAsset(name: "pattern_right")
     internal static let patternTop = ImageAsset(name: "pattern_top")
+  }
+  internal enum Colors {
+    internal static let accentColor = ColorAsset(name: "AccentColor")
+    internal static let negativeColor = ColorAsset(name: "NegativeColor")
+    internal static let secondaryColor = ColorAsset(name: "SecondaryColor")
+    internal static let textColor = ColorAsset(name: "TextColor")
   }
   internal enum GameScreen {
     internal static let gameCanvas = ImageAsset(name: "gameCanvas")
@@ -59,9 +64,9 @@ internal enum Assets {
     internal static let traktor = ImageAsset(name: "traktor")
     internal static let woodSign = ImageAsset(name: "wood_sign")
   }
-  internal static let redColor = ColorAsset(name: "RedColor")
   internal enum Stickers {
     internal static let sticker1 = ImageAsset(name: "Sticker_1")
+    internal static let file111042836 = ImageAsset(name: "file_111042836")
     internal enum Gameukrainestickers {
       internal static let file111042826 = ImageAsset(name: "file_111042826")
       internal static let file111042828 = ImageAsset(name: "file_111042828")
@@ -154,7 +159,6 @@ internal enum Assets {
       internal static let file111043272 = ImageAsset(name: "file_111043272")
     }
   }
-  internal static let whiteColor = ColorAsset(name: "WhiteColor")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

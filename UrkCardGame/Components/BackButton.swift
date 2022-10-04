@@ -16,7 +16,7 @@ struct BackButton: View {
     let action: (() -> Void)?
     
     init(
-        tintColor: Color = Assets.accentColor.swiftUIColor,
+        tintColor: Color = Assets.Colors.accentColor.swiftUIColor,
         action: (() -> Void)? = nil
     ) {
         self.tintColor = tintColor
