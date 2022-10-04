@@ -91,7 +91,7 @@ struct GameView: View {
         let description: String
         let buttonTitle: String
         let buttonAction: () -> Void
-        
+        let withSticker: Bool
         
         let stickers: [String] = [
             Assets.Stickers.sticker1.name,
@@ -108,9 +108,25 @@ struct GameView: View {
             Assets.Stickers.sticker12.name
         ]
         
+        init(
+            title: String,
+            description: String,
+            buttonTitle: String,
+            buttonAction: @escaping () -> Void,
+            withSticker: Bool = true
+        ) {
+            self.title = title
+            self.description = description
+            self.buttonTitle = buttonTitle
+            self.buttonAction = buttonAction
+            self.withSticker = withSticker
+        }
+        
         var body: some View {
             VStack(spacing: 40) {
-                Image(stickers.randomElement()!)
+                if withSticker {
+                    Image(stickers.randomElement()!)
+                }
                 VStack(spacing: 10) {
                     Text(title)
                         .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
@@ -201,7 +217,8 @@ struct GameView: View {
                 title: penaltyTask.text,
                 description: "",
                 buttonTitle: "Зарахувати",
-                buttonAction: action
+                buttonAction: action,
+                withSticker: false
             )
         }
     }
