@@ -43,6 +43,10 @@
 		2CA9D14528EC22240036A3C8 /* GameRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14428EC22240036A3C8 /* GameRulesView.swift */; };
 		2CA9D14728EC3ECC0036A3C8 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14628EC3ECC0036A3C8 /* RateView.swift */; };
 		2CA9D14928EC420D0036A3C8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14828EC420D0036A3C8 /* SettingsView.swift */; };
+		2CA9D14B28EC50430036A3C8 /* StickerPackStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14A28EC50430036A3C8 /* StickerPackStoreView.swift */; };
+		2CA9D14D28EC6FC60036A3C8 /* StickerPackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14C28EC6FC60036A3C8 /* StickerPackDetailView.swift */; };
+		2CA9D14F28EC71D20036A3C8 /* StickerPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14E28EC71D20036A3C8 /* StickerPack.swift */; };
+		2CA9D15128EC7D1F0036A3C8 /* StickerPackLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,10 @@
 		2CA9D14428EC22240036A3C8 /* GameRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesView.swift; sourceTree = "<group>"; };
 		2CA9D14628EC3ECC0036A3C8 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		2CA9D14828EC420D0036A3C8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2CA9D14A28EC50430036A3C8 /* StickerPackStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPackStoreView.swift; sourceTree = "<group>"; };
+		2CA9D14C28EC6FC60036A3C8 /* StickerPackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPackDetailView.swift; sourceTree = "<group>"; };
+		2CA9D14E28EC71D20036A3C8 /* StickerPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPack.swift; sourceTree = "<group>"; };
+		2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPackLinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +168,9 @@
 				2CA9D14428EC22240036A3C8 /* GameRulesView.swift */,
 				2CA9D14628EC3ECC0036A3C8 /* RateView.swift */,
 				2CA9D14828EC420D0036A3C8 /* SettingsView.swift */,
+				2CA9D14A28EC50430036A3C8 /* StickerPackStoreView.swift */,
+				2CA9D14C28EC6FC60036A3C8 /* StickerPackDetailView.swift */,
+				2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 				2C48962028EB01460010DFC7 /* Question.swift */,
 				2C48962228EB01600010DFC7 /* Penalty.swift */,
 				2C48962428EB016F0010DFC7 /* Blame.swift */,
+				2CA9D14E28EC71D20036A3C8 /* StickerPack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,10 +323,13 @@
 				2C48961328EAF60B0010DFC7 /* ButtonLabel.swift in Sources */,
 				2CA9D14928EC420D0036A3C8 /* SettingsView.swift in Sources */,
 				2C4895F628EAF2520010DFC7 /* Fonts.swift in Sources */,
+				2CA9D14D28EC6FC60036A3C8 /* StickerPackDetailView.swift in Sources */,
 				2C48961728EAFA420010DFC7 /* GameBackgroundView.swift in Sources */,
 				2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */,
 				2CA9D14528EC22240036A3C8 /* GameRulesView.swift in Sources */,
 				2C48962928EB397C0010DFC7 /* GameView.swift in Sources */,
+				2CA9D15128EC7D1F0036A3C8 /* StickerPackLinkView.swift in Sources */,
+				2CA9D14F28EC71D20036A3C8 /* StickerPack.swift in Sources */,
 				2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */,
 				2C48962128EB01460010DFC7 /* Question.swift in Sources */,
 				2C48961F28EB01310010DFC7 /* Player.swift in Sources */,
@@ -325,6 +340,7 @@
 				2C4895DF28EAF0690010DFC7 /* Constants.swift in Sources */,
 				2CA9D14728EC3ECC0036A3C8 /* RateView.swift in Sources */,
 				2C48961C28EB00F50010DFC7 /* PlayersListView.swift in Sources */,
+				2CA9D14B28EC50430036A3C8 /* StickerPackStoreView.swift in Sources */,
 				2C4895E128EAF0810010DFC7 /* CustomEnvironmentProperties.swift in Sources */,
 				2C48961528EAFA160010DFC7 /* MenuBackgroundView.swift in Sources */,
 				2C48962B28EB39A70010DFC7 /* GameViewModel.swift in Sources */,
@@ -467,6 +483,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,9 +491,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.divan.UrkCardGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -496,6 +516,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,9 +524,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.divan.UrkCardGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

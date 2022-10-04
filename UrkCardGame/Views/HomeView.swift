@@ -38,17 +38,17 @@ struct HomeView: View {
                     }
                     VStack(spacing: 10) {
                         NavigationLink() {
-                            //                            PlayesListView()
+                            StickerPackStoreView()
                         } label: {
                             ButtonLabel(text: "Отримати стікери")
                         }
                         NavigationLink() {
-                            //                            PlayesListView()
+                            GameRulesView()
                         } label: {
                             ButtonLabel(text: "Паляниця?")
                         }
                         NavigationLink() {
-                            //                            PlayesListView()
+                            SettingsView()
                         } label: {
                             ButtonLabel(text: "Налаштунки")
                         }

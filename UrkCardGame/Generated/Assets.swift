@@ -91,7 +91,7 @@ internal enum Assets {
       internal static let file111042873 = ImageAsset(name: "file_111042873")
       internal static let file111042881 = ImageAsset(name: "file_111042881")
       internal static let file111042883 = ImageAsset(name: "file_111042883")
-      internal static let promo = ImageAsset(name: "promo")
+      internal static let gameukrainestickersPromo = ImageAsset(name: "gameukrainestickers_promo")
     }
     internal static let pesuk = ImageAsset(name: "pesuk")
     internal enum Rusniahuinia {
@@ -111,7 +111,7 @@ internal enum Assets {
       internal static let file111036751 = ImageAsset(name: "file_111036751")
       internal static let file111036760 = ImageAsset(name: "file_111036760")
       internal static let file111036767 = ImageAsset(name: "file_111036767")
-      internal static let promo = ImageAsset(name: "promo")
+      internal static let rusniahuiniaPromo = ImageAsset(name: "rusniahuinia_promo")
     }
     internal enum Russiasuckk {
       internal static let file111036333 = ImageAsset(name: "file_111036333")
@@ -134,7 +134,7 @@ internal enum Assets {
       internal static let file111036378 = ImageAsset(name: "file_111036378")
       internal static let file111036381 = ImageAsset(name: "file_111036381")
       internal static let file111036382 = ImageAsset(name: "file_111036382")
-      internal static let promo = ImageAsset(name: "promo")
+      internal static let russiasuckkPromo = ImageAsset(name: "russiasuckk_promo")
     }
     internal static let sticker10 = ImageAsset(name: "sticker_10")
     internal static let sticker11 = ImageAsset(name: "sticker_11")
@@ -148,7 +148,6 @@ internal enum Assets {
     internal static let sticker8 = ImageAsset(name: "sticker_8")
     internal static let sticker9 = ImageAsset(name: "sticker_9")
     internal enum Ukrainegame {
-      internal static let promo = ImageAsset(name: "Promo")
       internal static let file111043260 = ImageAsset(name: "file_111043260")
       internal static let file111043262 = ImageAsset(name: "file_111043262")
       internal static let file111043263 = ImageAsset(name: "file_111043263")
@@ -159,6 +158,7 @@ internal enum Assets {
       internal static let file111043269 = ImageAsset(name: "file_111043269")
       internal static let file111043270 = ImageAsset(name: "file_111043270")
       internal static let file111043272 = ImageAsset(name: "file_111043272")
+      internal static let ukrainegamePromo = ImageAsset(name: "ukrainegame_Promo")
     }
     internal static let vseBudeDobre = ImageAsset(name: "vse_bude_dobre")
   }

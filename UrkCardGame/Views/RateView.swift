@@ -8,21 +8,19 @@
 import SwiftUI
 
 struct RateView: View {
+    
     var body: some View {
-        ZStack {
-            VStack(spacing: 15) {
+        ScrollView {
+            VStack(spacing: 30) {
                 HStack {
                     BackButton(
                         tintColor: Assets.Colors.secondaryColor.swiftUIColor
                     )
                     Spacer()
                 }
-                .padding(.horizontal, 30)
-                Assets.GameScreen.gameCanvas.swiftUIImage
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.horizontal, 30)
-                    .overlay {
+                VStack {
+                    VStack(spacing: 30) {
+                        
                         VStack(spacing: 40) {
                             Assets.Stickers.pesuk.swiftUIImage
                             VStack(spacing: 10) {
@@ -35,15 +33,22 @@ struct RateView: View {
                             }
                             .multilineTextAlignment(.center)
                             Button {
-    #warning("Rate me code")
+        #warning("Rate me code")
                             } label: {
                                 ButtonLabel(text: "Оцінити")
                             }
                         }
-                        .padding(.horizontal, 60)
+                    }
+                    .padding(.horizontal, 30)
+                    .padding(.top, 30)
+                    .padding(.bottom, 90)
+                    .background {
+                        Assets.GameScreen.gameCanvas.swiftUIImage
+                            .resizable()
+                    }
                 }
             }
-            
+            .padding(30)
         }
         .background(content: {
             GameBackgroundView()

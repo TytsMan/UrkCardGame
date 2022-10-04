@@ -18,13 +18,17 @@ struct GameRulesView: View {
     """
     
     var body: some View {
-        ZStack {
-            Assets.GameScreen.gameCanvas.swiftUIImage
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(.horizontal, 30)
-                .overlay {
-                    VStack {
+        ScrollView {
+            VStack(spacing: 30) {
+                HStack {
+                    BackButton(
+                        tintColor: Assets.Colors.secondaryColor.swiftUIColor
+                    )
+                    Spacer()
+                }
+                VStack {
+                    VStack(spacing: 30) {
+                        
                         Assets.Stickers.file111042836.swiftUIImage
                         Text("**Правила**")
                             .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
@@ -32,15 +36,17 @@ struct GameRulesView: View {
                         Text(gameRulesString)
                             .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
                             .foregroundColor(Assets.Colors.textColor.swiftUIColor)
-                        Button {
-                            
-                        } label: {
-                            ButtonLabel(text: "Зрозуміло")
-                        }
-
                     }
-                    .padding(.horizontal, 60)
+                    .padding(.horizontal, 30)
+                    .padding(.top, 30)
+                    .padding(.bottom, 90)
+                    .background {
+                        Assets.GameScreen.gameCanvas.swiftUIImage
+                            .resizable()
+                    }
                 }
+            }
+            .padding(30)
         }
         .background(content: {
             GameBackgroundView()
