@@ -19,6 +19,8 @@ struct StickerPackLinkView: View {
     - чи натисніть на кнопку автоматичного встановлення
     """
     
+    @State var stickerPackUrl: String = ""
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 30) {
@@ -31,8 +33,6 @@ struct StickerPackLinkView: View {
                 VStack {
                     VStack(spacing: 30) {
                         Assets.Stickers.file111042836.swiftUIImage
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
                         VStack(spacing: 10) {
                             Text("**Успішно**")
                                 .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
@@ -44,7 +44,7 @@ struct StickerPackLinkView: View {
                                 .foregroundColor(Assets.Colors.textColor.swiftUIColor)
                                 .multilineTextAlignment(.leading)
                         }
-                        TextField("", text: .constant(stickerPack.url))
+                        TextField("", text: $stickerPackUrl)
                             .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 16))
                             .multilineTextAlignment(.center)
                             .foregroundColor(Assets.Colors.textColor.swiftUIColor)
@@ -55,8 +55,21 @@ struct StickerPackLinkView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(.blue, lineWidth: 2)
                                 )
+                            .transition(.opacity)
+                            .disabled(true)
+                            .onTapGesture {
+                                UIPasteboard.general.string = stickerPack.url
+                                stickerPackUrl = "Скопійовано до буферу."
+                                DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                                    stickerPackUrl = stickerPack.url
+                                }
+                            }
                         Button {
                             #warning("open sticker link")
+                            
+                            if let url = URL(string: stickerPack.url) {
+                                UIApplication.shared.open(url)
+                            }
                         } label: {
                             ButtonLabel(text: "Встановити стікери")
                         }
@@ -76,6 +89,9 @@ struct StickerPackLinkView: View {
             GameBackgroundView()
         })
         .navigationBarHidden(true)
+        .onAppear {
+            stickerPackUrl = stickerPack.url
+        }
     }
 }
 
