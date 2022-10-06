@@ -35,6 +35,9 @@ class GameViewModel: ObservableObject {
     @Published private(set) var currentPlayer: Player
     
     var finishGame: (() -> Void)?
+    var openStickerStore: (() -> Void)?
+    
+    private var roundCounter = 0
     
     init(
         players: [Player],
@@ -61,16 +64,27 @@ class GameViewModel: ObservableObject {
     func startNextRound() {
         let question = getNextQuestion()
         state = .question(question)
+        
+        roundCounter += 1
     }
     
     func correctAnswerSelected() {
         
         if availableQuestions.isEmpty {
-            finishGame?()
+            endGame()
         } else {
             let player = getNextPlayer()
             currentPlayer = player
             state = .nextPlayer(player)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                guard let roundCounter = self?.roundCounter else {
+                    return
+                }
+                if roundCounter % 10 == 0 {
+                    self?.openStickerStore?()
+                }
+            }
         }
     }
     
@@ -87,11 +101,20 @@ class GameViewModel: ObservableObject {
     func penaltyTaskDone() {
         
         if availableQuestions.isEmpty {
-            finishGame?()
+            endGame()
         } else {
             let player = getNextPlayer()
             currentPlayer = player
             state = .nextPlayer(player)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) { [weak self] in
+                guard let roundCounter = self?.roundCounter else {
+                    return
+                }
+                if roundCounter % 10 == 0 {
+                    self?.openStickerStore?()
+                }
+            }
         }
     }
     
@@ -130,5 +153,11 @@ class GameViewModel: ObservableObject {
         let penaltyTask = availableBlames[idx]
         availableBlames.remove(at: idx)
         return penaltyTask
+    }
+    
+    private func endGame() {
+        availableQuestions = questions
+        roundCounter = 0
+        finishGame?()
     }
 }

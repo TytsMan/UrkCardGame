@@ -11,13 +11,15 @@ import SwiftUI
 struct GameView: View {
     
     @Binding var rootIsActive : Bool
+    @State var pushRateView = false
+    @State var pushStickerStoreView = false
     
     @ObservedObject var viewModel: GameViewModel
-
+    
     @State var countDownTimer: Int = Const.secondsInRound
     @State var timerRunning: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
+    
     var body: some View {
         ZStack {
             GameBackgroundView()
@@ -38,12 +40,27 @@ struct GameView: View {
                     }
             }
             .padding(.horizontal, 30)
+            
+            NavigationLink(
+                destination: RateView(),
+                isActive: self.$pushRateView) {
+                    EmptyView()
+                }.hidden()
+            
+            NavigationLink(
+                destination:  StickerPackStoreView(),
+                isActive: self.$pushStickerStoreView) {
+                    EmptyView()
+                }.hidden()
         }
         .ignoresSafeArea()
         .navigationBarHidden(true)
         .onAppear {
             viewModel.finishGame = {
                 rootIsActive = false
+            }
+            viewModel.openStickerStore = {
+                pushStickerStoreView = true
             }
         }
     }
@@ -84,7 +101,7 @@ struct GameView: View {
             return AnyView(TaskView(penaltyTask: penaltyTask, action: viewModel.penaltyTaskDone))
         }
     }
-        
+    
     struct MemeView: View {
         
         let title: String
