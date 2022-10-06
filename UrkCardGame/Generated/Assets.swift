@@ -60,6 +60,7 @@ internal enum Assets {
   }
   internal enum LaunchScreen {
     internal static let heartUaFlag = ImageAsset(name: "heart_ua_flag")
+    internal static let launchScreenText = ImageAsset(name: "launch_screen_text")
   }
   internal enum PlayersScreen {
     internal static let traktor = ImageAsset(name: "traktor")

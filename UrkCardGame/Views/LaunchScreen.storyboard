@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern_top" translatesAutoresizingMaskIntoConstraints="NO" id="UBf-58-Mmp">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="78"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-tC-8oG">
+                                <rect key="frame" x="0.0" y="766" width="390" height="78"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tPZ-fF-5Eg">
+                                <rect key="frame" x="99.666666666666686" y="294" width="191" height="269"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_ua_flag" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-Sp-ihG">
+                                        <rect key="frame" x="0.0" y="0.0" width="191" height="174"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_screen_text" translatesAutoresizingMaskIntoConstraints="NO" id="vX9-QX-Pcl">
+                                        <rect key="frame" x="0.0" y="214" width="191" height="55"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UBf-58-Mmp" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="0Sr-Dh-poe"/>
+                            <constraint firstItem="tPZ-fF-5Eg" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="5V6-UU-Z9S"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="UBf-58-Mmp" secondAttribute="top" constant="47" id="7Vx-UM-M5h"/>
+                            <constraint firstItem="UBf-58-Mmp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Dzn-yK-KMO"/>
+                            <constraint firstItem="JEa-tC-8oG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="FqH-P6-reS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JEa-tC-8oG" secondAttribute="trailing" id="NPM-C3-3SO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UBf-58-Mmp" secondAttribute="trailing" id="WBC-ce-Iax"/>
+                            <constraint firstItem="JEa-tC-8oG" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="34" id="mJe-wy-Tjq"/>
+                            <constraint firstItem="tPZ-fF-5Eg" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="vRw-Hb-Dd0"/>
+                            <constraint firstItem="JEa-tC-8oG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vUV-fC-GxT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.76923076923077" y="-34.123222748815166"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart_ua_flag" width="174" height="174"/>
+        <image name="launch_screen_text" width="191" height="55"/>
+        <image name="pattern_bottom" width="414" height="78"/>
+        <image name="pattern_top" width="414" height="78"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -48,6 +48,7 @@
 		2CA9D14F28EC71D20036A3C8 /* StickerPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14E28EC71D20036A3C8 /* StickerPack.swift */; };
 		2CA9D15128EC7D1F0036A3C8 /* StickerPackLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */; };
 		2CA9D15328EF11DA0036A3C8 /* CardCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15228EF11DA0036A3C8 /* CardCanvasView.swift */; };
+		2CA9D15528EF185E0036A3C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA9D15428EF185E0036A3C8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		2CA9D14E28EC71D20036A3C8 /* StickerPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPack.swift; sourceTree = "<group>"; };
 		2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPackLinkView.swift; sourceTree = "<group>"; };
 		2CA9D15228EF11DA0036A3C8 /* CardCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCanvasView.swift; sourceTree = "<group>"; };
+		2CA9D15428EF185E0036A3C8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				2CA9D14A28EC50430036A3C8 /* StickerPackStoreView.swift */,
 				2CA9D14C28EC6FC60036A3C8 /* StickerPackDetailView.swift */,
 				2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */,
+				2CA9D15428EF185E0036A3C8 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				2C4CED2328EB3BE3000EE935 /* Penalties.txt in Resources */,
 				2C48960F28EAF4CF0010DFC7 /* SF-Compact-Rounded-Light.otf in Resources */,
 				2C48961028EAF4CF0010DFC7 /* SF-Compact-Rounded-Semibold.otf in Resources */,
+				2CA9D15528EF185E0036A3C8 /* LaunchScreen.storyboard in Resources */,
 				2C48960A28EAF4CF0010DFC7 /* SF-Compact-Rounded-Bold.otf in Resources */,
 				2C48960D28EAF4CF0010DFC7 /* SF-Compact-Rounded-Medium.otf in Resources */,
 			);
@@ -485,6 +489,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -519,6 +524,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
