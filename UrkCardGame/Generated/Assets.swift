@@ -53,10 +53,10 @@ internal enum Assets {
     internal static let shevchenkoWithRpg = ImageAsset(name: "shevchenko_with_rpg")
   }
   internal enum Icons {
+    internal static let subtract = ImageAsset(name: "Subtract")
     internal static let crossCircleFill = ImageAsset(name: "cross_circle_fill")
     internal static let leftArrowCircleFill = ImageAsset(name: "left_arrow_circle_fill")
     internal static let plusCircleFill = ImageAsset(name: "plus_circle_fill")
-    internal static let subtract = ImageAsset(name: "subtract")
   }
   internal enum LaunchScreen {
     internal static let heartUaFlag = ImageAsset(name: "heart_ua_flag")

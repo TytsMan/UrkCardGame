@@ -54,7 +54,7 @@ class GameViewModel: ObservableObject {
         availablePenalties = penalties
         availableBlames = blames
         
-        self.currentPlayer = players.first!
+        self.currentPlayer = players.first ?? Player(nickname: "Unknown", avatar: Assets.Avatars.avatarMale1.name)
         self.currentPlayer = self.getNextPlayer()
     }
     

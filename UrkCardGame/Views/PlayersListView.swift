@@ -12,8 +12,8 @@ struct PlayersListView: View {
     @Binding var rootIsActive: Bool
     
     @State var players: [Player] = [
-        Player(nickname: "Steven", avatar: Assets.Avatars.avatarMale1.name),
-        Player(nickname: "Sveta", avatar: Assets.Avatars.avatarFemale1.name)
+        Player(nickname: "Назар", avatar: Assets.Avatars.avatarMale1.name),
+        Player(nickname: "Марійка", avatar: Assets.Avatars.avatarFemale1.name)
     ]
     
     var body: some View {
@@ -52,13 +52,19 @@ struct PlayersListView: View {
                 }
                 Spacer()
                 Assets.PlayersScreen.traktor.swiftUIImage
-                NavigationLink {
-                    GameView(rootIsActive: $rootIsActive, viewModel: GameViewModel(players: players))
-                } label: {
-                    ButtonLabel(text: "Продовжити")
-                        .frame(width: 300, alignment: .center)
+                if self.players.count > 1 {
+                    NavigationLink(destination: GameView(rootIsActive: $rootIsActive, viewModel: GameViewModel(players: players))) {
+                        ButtonLabel(text: "Продовжити")
+                            .frame(width: 300, alignment: .center)
+                    }
+                } else {
+                    Button {
+                        
+                    } label: {
+                        ButtonLabel(text: "Продовжити")
+                            .frame(width: 300, alignment: .center)
+                    }
                 }
-                .disabled(players.count < 2)
             }
             .padding(.top, 60)
             .padding(.bottom, 80)
@@ -81,12 +87,12 @@ struct PlayersListView: View {
                     .padding(.horizontal, 17)
                 Text(player.nickname)
                     .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
-                    .font(.system(size: 21))
+                    .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
                 Spacer()
                 Button(action: removeAction) {
-                    Image("subtract")
+                    Assets.Icons.subtract.swiftUIImage
                         .resizable()
-                        .frame(width: 30, height: 30, alignment: .center)
+                        .frame(width: 24, height: 24, alignment: .center)
                         .colorMultiply(.white)
                         .padding(.horizontal, 17)
                 }
@@ -102,7 +108,7 @@ struct PlayersListView: View {
                 Assets.Icons.plusCircleFill.swiftUIImage
                     .padding(.horizontal, 17)
                 Text("Додати гравця")
-                    .font(.system(size: 21))
+                    .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
                     .padding(.trailing, 50)
                     .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
             }
