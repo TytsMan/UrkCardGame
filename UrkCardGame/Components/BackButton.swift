@@ -28,7 +28,7 @@ struct BackButton: View {
         Button(action: backAction) {
             Assets.Icons.leftArrowCircleFill.swiftUIImage
                 .resizable()
-                .frame(width: 30, height: 30, alignment: .center)
+                .frame(width: 40, height: 40, alignment: .center)
                 .colorMultiply(tintColor)
         }
     }

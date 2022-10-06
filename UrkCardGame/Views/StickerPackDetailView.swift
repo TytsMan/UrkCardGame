@@ -44,11 +44,6 @@ struct StickerPackDetailView: View {
                                 }
                             }
                         }
-//                        Button {
-//                            #warning("buy sticker pack")
-//                        } label: {
-//                            ButtonLabel(text: "Придбати за $1.99")
-//                        }
                         NavigationLink(isActive: $openStickerPackLink) {
                             StickerPackLinkView(stickerPack: stickerPack)
                         } label: {
@@ -56,13 +51,11 @@ struct StickerPackDetailView: View {
                         }
 
                     }
-                    .padding(.horizontal, 30)
-                    .padding(.top, 30)
-                    .padding(.bottom, 90)
+                    .padding(30)
                     .background {
-                        Assets.GameScreen.gameCanvas.swiftUIImage
-                            .resizable()
+                        Assets.Colors.secondaryColor.swiftUIColor
                     }
+                    .cornerRadius(30)
                 }
             }
             .padding(30)

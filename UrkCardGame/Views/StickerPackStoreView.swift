@@ -47,15 +47,11 @@ struct StickerPackStoreView: View {
                         }
                         
                     }
-                    .padding(.horizontal, 30)
-                    .padding(.top, 30)
-                    .padding(.bottom, 90)
+                    .padding(30)
                     .background {
-                        Assets.GameScreen.gameCanvas.swiftUIImage
-                            .resizable()
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .frame(minHeight: 0, maxHeight: .infinity)
+                        Assets.Colors.secondaryColor.swiftUIColor
                     }
+                    .cornerRadius(30)
                 }
             }
             .padding(30)

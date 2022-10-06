@@ -74,13 +74,11 @@ struct StickerPackLinkView: View {
                             ButtonLabel(text: "Встановити стікери")
                         }
                     }
-                    .padding(.horizontal, 30)
-                    .padding(.top, 30)
-                    .padding(.bottom, 90)
+                    .padding(30)
                     .background {
-                        Assets.GameScreen.gameCanvas.swiftUIImage
-                            .resizable()
+                        Assets.Colors.secondaryColor.swiftUIColor
                     }
+                    .cornerRadius(30)
                 }
             }
             .padding(30)
