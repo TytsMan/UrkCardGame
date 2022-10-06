@@ -9,8 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        ZStack {
-            MenuBackgroundView()
+        ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 HStack {
                     BackButton()
@@ -20,18 +19,21 @@ struct SettingsView: View {
                 Assets.Stickers.vseBudeDobre.swiftUIImage
                 VStack(spacing: 10) {
                     Button {
-                        #warning("open Terms of use page")
+                        openUrl(string: Const.termsOfUseUrl)
                     } label: {
                         ButtonLabel(text: "Правила використання")
                     }
                     Button {
-                        #warning("open Privacy&Policy page")
+                        openUrl(string: Const.privacyPolicyUrl)
                     } label: {
                         ButtonLabel(text: "Конфіденційність")
                     }
                     Button {
-                        #warning("Donate ZSU")
+                        openUrl(string: Const.contactUsUrl)
                     } label: {
+                        ButtonLabel(text: "Звʼязок")
+                    }
+                    NavigationLink(destination: StickerPackStoreView()) {
                         VStack(spacing: 0) {
                             Assets.Colors.accentColor.swiftUIColor
                                 .frame(height: 55)
@@ -45,14 +47,18 @@ struct SettingsView: View {
                                 .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
                         }
                     }
-
                 }
             }
+            .padding(.top, 30)
             .padding(.horizontal, 30)
-            .offset(y: -40)
         }
+        .background(content: {
+            
+            MenuBackgroundView()
+        })
         .ignoresSafeArea()
         .navigationBarHidden(true)
+        
     }
 }
 

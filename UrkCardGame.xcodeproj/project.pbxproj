@@ -49,6 +49,7 @@
 		2CA9D15128EC7D1F0036A3C8 /* StickerPackLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */; };
 		2CA9D15328EF11DA0036A3C8 /* CardCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15228EF11DA0036A3C8 /* CardCanvasView.swift */; };
 		2CA9D15528EF185E0036A3C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA9D15428EF185E0036A3C8 /* LaunchScreen.storyboard */; };
+		2CA9D15728EF1A300036A3C8 /* DeepLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15628EF1A300036A3C8 /* DeepLinks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPackLinkView.swift; sourceTree = "<group>"; };
 		2CA9D15228EF11DA0036A3C8 /* CardCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCanvasView.swift; sourceTree = "<group>"; };
 		2CA9D15428EF185E0036A3C8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CA9D15628EF1A300036A3C8 /* DeepLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				2C4895DE28EAF0690010DFC7 /* Constants.swift */,
 				2C4895E028EAF0810010DFC7 /* CustomEnvironmentProperties.swift */,
+				2CA9D15628EF1A300036A3C8 /* DeepLinks.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				2C48962528EB016F0010DFC7 /* Blame.swift in Sources */,
 				2C48961A28EAFA850010DFC7 /* HomeView.swift in Sources */,
 				2C4895F428EAF21B0010DFC7 /* Assets.swift in Sources */,
+				2CA9D15728EF1A300036A3C8 /* DeepLinks.swift in Sources */,
 				2C4895DF28EAF0690010DFC7 /* Constants.swift in Sources */,
 				2CA9D14728EC3ECC0036A3C8 /* RateView.swift in Sources */,
 				2C48961C28EB00F50010DFC7 /* PlayersListView.swift in Sources */,

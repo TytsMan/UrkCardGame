@@ -66,8 +66,6 @@ struct StickerPackLinkView: View {
                                     }
                                 }
                             Button {
-                                #warning("open sticker link")
-                                
                                 if let url = URL(string: stickerPack.url) {
                                     UIApplication.shared.open(url)
                                 }
@@ -75,11 +73,6 @@ struct StickerPackLinkView: View {
                                 ButtonLabel(text: "Встановити стікери")
                             }
                         }
-    //                    .padding(30)
-    //                    .background {
-    //                        Assets.Colors.secondaryColor.swiftUIColor
-    //                    }
-    //                    .cornerRadius(30)
                     }
                 }
             }
