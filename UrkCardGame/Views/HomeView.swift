@@ -60,6 +60,7 @@ struct HomeView: View {
             .navigationBarHidden(true)
         }
         .environment(\.rootPresentation, $rootPresentation)
+        .statusBar(hidden: true)
     }
 }
 
