@@ -11,35 +11,30 @@ struct RateView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack(spacing: 30) {
                 HStack {
                     BackButton(
                         tintColor: Assets.Colors.secondaryColor.swiftUIColor
                     )
                     Spacer()
                 }
-                VStack(spacing: 70) {
-                    Assets.Stickers.pesuk.swiftUIImage
-                    VStack(spacing: 10) {
-                        Text("**Вам подобається Українська гра?**")
-                            .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
-                            .foregroundColor(Assets.Colors.textColor.swiftUIColor)
-                        Text("Підтримайте команду українських розробників оцінкою в AppStore! Дуже вдячні, Слава Україні.")
-                            .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
-                            .foregroundColor(Assets.Colors.textColor.swiftUIColor)
-                    }
-                    .multilineTextAlignment(.center)
-                    Button {
+                CardCanvasView {
+                    VStack(spacing: 70) {
+                        Assets.Stickers.pesuk.swiftUIImage
+                        VStack(spacing: 10) {
+                            Text("**Вам подобається Українська гра?**")
+                                .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
+                                .foregroundColor(Assets.Colors.textColor.swiftUIColor)
+                            Text("Підтримайте команду українських розробників оцінкою в AppStore! Дуже вдячні, Слава Україні.")
+                                .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
+                                .foregroundColor(Assets.Colors.textColor.swiftUIColor)
+                        }
+                        .multilineTextAlignment(.center)
+                        Button {
 #warning("Rate me code")
-                    } label: {
-                        ButtonLabel(text: "Оцінити")
-                    }
-                }
-                .padding(60)
-                .background {
-                    VStack {
-                        Spacer()
-                        Assets.GameScreen.gameCanvas.swiftUIImage
+                        } label: {
+                            ButtonLabel(text: "Оцінити")
+                        }
                     }
                 }
             }

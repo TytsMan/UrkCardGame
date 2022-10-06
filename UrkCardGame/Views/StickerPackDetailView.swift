@@ -22,7 +22,7 @@ struct StickerPackDetailView: View {
                     )
                     Spacer()
                 }
-                VStack {
+                CardCanvasView {
                     VStack(spacing: 40) {
                         Image(stickerPack.cover)
                             .resizable()
@@ -51,11 +51,6 @@ struct StickerPackDetailView: View {
                         }
 
                     }
-                    .padding(30)
-                    .background {
-                        Assets.Colors.secondaryColor.swiftUIColor
-                    }
-                    .cornerRadius(30)
                 }
             }
             .padding(30)

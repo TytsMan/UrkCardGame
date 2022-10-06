@@ -26,7 +26,7 @@ struct GameRulesView: View {
                     )
                     Spacer()
                 }
-                VStack {
+                CardCanvasView {
                     VStack(spacing: 30) {
                         
                         Assets.Stickers.file111042836.swiftUIImage
@@ -36,13 +36,6 @@ struct GameRulesView: View {
                         Text(gameRulesString)
                             .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
                             .foregroundColor(Assets.Colors.textColor.swiftUIColor)
-                    }
-                    .padding(.horizontal, 30)
-                    .padding(.top, 30)
-                    .padding(.bottom, 90)
-                    .background {
-                        Assets.GameScreen.gameCanvas.swiftUIImage
-                            .resizable()
                     }
                 }
             }

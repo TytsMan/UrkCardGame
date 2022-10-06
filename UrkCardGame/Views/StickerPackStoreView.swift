@@ -25,7 +25,7 @@ struct StickerPackStoreView: View {
                     )
                     Spacer()
                 }
-                VStack {
+                CardCanvasView {
                     VStack(spacing: 40) {
                         Assets.Stickers.Ukrainegame.file111043264.swiftUIImage
                             .resizable()
@@ -45,13 +45,8 @@ struct StickerPackStoreView: View {
                                 createStickerPackButton(stickerPack: stickerPacks[3])
                             }
                         }
-                        
                     }
-                    .padding(30)
-                    .background {
-                        Assets.Colors.secondaryColor.swiftUIColor
-                    }
-                    .cornerRadius(30)
+                    .padding(.bottom, 10)
                 }
             }
             .padding(30)

@@ -47,6 +47,7 @@
 		2CA9D14D28EC6FC60036A3C8 /* StickerPackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14C28EC6FC60036A3C8 /* StickerPackDetailView.swift */; };
 		2CA9D14F28EC71D20036A3C8 /* StickerPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D14E28EC71D20036A3C8 /* StickerPack.swift */; };
 		2CA9D15128EC7D1F0036A3C8 /* StickerPackLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */; };
+		2CA9D15328EF11DA0036A3C8 /* CardCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15228EF11DA0036A3C8 /* CardCanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		2CA9D14C28EC6FC60036A3C8 /* StickerPackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPackDetailView.swift; sourceTree = "<group>"; };
 		2CA9D14E28EC71D20036A3C8 /* StickerPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPack.swift; sourceTree = "<group>"; };
 		2CA9D15028EC7D1F0036A3C8 /* StickerPackLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPackLinkView.swift; sourceTree = "<group>"; };
+		2CA9D15228EF11DA0036A3C8 /* CardCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				2C48961228EAF60B0010DFC7 /* ButtonLabel.swift */,
 				2C48961428EAFA160010DFC7 /* MenuBackgroundView.swift */,
 				2C48961628EAFA420010DFC7 /* GameBackgroundView.swift */,
+				2CA9D15228EF11DA0036A3C8 /* CardCanvasView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				2CA9D14F28EC71D20036A3C8 /* StickerPack.swift in Sources */,
 				2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */,
 				2C48962128EB01460010DFC7 /* Question.swift in Sources */,
+				2CA9D15328EF11DA0036A3C8 /* CardCanvasView.swift in Sources */,
 				2C48961F28EB01310010DFC7 /* Player.swift in Sources */,
 				2C48962E28EB3A010010DFC7 /* GameDataProvider.swift in Sources */,
 				2C48962528EB016F0010DFC7 /* Blame.swift in Sources */,
