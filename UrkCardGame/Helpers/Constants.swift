@@ -8,6 +8,13 @@
 import Foundation
 
 enum Const {
+    
+    enum UserDefaultsKeys {
+        
+        static let launchCountKey = "launchCount"
+        
+    }
+    
 
     static let secondsInRound = 20
 

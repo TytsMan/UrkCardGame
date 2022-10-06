@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var rootPresentation: Bool = false
+    @State var pushRateView = false
     
     var body: some View {
         NavigationView {
@@ -52,15 +53,29 @@ struct HomeView: View {
                         } label: {
                             ButtonLabel(text: "Налаштунки")
                         }
+                        NavigationLink(
+                            destination: RateView(),
+                            isActive: self.$pushRateView) {
+                                EmptyView()
+                            }.hidden()
                     }
                     .padding(.horizontal, 80)
                 }
                 .offset(x: 0, y: -50)
             }
             .navigationBarHidden(true)
+            
         }
         .environment(\.rootPresentation, $rootPresentation)
         .statusBar(hidden: true)
+        .onAppear {
+            let analytics = Analytics {
+                pushRateView = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                analytics.openRateViewIfNeeded()
+            }
+        }
     }
 }
 
