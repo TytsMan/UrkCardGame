@@ -47,44 +47,49 @@ struct StickerPackDetailView: View {
                                     }
                                 }
                             }
-                            Button(action: purchaseStickerPack) {
-                                ButtonLabel(text: "Придбати за \(stickerPack.price)")
+                            VStack(spacing: 10) {
+                                Button(action: purchaseStickerPack) {
+                                    ButtonLabel(text: "Придбати за \(stickerPack.price)")
+                                }
+                                NavigationLink(isActive: $openStickerPackLink) {
+                                    StickerPackLinkView(stickerPack: stickerPack)
+                                } label: {
+                                    if false {
+                                        ButtonLabel(text: "Посилання")
+                                    } else {
+                                        EmptyView()
+                                    }
+                                }
                             }
-                            
                         }
                     }
-                    NavigationLink(isActive: $openStickerPackLink) {
-                        StickerPackLinkView(stickerPack: stickerPack)
-                    } label: {
-                        EmptyView()
-                    }
-                    .hidden()
                 }
                 .padding(30)
             }
             .background(content: {
                 GameBackgroundView()
             })
-            .navigationBarHidden(true)
         }
+        .navigationBarHidden(true)
         
     }
     
     private func purchaseStickerPack() {
-//        guard let apphudProduct = stickerPack.apphudProduct else {
-//            return
-//        }
-//
-//        isLoading = true
-//        Apphud.purchase(apphudProduct) { result in
-//            isLoading = false
-//            if let error = result.error {
-//                print(error.localizedDescription)
-//            } else if let purchase = result.nonRenewingPurchase,
-//                      purchase.isActive() {
+        guard let apphudProduct = stickerPack.apphudProduct else {
+            return
+        }
+        
+        isLoading = true
+        
+        Apphud.purchase(apphudProduct) { result in
+            isLoading = false
+            if let error = result.error {
+                print(error.localizedDescription)
+            } else if let purchase = result.nonRenewingPurchase,
+                      purchase.isActive() {
                 self.purchaseSuccess()
-//            }
-//        }
+            }
+        }
     }
     
     private func purchaseSuccess() {
