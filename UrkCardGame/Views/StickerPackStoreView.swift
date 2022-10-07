@@ -120,12 +120,8 @@ struct StickerPackStoreView: View {
     
     private func restorePurchases() {
         isLoading = true
-        storeManager.restorePurchases { error in
+        storeManager.restorePurchases { _ in
             self.isLoading = false
-            if let error = error {
-                self.alertText = error.localizedDescription
-                self.showingAlert = true
-            }
         }
     }
 }
