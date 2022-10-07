@@ -51,6 +51,7 @@
 		2CA9D15528EF185E0036A3C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA9D15428EF185E0036A3C8 /* LaunchScreen.storyboard */; };
 		2CA9D15728EF1A300036A3C8 /* DeepLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15628EF1A300036A3C8 /* DeepLinks.swift */; };
 		2CA9D15928EF36070036A3C8 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15828EF36070036A3C8 /* Analytics.swift */; };
+		844788D728F01D96004715B9 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 844788D628F01D96004715B9 /* ApphudSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844788D728F01D96004715B9 /* ApphudSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +269,9 @@
 			dependencies = (
 			);
 			name = UrkCardGame;
+			packageProductDependencies = (
+				844788D628F01D96004715B9 /* ApphudSDK */,
+			);
 			productName = UrkCardGame;
 			productReference = 2C734B6928E2E9F40091575B /* UrkCardGame.app */;
 			productType = "com.apple.product-type.application";
@@ -295,6 +300,9 @@
 				Base,
 			);
 			mainGroup = 2C734B6028E2E9F40091575B;
+			packageReferences = (
+				844788D528F01D96004715B9 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+			);
 			productRefGroup = 2C734B6A28E2E9F40091575B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -491,7 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UrkCardGame/Preview Content\"";
-				DEVELOPMENT_TEAM = JDMQBR6RR6;
+				DEVELOPMENT_TEAM = SL4993YL74;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Паляниця";
@@ -527,7 +535,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UrkCardGame/Preview Content\"";
-				DEVELOPMENT_TEAM = JDMQBR6RR6;
+				DEVELOPMENT_TEAM = SL4993YL74;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Паляниця";
@@ -577,6 +585,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		844788D528F01D96004715B9 /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		844788D628F01D96004715B9 /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 844788D528F01D96004715B9 /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2C734B6128E2E9F40091575B /* Project object */;
 }

@@ -15,7 +15,11 @@ enum Const {
         
     }
     
-
+    enum AppHud {
+        
+        static let apiKey = "app_FGewXxoWEQpCfSsCjZXvXgKPfVTYtw"
+    }
+    
     static let secondsInRound = 20
 
     static let termsOfUseUrl = "https://ua-game.energise.pro/terms-of-use/"

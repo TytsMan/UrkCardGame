@@ -18,8 +18,7 @@ class Analytics {
     func openRateViewIfNeeded() {
         
         var openingCount = UserDefaults.standard.integer(forKey: Const.UserDefaultsKeys.launchCountKey)
-//        openingCount += 1
-        openingCount = 3
+        openingCount += 1
         UserDefaults.standard.set(openingCount, forKey:Const.UserDefaultsKeys.launchCountKey)
         
         let numberToOpenRateView = [3, 9, 27]
