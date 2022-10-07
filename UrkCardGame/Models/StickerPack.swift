@@ -6,12 +6,37 @@
 //
 
 import Foundation
+import ApphudSDK
 
 struct StickerPack {
     
+    let id: String
     let cover: String
     let stickers: [String]
     let url: String
+    let apphudProduct: ApphudProduct?
+    
+    var price: String {
+        apphudProduct?.skProduct?.getLocalizedPrice() ?? "0.0 $"
+    }
+//    var owned: Bool = false {
+//        apphudProduct.h
+//    }
+    
+    
+    init(
+        id: String,
+        cover: String,
+        stickers: [String],
+        url: String,
+        apphudProduct: ApphudProduct?
+    ) {
+        self.id = id
+        self.cover = cover
+        self.stickers = stickers
+        self.url = url
+        self.apphudProduct = apphudProduct
+    }
     
 }
 
@@ -19,8 +44,27 @@ class StickerPackFactory {
     
     static let shared = StickerPackFactory()
     
-    func createFirstStickerPack() -> StickerPack {
+    func createStickerPack(for product: ApphudProduct? = nil) -> StickerPack {
+        var result: StickerPack
+        
+        if product?.productId == Const.StoreProducts.ukraineGameProductId {
+            result = createFirstStickerPack(apphudProduct: product)
+        } else if product?.productId == Const.StoreProducts.ukraineGameStickersProductId {
+            result = createSecondStickerPack(apphudProduct: product)
+        } else if product?.productId == Const.StoreProducts.russiaSuckkProductId {
+            result = createThirdStickerPack(apphudProduct: product)
+        } else if product?.productId == Const.StoreProducts.rusniahuiniaProductId {
+            result = createFourthStickerPack(apphudProduct: product)
+        } else {
+            result = createFirstStickerPack(apphudProduct: product)
+        }
+        
+        return result
+    }
+    
+    private func createFirstStickerPack(apphudProduct: ApphudProduct?) -> StickerPack {
         StickerPack(
+            id: Const.StoreProducts.ukraineGameProductId,
             cover: Assets.Stickers.Ukrainegame.ukrainegamePromo.name,
             stickers: [
                 Assets.Stickers.Ukrainegame.file111043260.name,
@@ -34,12 +78,14 @@ class StickerPackFactory {
                 Assets.Stickers.Ukrainegame.file111043270.name,
                 Assets.Stickers.Ukrainegame.file111043272.name
             ],
-            url: "https://t.me/addstickers/ukrainegame"
+            url: "https://t.me/addstickers/ukrainegame",
+            apphudProduct: apphudProduct
         )
     }
     
-    func createSecondStickerPack() -> StickerPack {
+    private func createSecondStickerPack(apphudProduct: ApphudProduct?) -> StickerPack {
         StickerPack(
+            id: Const.StoreProducts.ukraineGameProductId,
             cover: Assets.Stickers.Gameukrainestickers.gameukrainestickersPromo.name,
             stickers: [
                 Assets.Stickers.Gameukrainestickers.file111042826.name,
@@ -65,12 +111,14 @@ class StickerPackFactory {
                 Assets.Stickers.Gameukrainestickers.file111042881.name,
                 Assets.Stickers.Gameukrainestickers.file111042883.name
             ],
-            url: "https://t.me/addstickers/gameukrainestickers"
+            url: "https://t.me/addstickers/gameukrainestickers",
+            apphudProduct: apphudProduct
         )
     }
     
-    func createThirdStickerPack() -> StickerPack {
+    private func createThirdStickerPack(apphudProduct: ApphudProduct?) -> StickerPack {
         StickerPack(
+            id: Const.StoreProducts.ukraineGameProductId,
             cover: Assets.Stickers.Russiasuckk.russiasuckkPromo.name,
             stickers: [
                 Assets.Stickers.Russiasuckk.file111036333.name,
@@ -94,12 +142,14 @@ class StickerPackFactory {
                 Assets.Stickers.Russiasuckk.file111036381.name,
                 Assets.Stickers.Russiasuckk.file111036382.name
             ],
-            url: "https://t.me/addstickers/rusniahuinia"
+            url: "https://t.me/addstickers/rusniahuinia",
+            apphudProduct: apphudProduct
         )
     }
     
-    func createFourthStickerPack() -> StickerPack {
+    private func createFourthStickerPack(apphudProduct: ApphudProduct?) -> StickerPack {
         StickerPack(
+            id: Const.StoreProducts.ukraineGameProductId,
             cover: Assets.Stickers.Rusniahuinia.rusniahuiniaPromo.name,
             stickers: [
                 Assets.Stickers.Rusniahuinia.file111036703.name,
@@ -119,7 +169,8 @@ class StickerPackFactory {
                 Assets.Stickers.Rusniahuinia.file111036691.name,
                 Assets.Stickers.Rusniahuinia.file111036695.name
             ],
-            url: "https://t.me/addstickers/russiasuckk"
+            url: "https://t.me/addstickers/russiasuckk",
+            apphudProduct: apphudProduct
         )
     }
 }

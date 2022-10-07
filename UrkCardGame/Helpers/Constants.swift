@@ -10,15 +10,21 @@ import Foundation
 enum Const {
     
     enum UserDefaultsKeys {
-        
         static let launchCountKey = "launchCount"
-        
     }
     
     enum AppHud {
-        
         static let apiKey = "app_FGewXxoWEQpCfSsCjZXvXgKPfVTYtw"
+        static let stickerPackGroup = "Telegram Sticker Pack"
     }
+    
+    enum StoreProducts {
+        static let ukraineGameProductId = "com.palianytsia.tgstickerpack.ukrainegame"
+        static let ukraineGameStickersProductId = "com.palianytsia.tgstickerpack.ukrainegamestickers"
+        static let rusniahuiniaProductId = "com.palianytsia.tgstickerpack.rusniahuinia"
+        static let russiaSuckkProductId = "com.palianytsia.tgstickerpack.russiasuck"
+    }
+    
     
     static let secondsInRound = 20
 

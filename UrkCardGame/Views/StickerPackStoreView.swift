@@ -9,51 +9,55 @@ import SwiftUI
 
 struct StickerPackStoreView: View {
     
-    let stickerPacks = [
-        StickerPackFactory.shared.createFirstStickerPack(),
-        StickerPackFactory.shared.createSecondStickerPack(),
-        StickerPackFactory.shared.createThirdStickerPack(),
-        StickerPackFactory.shared.createFourthStickerPack()
-    ]
+    @EnvironmentObject var storeManager: StoreManager
+    
+    @State var stickerPacks: [StickerPack] = []
+    @State var isLoading = false
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 30) {
-                HStack {
-                    BackButton(
-                        tintColor: Assets.Colors.secondaryColor.swiftUIColor
-                    )
-                    Spacer()
-                }
-                CardCanvasView {
-                    VStack(spacing: 40) {
-                        Assets.Stickers.Ukrainegame.file111043264.swiftUIImage
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        Text("**Гроші від купівлі стікерів йдуть до ЗСУ**")
-                            .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
-                            .foregroundColor(Assets.Colors.textColor.swiftUIColor)
-                            .multilineTextAlignment(.center)
-                        
+        LoadingView(isShowing: $isLoading) {
+            ScrollView {
+                VStack(spacing: 30) {
+                    HStack {
+                        BackButton(
+                            tintColor: Assets.Colors.secondaryColor.swiftUIColor
+                        )
+                        Spacer()
+                    }
+                    CardCanvasView {
                         VStack(spacing: 40) {
-                            HStack(spacing: 40) {
-                                createStickerPackButton(stickerPack: stickerPacks[0])
-                                createStickerPackButton(stickerPack: stickerPacks[1])
-                            }
-                            HStack(spacing: 40) {
-                                createStickerPackButton(stickerPack: stickerPacks[2])
-                                createStickerPackButton(stickerPack: stickerPacks[3])
+                            Assets.Stickers.Ukrainegame.file111043264.swiftUIImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            Text("**Гроші від купівлі стікерів йдуть до ЗСУ**")
+                                .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
+                                .foregroundColor(Assets.Colors.textColor.swiftUIColor)
+                                .multilineTextAlignment(.center)
+                            
+                            VStack(spacing: 40) {
+                                
+                                ForEach(Array(stride(from: 0, to: stickerPacks.count, by: 2)), id: \.self) { idx in
+                                    HStack(spacing: 40) {
+                                        createStickerPackButton(stickerPack: stickerPacks[idx])
+                                        if stickerPacks.count > idx {
+                                            createStickerPackButton(stickerPack: stickerPacks[idx+1])
+                                        }
+                                    }
+                                }
                             }
                         }
+                        .padding(.bottom, 10)
                     }
-                    .padding(.bottom, 10)
                 }
+                .padding(30)
             }
-            .padding(30)
+            .background(content: {
+                GameBackgroundView()
+            })
+//            .onAppear {
+//                self.updateProducts()
+//            }
         }
-        .background(content: {
-            GameBackgroundView()
-        })
         .navigationBarHidden(true)
     }
     
@@ -71,7 +75,7 @@ struct StickerPackStoreView: View {
                                 HStack {
                                     Spacer()
                                     HStack {
-                                        Text("$1.99")
+                                        Text(stickerPack.price)
                                             .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 20))
                                             .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
                                             .padding(.horizontal, 7)
@@ -84,13 +88,28 @@ struct StickerPackStoreView: View {
                             }
                         }
                 })
-            
-//            Button(action: {
-//#warning("open sticker pack")
-//            }, label: {
-//                
-//            })
         )
+    }
+    
+    private func updateProducts() {
+
+        isLoading = true
+        storeManager.getStickerPackProducts {  result in
+            isLoading = false
+            switch result {
+            case .success(let products):
+                let result: [StickerPack] = products.map { product in
+                    StickerPackFactory.shared.createStickerPack(for: product)
+                }
+                self.stickerPacks = result
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func restorePurchases() {
+        
     }
 }
 

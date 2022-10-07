@@ -90,7 +90,7 @@ struct StickerPackLinkView: View {
 
 struct Stc_Previews: PreviewProvider {
     
-    static let stickerPack = StickerPackFactory.shared.createThirdStickerPack()
+    static let stickerPack = StickerPackFactory.shared.createStickerPack()
     
     static var previews: some View {
         StickerPackLinkView(stickerPack: stickerPack)
