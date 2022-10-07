@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct RateView: View {
     
@@ -31,7 +32,7 @@ struct RateView: View {
                         }
                         .multilineTextAlignment(.center)
                         Button {
-#warning("Rate me code")
+                            SKStoreReviewController.requestReview()
                         } label: {
                             ButtonLabel(text: "Оцінити")
                         }
