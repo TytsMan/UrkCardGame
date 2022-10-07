@@ -14,6 +14,9 @@ struct StickerPackStoreView: View {
     @State var stickerPacks: [StickerPack] = []
     @State var isLoading = false
     
+    @State var alertText = ""
+    @State var showingAlert = false
+    
     var body: some View {
         LoadingView(isShowing: $isLoading) {
             ScrollView {
@@ -45,6 +48,10 @@ struct StickerPackStoreView: View {
                                     }
                                 }
                             }
+                            
+                            Button(action: restorePurchases) {
+                                ButtonLabel(text: "Відновити покупки")
+                            }
                         }
                         .padding(.bottom, 10)
                     }
@@ -54,11 +61,14 @@ struct StickerPackStoreView: View {
             .background(content: {
                 GameBackgroundView()
             })
-//            .onAppear {
-//                self.updateProducts()
-//            }
+            .onAppear {
+                self.updateProducts()
+            }
         }
         .navigationBarHidden(true)
+        .alert(alertText, isPresented: $showingAlert) {
+            Button("OK", role: .cancel) { }
+        }
     }
     
     fileprivate func createStickerPackButton(stickerPack: StickerPack) -> some View{
@@ -109,7 +119,14 @@ struct StickerPackStoreView: View {
     }
     
     private func restorePurchases() {
-        
+        isLoading = true
+        storeManager.restorePurchases { error in
+            self.isLoading = false
+            if let error = error {
+                self.alertText = error.localizedDescription
+                self.showingAlert = true
+            }
+        }
     }
 }
 

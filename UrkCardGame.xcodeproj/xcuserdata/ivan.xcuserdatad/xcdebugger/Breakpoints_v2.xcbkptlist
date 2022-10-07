@@ -14,10 +14,10 @@
             filePath = "UrkCardGame/Views/StickerPackStoreView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "StickerPackStoreView"
-            landmarkType = "14">
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "updateProducts()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

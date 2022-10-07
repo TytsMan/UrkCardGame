@@ -21,7 +21,7 @@ class StoreManager: ObservableObject {
         assertionFailure("Method should be overriden")
     }
     
-    func restorePurchases(completion: @escaping (Bool) -> Void) -> Void {
+    func restorePurchases(completion: @escaping (Error?) -> Void) -> Void {
         assertionFailure("Method should be overriden")
     }
 }
@@ -62,9 +62,9 @@ class AppHudStoreManager: StoreManager {
         }
     }
     
-    override func restorePurchases(completion: @escaping (Bool) -> Void) -> Void {
+    override func restorePurchases(completion: @escaping (Error?) -> Void) -> Void {
         Apphud.restorePurchases { _, _, error in
-            completion(error == nil)
+            completion(error)
         }
     }
 }
