@@ -51,10 +51,6 @@ class StickerPackFactory {
             result = createFirstStickerPack(apphudProduct: product)
         } else if product?.productId == Const.StoreProducts.ukraineGameStickersProductId {
             result = createSecondStickerPack(apphudProduct: product)
-        } else if product?.productId == Const.StoreProducts.russiaSuckkProductId {
-            result = createThirdStickerPack(apphudProduct: product)
-        } else if product?.productId == Const.StoreProducts.rusniahuiniaProductId {
-            result = createFourthStickerPack(apphudProduct: product)
         } else {
             result = createFirstStickerPack(apphudProduct: product)
         }
@@ -112,64 +108,6 @@ class StickerPackFactory {
                 Assets.Stickers.Gameukrainestickers.file111042883.name
             ],
             url: "https://t.me/addstickers/gameukrainestickers",
-            apphudProduct: apphudProduct
-        )
-    }
-    
-    private func createThirdStickerPack(apphudProduct: ApphudProduct?) -> StickerPack {
-        StickerPack(
-            id: Const.StoreProducts.ukraineGameProductId,
-            cover: Assets.Stickers.Russiasuckk.russiasuckkPromo.name,
-            stickers: [
-                Assets.Stickers.Russiasuckk.file111036333.name,
-                Assets.Stickers.Russiasuckk.file111036336.name,
-                Assets.Stickers.Russiasuckk.file111036341.name,
-                Assets.Stickers.Russiasuckk.file111036343.name,
-                Assets.Stickers.Russiasuckk.file111036346.name,
-                Assets.Stickers.Russiasuckk.file111036348.name,
-                Assets.Stickers.Russiasuckk.file111036351.name,
-                Assets.Stickers.Russiasuckk.file111036353.name,
-                Assets.Stickers.Russiasuckk.file111036356.name,
-                Assets.Stickers.Russiasuckk.file111036357.name,
-                Assets.Stickers.Russiasuckk.file111036360.name,
-                Assets.Stickers.Russiasuckk.file111036363.name,
-                Assets.Stickers.Russiasuckk.file111036365.name,
-                Assets.Stickers.Russiasuckk.file111036369.name,
-                Assets.Stickers.Russiasuckk.file111036371.name,
-                Assets.Stickers.Russiasuckk.file111036373.name,
-                Assets.Stickers.Russiasuckk.file111036375.name,
-                Assets.Stickers.Russiasuckk.file111036378.name,
-                Assets.Stickers.Russiasuckk.file111036381.name,
-                Assets.Stickers.Russiasuckk.file111036382.name
-            ],
-            url: "https://t.me/addstickers/rusniahuinia",
-            apphudProduct: apphudProduct
-        )
-    }
-    
-    private func createFourthStickerPack(apphudProduct: ApphudProduct?) -> StickerPack {
-        StickerPack(
-            id: Const.StoreProducts.ukraineGameProductId,
-            cover: Assets.Stickers.Rusniahuinia.rusniahuiniaPromo.name,
-            stickers: [
-                Assets.Stickers.Rusniahuinia.file111036703.name,
-                Assets.Stickers.Rusniahuinia.file111036709.name,
-                Assets.Stickers.Rusniahuinia.file111036714.name,
-                Assets.Stickers.Rusniahuinia.file111036723.name,
-                Assets.Stickers.Rusniahuinia.file111036734.name,
-                Assets.Stickers.Rusniahuinia.file111036751.name,
-                Assets.Stickers.Rusniahuinia.file111036760.name,
-                Assets.Stickers.Rusniahuinia.file111036767.name,
-                Assets.Stickers.Rusniahuinia.file111036670.name,
-                Assets.Stickers.Rusniahuinia.file111036673.name,
-                Assets.Stickers.Rusniahuinia.file111036675.name,
-                Assets.Stickers.Rusniahuinia.file111036680.name,
-                Assets.Stickers.Rusniahuinia.file111036683.name,
-                Assets.Stickers.Rusniahuinia.file111036686.name,
-                Assets.Stickers.Rusniahuinia.file111036691.name,
-                Assets.Stickers.Rusniahuinia.file111036695.name
-            ],
-            url: "https://t.me/addstickers/russiasuckk",
             apphudProduct: apphudProduct
         )
     }
