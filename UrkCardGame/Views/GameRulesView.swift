@@ -11,14 +11,14 @@ struct GameRulesView: View {
     
     let gameRulesString = """
     Правила гри дуже прості:
-    -Граєш з друзями
-    -Відповідаєш на питання,міняєшся
-    -В разі неправильної відповіді, або через брак часу, ти повинен виконати завдання
-    -І пам’ятай головне “русня -ху*ня”
+    
+    - Граєш з друзями
+    - Відповідаєш на питання, міняєшся
+    - В разі неправильної відповіді, або через брак часу, ти повинен виконати завдання
     """
     
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical) {
             VStack(spacing: 30) {
                 HStack {
                     BackButton(
@@ -29,13 +29,14 @@ struct GameRulesView: View {
                 CardCanvasView {
                     VStack(spacing: 30) {
                         
-                        Assets.Stickers.file111042836.swiftUIImage
+                        Assets.Stickers.vseBudeDobre.swiftUIImage
                         Text("**Правила**")
                             .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
                             .foregroundColor(Assets.Colors.textColor.swiftUIColor)
                         Text(gameRulesString)
                             .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
                             .foregroundColor(Assets.Colors.textColor.swiftUIColor)
+                            .multilineTextAlignment(.leading)
                     }
                 }
             }

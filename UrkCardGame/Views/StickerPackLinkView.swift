@@ -33,7 +33,9 @@ struct StickerPackLinkView: View {
                 CardCanvasView {
                     VStack {
                         VStack(spacing: 30) {
-                            Assets.Stickers.file111042836.swiftUIImage
+                            Assets.Stickers.Ukrainegame.file111043264.swiftUIImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
                             VStack(spacing: 10) {
                                 Text("**Успішно**")
                                     .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
