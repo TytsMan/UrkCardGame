@@ -23,7 +23,7 @@ struct PlayersListView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Assets.PlayersScreen.woodSign.swiftUIImage
+                    Assets.PlayersScreen.uaFlagSign.swiftUIImage
                 }
             }
             .ignoresSafeArea()

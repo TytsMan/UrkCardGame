@@ -34,7 +34,7 @@ struct AddPlayerView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Image("wood_sign")
+                    Assets.PlayersScreen.uaFlagSign.swiftUIImage
                 }
             }
             .ignoresSafeArea()
