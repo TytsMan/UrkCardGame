@@ -15,8 +15,10 @@ struct UrkCardGameApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                .environmentObject(storeManager)
+            NavigationView {
+                HomeView()
+            }
+            .environmentObject(storeManager)
         }
     }
     

@@ -22,6 +22,8 @@ struct RateView: View {
                 CardCanvasView {
                     VStack(spacing: 70) {
                         Assets.Stickers.pesuk.swiftUIImage
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                         VStack(spacing: 10) {
                             Text("**Вам подобається Українська гра?**")
                                 .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
@@ -41,10 +43,11 @@ struct RateView: View {
             }
             .padding(30)
         }
-        .background(content: {
+        .background {
             GameBackgroundView()
-        })
-        .navigationBarHidden(true)
+        }
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
 }
 

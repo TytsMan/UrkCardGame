@@ -54,7 +54,6 @@ struct GameView: View {
                 }.hidden()
         }
         .ignoresSafeArea()
-        .navigationBarHidden(true)
         .onAppear {
             viewModel.finishGame = {
                 rootIsActive = false
@@ -63,6 +62,8 @@ struct GameView: View {
                 pushStickerStoreView = true
             }
         }
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
     
     func content(for state: GameViewModel.GameState) -> AnyView {

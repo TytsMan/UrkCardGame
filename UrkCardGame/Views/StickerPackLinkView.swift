@@ -80,13 +80,14 @@ struct StickerPackLinkView: View {
             }
             .padding(30)
         }
-        .background(content: {
+        .background {
             GameBackgroundView()
-        })
-        .navigationBarHidden(true)
+        }
         .onAppear {
             stickerPackUrl = stickerPack.url
         }
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
 }
 

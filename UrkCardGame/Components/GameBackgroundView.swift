@@ -11,8 +11,12 @@ struct GameBackgroundView: View {
     var body: some View {
         HStack {
             Assets.Background.patternLeft.swiftUIImage
+                .resizable()
+                .aspectRatio(contentMode: .fit)
             Spacer()
             Assets.Background.patternRight.swiftUIImage
+                .resizable()
+                .aspectRatio(contentMode: .fit)
         }
         .ignoresSafeArea()
         .background(Assets.Colors.accentColor.swiftUIColor)

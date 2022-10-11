@@ -69,7 +69,7 @@ class GameDataProvider: GameDataProviderProtocol {
         var result: [String] = []
         
         do {
-            let path = Bundle.main.path(forResource: "\(filename)", ofType: "txt") // file path for file "data.txt"
+            let path = Bundle.main.path(forResource: "\(filename)", ofType: "txt")
             let contents = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
             let lines = contents.split(separator:"\n")
             result = lines.map(String.init)

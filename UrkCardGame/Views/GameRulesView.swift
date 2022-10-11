@@ -9,7 +9,8 @@ import SwiftUI
 
 struct GameRulesView: View {
     
-    let gameRulesString = """
+    private let gameRulesTitle = "Правила"
+    private let gameRulesDescription = """
     Правила гри дуже прості:
     
     - Граєш з друзями
@@ -28,12 +29,15 @@ struct GameRulesView: View {
                 }
                 CardCanvasView {
                     VStack(spacing: 30) {
-                        
                         Assets.Stickers.vseBudeDobre.swiftUIImage
-                        Text("**Правила**")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        
+                        Text(gameRulesTitle)
                             .font(FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 26))
                             .foregroundColor(Assets.Colors.textColor.swiftUIColor)
-                        Text(gameRulesString)
+                        
+                        Text(gameRulesDescription)
                             .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
                             .foregroundColor(Assets.Colors.textColor.swiftUIColor)
                             .multilineTextAlignment(.leading)
@@ -42,10 +46,11 @@ struct GameRulesView: View {
             }
             .padding(30)
         }
-        .background(content: {
+        .background {
             GameBackgroundView()
-        })
-        .navigationBarHidden(true)
+        }
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
 }
 

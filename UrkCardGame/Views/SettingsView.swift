@@ -17,6 +17,8 @@ struct SettingsView: View {
                 }
                 .offset(y: 80)
                 Assets.Stickers.vseBudeDobre.swiftUIImage
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                 VStack(spacing: 10) {
                     Button {
                         openUrl(string: Const.termsOfUseUrl)
@@ -52,13 +54,13 @@ struct SettingsView: View {
             .padding(.top, 30)
             .padding(.horizontal, 30)
         }
-        .background(content: {
+        .background {
             
             MenuBackgroundView()
-        })
+        }
         .ignoresSafeArea()
-        .navigationBarHidden(true)
-        
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
 }
 

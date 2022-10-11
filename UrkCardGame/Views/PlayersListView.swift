@@ -10,67 +10,66 @@ import SwiftUI
 struct PlayersListView: View {
     
     @Binding var rootIsActive: Bool
+    @State var players: [Player] = Player.defaultPlayers
     
-    @State var players: [Player] = [
-        Player(nickname: "Назар", avatar: Assets.Avatars.avatarMale1.name),
-        Player(nickname: "Марійка", avatar: Assets.Avatars.avatarFemale1.name)
-    ]
+    let continueButtonLabel: some View = {
+        ButtonLabel(text: "Продовжити")
+            .padding(.horizontal, 30)
+    }()
+    
+    var formIsValid: Bool {
+        players.count > 1
+    }
     
     var body: some View {
-        ZStack {
-            MenuBackgroundView()
-            VStack {
-                Spacer()
+        VStack() {
+            Spacer()
+            VStack(alignment: .leading) {
                 HStack {
+                    BackButton()
                     Spacer()
-                    Assets.PlayersScreen.uaFlagSign.swiftUIImage
                 }
-            }
-            .ignoresSafeArea()
-            VStack() {
-                VStack(alignment: .leading) {
-                    HStack {
-                        BackButton()
-                        Spacer()
-                    }
-                    Text("Додайте гравців")
-                        .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
-                        .foregroundColor(Color.black)
-                    
-                    ScrollView {
-                        VStack(alignment: .leading) {
-                            ForEach((0..<players.count), id: \.self) { idx in
-                                PlayerView(player: players[idx]) {
-                                    players.remove(at: idx)
-                                }
+                Text("Додайте гравців")
+                    .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
+                    .foregroundColor(Color.black)
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach((0..<players.count), id: \.self) { idx in
+                            PlayerView(player: players[idx]) {
+                                players.remove(at: idx)
                             }
-                            NavigationLink(destination: AddPlayerView(players: $players)) {
-                                NewPlayerView()
-                            }
+                        }
+                        NavigationLink(
+                            destination: AddPlayerView(players: $players)
+                        ) {
+                            NewPlayerView()
                         }
                     }
                 }
-                Spacer()
-                Assets.PlayersScreen.traktor.swiftUIImage
-                if self.players.count > 1 {
-                    NavigationLink(destination: GameView(rootIsActive: $rootIsActive, viewModel: GameViewModel(players: players))) {
-                        ButtonLabel(text: "Продовжити")
-                            .frame(width: 300, alignment: .center)
-                    }
-                } else {
-                    Button {
-                        
-                    } label: {
-                        ButtonLabel(text: "Продовжити")
-                            .frame(width: 300, alignment: .center)
-                    }
+            }
+            Spacer()
+            Assets.PlayersScreen.traktor.swiftUIImage
+            /// to avoid creating vm without players
+            if formIsValid {
+                NavigationLink(destination: GameView(rootIsActive: $rootIsActive, viewModel: GameViewModel(players: players))) {
+                    continueButtonLabel
+                }
+            } else {
+                Button { } label: {
+                    continueButtonLabel
                 }
             }
-            .padding(.top, 60)
-            .padding(.bottom, 80)
-            .padding(.horizontal, 40)
+            Spacer()
         }
-        .navigationBarHidden(true)
+        .padding(.top, 50)
+        .padding(.horizontal, 30)
+        .padding(.bottom, 80)
+        .background {
+            MenuBackgroundView(sticker: Assets.PlayersScreen.uaFlagSign.name)
+        }
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
     
     struct PlayerView: View {
@@ -109,8 +108,8 @@ struct PlayersListView: View {
                     .padding(.horizontal, 17)
                 Text("Додати гравця")
                     .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
-                    .padding(.trailing, 50)
                     .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
+                    .padding(.trailing, 50)
             }
             .padding(.vertical, 8)
             .background(Assets.Colors.accentColor.swiftUIColor)
@@ -122,17 +121,17 @@ struct PlayersListView: View {
 
 struct PlayesListView_Previews: PreviewProvider {
     
-    static let players: [Player] = [
-        Player(nickname: "Johny", avatar: Assets.Avatars.avatarMale1.name),
-        Player(nickname: "Dave", avatar: Assets.Avatars.avatarMale2.name),
-        //        Player(nickname: "Leon", avatar: Assets.Avatars.avatarMale3.name),
-        //        Player(nickname: "Said", avatar: Assets.Avatars.avatarMale4.name),
-        Player(nickname: "Mary", avatar: Assets.Avatars.avatarFemale1.name),
-        Player(nickname: "Elizabeth", avatar: Assets.Avatars.avatarFemale2.name)
-    ]
+    static let players: [Player] = Player.defaultPlayers
     
     static var previews: some View {
         PlayersListView(rootIsActive: .constant(false),players: players)
     }
+}
+
+extension Player {
+    static let defaultPlayers = [
+        Player(nickname: "Назар", avatar: Assets.Avatars.avatarMale1.name),
+        Player(nickname: "Марійка", avatar: Assets.Avatars.avatarFemale1.name)
+    ]
 }
 

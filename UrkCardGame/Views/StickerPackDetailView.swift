@@ -54,6 +54,7 @@ struct StickerPackDetailView: View {
                                 NavigationLink(isActive: $openStickerPackLink) {
                                     StickerPackLinkView(stickerPack: stickerPack)
                                 } label: {
+                                    /// need to track what has been bought
                                     if false {
                                         ButtonLabel(text: "Посилання")
                                     } else {
@@ -70,8 +71,8 @@ struct StickerPackDetailView: View {
                 GameBackgroundView()
             })
         }
-        .navigationBarHidden(true)
-        
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
     
     private func purchaseStickerPack() {
@@ -85,8 +86,10 @@ struct StickerPackDetailView: View {
             isLoading = false
             if let error = result.error {
                 print(error.localizedDescription)
-            } else if let purchase = result.nonRenewingPurchase,
-                      purchase.isActive() {
+            } else if
+                let purchase = result.nonRenewingPurchase,
+                purchase.isActive()
+            {
                 self.purchaseSuccess()
             }
         }

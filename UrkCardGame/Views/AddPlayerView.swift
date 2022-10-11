@@ -27,94 +27,93 @@ struct AddPlayerView: View {
         Assets.Avatars.avatarMale4.name
     ]
     
+    var formIsValid: Bool {
+        !nickname.isEmpty
+    }
+    
     var body: some View {
-        ZStack {
-            MenuBackgroundView()
-            VStack {
-                Spacer()
+        VStack() {
+            VStack(alignment: .leading) {
                 HStack {
+                    BackButton()
                     Spacer()
-                    Assets.PlayersScreen.uaFlagSign.swiftUIImage
                 }
+                selectAvatarView()
+                pickNicknameView()
+                Spacer()
+                
             }
-            .ignoresSafeArea()
+            VStack {
+                Assets.PlayersScreen.traktor.swiftUIImage
+                Button(action: createPlayerAction) {
+                    ButtonLabel(text: "Обрати")
+                }
+                .disabled(!formIsValid)
+                .padding(.horizontal, 30)
+            }
+        }
+        .padding(.top, 60)
+        .padding(.bottom, 80)
+        .padding(.horizontal, 40)
+        .background {
+            MenuBackgroundView()
+        }
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
+    }
+    
+    func selectAvatarView() -> some View {
+        VStack(alignment: .leading) {
+            Text("Оберіть аватар")
+                .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
+                .foregroundColor(.black)
             
-            VStack() {
-                VStack(alignment: .leading, spacing: 30) {
-                    HStack {
-                        BackButton()
-                        Spacer()
-                    }
-                    VStack(alignment: .leading) {
-                        Text("Оберіть аватар")
-                            .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
-                            .foregroundColor(.black)
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(0..<avatars.count, id: \.self) { idx in
-                                    Button {
-                                        selectedAvatarIdx = idx
-                                    } label: {
-                                        if selectedAvatarIdx == idx {
-                                            SelectedImage(image: Image(avatars[idx]))
-                                        } else {
-                                            UnselectedImage(image: Image(avatars[idx]))
-                                        }
-                                    }
-                                }
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(0..<avatars.count, id: \.self) { idx in
+                        Button {
+                            selectedAvatarIdx = idx
+                        } label: {
+                            if selectedAvatarIdx == idx {
+                                SelectedImage(image: Image(avatars[idx]))
+                            } else {
+                                UnselectedImage(image: Image(avatars[idx]))
                             }
                         }
                     }
-                    
-                    VStack(alignment: .leading) {
-                        Text("Ваше ім’я")
-                            .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
-                            .foregroundColor(.black)
-                        HStack {
-                            Image(avatars[selectedAvatarIdx])
-                                .resizable()
-                                .frame(width: 31, height: 31, alignment: .center)
-                                .padding(.horizontal, 17)
-                                .padding(.vertical, 8)
-                            TextField("Напишіть імʼя", text: $nickname)
-                                .padding(.trailing, 10)
-                                .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
-                                .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
-                        }
-                        .background(Assets.Colors.accentColor.swiftUIColor)
-                        .cornerRadius(17)
-                    }
-                    Spacer()
-                    
-                }
-                VStack {
-                    HStack {
-                        Spacer()
-                        Assets.PlayersScreen.traktor.swiftUIImage
-                        Spacer()
-                    }
-                    HStack {
-                        Button {
-                            let newPlayer = Player(
-                                nickname: self.nickname,
-                                avatar: avatars[selectedAvatarIdx]
-                            )
-                            $players.wrappedValue.append(newPlayer)
-                            presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            ButtonLabel(text: "Обрати")
-                        }
-                        .disabled(nickname.isEmpty)
-                    }
                 }
             }
-            .padding(.top, 60)
-            .padding(.bottom, 80)
-            .padding(.horizontal, 40)
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+    }
+    
+    func pickNicknameView() -> some View {
+        VStack(alignment: .leading) {
+            Text("Ваше ім’я")
+                .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
+                .foregroundColor(.black)
+            HStack {
+                Image(avatars[selectedAvatarIdx])
+                    .resizable()
+                    .frame(width: 31, height: 31, alignment: .center)
+                    .padding(.horizontal, 17)
+                    .padding(.vertical, 8)
+                TextField("Напишіть імʼя", text: $nickname)
+                    .padding(.trailing, 10)
+                    .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
+                    .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
+            }
+            .background(Assets.Colors.accentColor.swiftUIColor)
+            .cornerRadius(17)
+        }
+    }
+    
+    func createPlayerAction() {
+        let newPlayer = Player(
+            nickname: self.nickname,
+            avatar: avatars[selectedAvatarIdx]
+        )
+        $players.wrappedValue.append(newPlayer)
+        presentationMode.wrappedValue.dismiss()
     }
     
     struct SelectedImage: View {
@@ -146,7 +145,6 @@ struct AddPlayerView: View {
                 }
         }
     }
-    
 }
 
 struct AddPlayerView_Previews: PreviewProvider {

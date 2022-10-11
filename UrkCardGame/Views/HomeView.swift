@@ -13,61 +13,52 @@ struct HomeView: View {
     @State var pushRateView = false
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                MenuBackgroundView()
+        ZStack {
+            VStack(spacing: 30) {
+                Spacer()
                 VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Assets.HomeScreen.shevchenkoWithRpg.swiftUIImage
-                    }
+                    Image("greetings")
+                    NavigationLink(
+                        destination: PlayersListView(rootIsActive: $rootPresentation),
+                        isActive: $rootPresentation) {
+                            ButtonLabel(
+                                text: "Почати гру!",
+                                font: FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 35)
+                            )
+                            .padding(.horizontal, 50)
+                        }
                 }
-                .ignoresSafeArea()
-                VStack(spacing: 30) {
-                    VStack {
-                        Image("greetings")
-                        NavigationLink(
-                            destination: PlayersListView(rootIsActive: $rootPresentation),
-                            isActive: $rootPresentation) {
-                                ButtonLabel(
-                                    text: "Почати гру!",
-                                    font: FontFamily.SFCompactRounded.semibold.swiftUIFont(size: 35)
-                                )
-                                .padding(.horizontal, 50)
-                            }
+                VStack(spacing: 10) {
+                    NavigationLink() {
+                        StickerPackStoreView()
+                    } label: {
+                        ButtonLabel(text: "Отримати стікери")
                     }
-                    VStack(spacing: 10) {
-                        NavigationLink() {
-                            StickerPackStoreView()
-                        } label: {
-                            ButtonLabel(text: "Отримати стікери")
-                        }
-                        NavigationLink() {
-                            GameRulesView()
-                        } label: {
-                            ButtonLabel(text: "Паляниця?")
-                        }
-                        NavigationLink() {
-                            SettingsView()
-                        } label: {
-                            ButtonLabel(text: "Налаштунки")
-                        }
-                        NavigationLink(
-                            destination: RateView(),
-                            isActive: self.$pushRateView) {
-                                EmptyView()
-                            }.hidden()
+                    NavigationLink() {
+                        GameRulesView()
+                    } label: {
+                        ButtonLabel(text: "Паляниця?")
                     }
-                    .padding(.horizontal, 80)
+                    NavigationLink() {
+                        SettingsView()
+                    } label: {
+                        ButtonLabel(text: "Налаштунки")
+                    }
+                    NavigationLink(
+                        destination: RateView(),
+                        isActive: self.$pushRateView) {
+                            EmptyView()
+                        }.hidden()
                 }
-                .offset(x: 0, y: -50)
+                .padding(.horizontal, 80)
+                Spacer()
             }
-            .navigationBarHidden(true)
-            
+            .offset(x: 0, y: -50)
         }
         .environment(\.rootPresentation, $rootPresentation)
-        .statusBar(hidden: true)
+        .background {
+            MenuBackgroundView(sticker: Assets.HomeScreen.shevchenkoWithRpg.name)
+        }
         .onAppear {
             let analytics = Analytics {
                 pushRateView = true
@@ -76,6 +67,8 @@ struct HomeView: View {
                 analytics.openRateViewIfNeeded()
             }
         }
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
 }
 

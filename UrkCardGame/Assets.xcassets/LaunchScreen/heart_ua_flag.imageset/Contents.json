@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "heart_ua_flag.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "heart_ua_flag.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },

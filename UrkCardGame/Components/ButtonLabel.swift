@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ButtonLabel: View {
-
+    
     let text: String
     let font: SwiftUI.Font
     let backgroundColor: Color
@@ -25,18 +25,18 @@ struct ButtonLabel: View {
     }
     
     var body: some View {
-            Text(text)
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .font(font)
-                .padding(.vertical, 18)
-                .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
-                .background(backgroundColor)
-                .cornerRadius(20)
+        Text(text)
+            .font(font)
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .padding(.vertical, 18)
+            .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
+            .background(backgroundColor)
+            .cornerRadius(20)
     }
 }
 
 struct MainButton_Previews: PreviewProvider {
     static var previews: some View {
-         ButtonLabel(text: "ButtonLabel")
+        ButtonLabel(text: "ButtonLabel")
     }
 }

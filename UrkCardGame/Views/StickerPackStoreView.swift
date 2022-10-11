@@ -65,10 +65,11 @@ struct StickerPackStoreView: View {
                 self.updateProducts()
             }
         }
-        .navigationBarHidden(true)
         .alert(alertText, isPresented: $showingAlert) {
             Button("OK", role: .cancel) { }
         }
+        .hiddenNavigationBarStyle()
+        .hiddenStatusBarStyle()
     }
     
     fileprivate func createStickerPackButton(stickerPack: StickerPack) -> some View{

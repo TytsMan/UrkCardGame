@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0562D828F55BF800769C32 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0562D728F55BF800769C32 /* ViewModifiers.swift */; };
 		2C46C94028F02A7A00228D24 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2C46C93F28F02A7A00228D24 /* ApphudSDK */; };
 		2C46C94228F02C6B00228D24 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46C94128F02C6B00228D24 /* StoreManager.swift */; };
 		2C46C94428F0493200228D24 /* StoreKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46C94328F0493100228D24 /* StoreKit+Extension.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0562D728F55BF800769C32 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		2C46C94128F02C6B00228D24 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		2C46C94328F0493100228D24 /* StoreKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreKit+Extension.swift"; sourceTree = "<group>"; };
 		2C4895DE28EAF0690010DFC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				2CA9D15628EF1A300036A3C8 /* DeepLinks.swift */,
 				2CA9D15828EF36070036A3C8 /* Analytics.swift */,
 				2C46C94328F0493100228D24 /* StoreKit+Extension.swift */,
+				2C0562D728F55BF800769C32 /* ViewModifiers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				2C4895F628EAF2520010DFC7 /* Fonts.swift in Sources */,
 				2CA9D14D28EC6FC60036A3C8 /* StickerPackDetailView.swift in Sources */,
 				2C48961728EAFA420010DFC7 /* GameBackgroundView.swift in Sources */,
+				2C0562D828F55BF800769C32 /* ViewModifiers.swift in Sources */,
 				2C734B6F28E2E9F40091575B /* ContentView.swift in Sources */,
 				2CA9D14528EC22240036A3C8 /* GameRulesView.swift in Sources */,
 				2C48962928EB397C0010DFC7 /* GameView.swift in Sources */,

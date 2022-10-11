@@ -12,8 +12,8 @@ extension SKProduct {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = self.priceLocale
-        if let formated = formatter.string(from: self.price) {
-            return formated
+        if let formatted = formatter.string(from: self.price) {
+            return formatted
         } else {
             return "\(self.price)"
         }

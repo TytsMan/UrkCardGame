@@ -19,10 +19,6 @@ struct StickerPack {
     var price: String {
         apphudProduct?.skProduct?.getLocalizedPrice() ?? "0.0 $"
     }
-//    var owned: Bool = false {
-//        apphudProduct.h
-//    }
-    
     
     init(
         id: String,
@@ -37,7 +33,6 @@ struct StickerPack {
         self.url = url
         self.apphudProduct = apphudProduct
     }
-    
 }
 
 class StickerPackFactory {
@@ -46,7 +41,6 @@ class StickerPackFactory {
     
     func createStickerPack(for product: ApphudProduct? = nil) -> StickerPack {
         var result: StickerPack
-        
         if product?.productId == Const.StoreProducts.ukraineGameProductId {
             result = createFirstStickerPack(apphudProduct: product)
         } else if product?.productId == Const.StoreProducts.ukraineGameStickersProductId {
@@ -54,7 +48,6 @@ class StickerPackFactory {
         } else {
             result = createFirstStickerPack(apphudProduct: product)
         }
-        
         return result
     }
     

@@ -9,6 +9,12 @@ import SwiftUI
 
 struct MenuBackgroundView: View {
     
+    let sticker: String?
+    
+    init(sticker: String? = nil) {
+        self.sticker = sticker
+    }
+    
     var body: some View {
         VStack {
             Assets.Background.patternTop.swiftUIImage
@@ -19,6 +25,17 @@ struct MenuBackgroundView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
+        .overlay {
+            if let sticker = self.sticker {
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Image(sticker)
+                    }
+                }
+            }
+        }
         .ignoresSafeArea()
         .background(Assets.Colors.secondaryColor.swiftUIColor)
     }
@@ -26,6 +43,6 @@ struct MenuBackgroundView: View {
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuBackgroundView()
+        MenuBackgroundView(sticker: Assets.HomeScreen.shevchenkoWithRpg.name)
     }
 }

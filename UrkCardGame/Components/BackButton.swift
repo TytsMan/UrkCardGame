@@ -11,7 +11,6 @@ struct BackButton: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    
     let tintColor: Color
     let action: (() -> Void)?
     
@@ -24,7 +23,6 @@ struct BackButton: View {
     }
     
     var body: some View {
-        
         Button(action: backAction) {
             Assets.Icons.leftArrowCircleFill.swiftUIImage
                 .resizable()
