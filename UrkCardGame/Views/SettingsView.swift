@@ -19,6 +19,7 @@ struct SettingsView: View {
                 Assets.Stickers.vseBudeDobre.swiftUIImage
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .allowsHitTesting(false)
                 VStack(spacing: 10) {
                     Button {
                         openUrl(string: Const.termsOfUseUrl)
