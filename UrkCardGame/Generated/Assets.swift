@@ -80,6 +80,7 @@ internal enum Assets {
       internal static let firstpackCover = ImageAsset(name: "firstpackCover")
     }
     internal static let pesuk = ImageAsset(name: "pesuk")
+    internal static let slavaZsu = ImageAsset(name: "slava_zsu")
     internal enum Slavaukraineappgame {
       internal static let file111036333 = ImageAsset(name: "file_111036333")
       internal static let file111036336 = ImageAsset(name: "file_111036336")

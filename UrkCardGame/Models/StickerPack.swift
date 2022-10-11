@@ -41,9 +41,9 @@ class StickerPackFactory {
     
     func createStickerPack(for product: ApphudProduct? = nil) -> StickerPack {
         var result: StickerPack
-        if product?.productId == Const.StoreProducts.ukraineGameProductId {
+        if product?.productId == Const.StoreProducts.firstpackukrainegameProductId {
             result = createFirstStickerPack(apphudProduct: product)
-        } else if product?.productId == Const.StoreProducts.ukraineGameStickersProductId {
+        } else if product?.productId == Const.StoreProducts.slavaukraineappgameProductId {
             result = createSecondStickerPack(apphudProduct: product)
         } else {
             result = createFirstStickerPack(apphudProduct: product)
@@ -53,54 +53,39 @@ class StickerPackFactory {
     
     private func createFirstStickerPack(apphudProduct: ApphudProduct?) -> StickerPack {
         StickerPack(
-            id: Const.StoreProducts.ukraineGameProductId,
-            cover: Assets.Stickers.Ukrainegame.ukrainegamePromo.name,
+            id: Const.StoreProducts.firstpackukrainegameProductId,
+            cover: Assets.Stickers.Firstpackukrainegame.firstpackCover.name,
             stickers: [
-                Assets.Stickers.Ukrainegame.file111043260.name,
-                Assets.Stickers.Ukrainegame.file111043262.name,
-                Assets.Stickers.Ukrainegame.file111043263.name,
-                Assets.Stickers.Ukrainegame.file111043264.name,
-                Assets.Stickers.Ukrainegame.file111043266.name,
-                Assets.Stickers.Ukrainegame.file111043267.name,
-                Assets.Stickers.Ukrainegame.file111043268.name,
-                Assets.Stickers.Ukrainegame.file111043269.name,
-                Assets.Stickers.Ukrainegame.file111043270.name,
-                Assets.Stickers.Ukrainegame.file111043272.name
+                Assets.Stickers.Firstpackukrainegame.file111068017.name,
+                Assets.Stickers.Firstpackukrainegame.file111068018.name,
+                Assets.Stickers.Firstpackukrainegame.file111068020.name,
+                Assets.Stickers.Firstpackukrainegame.file111068024.name,
+                Assets.Stickers.Firstpackukrainegame.file111068033.name,
+                Assets.Stickers.Firstpackukrainegame.file111068034.name,
+                Assets.Stickers.Firstpackukrainegame.file111068035.name,
+                Assets.Stickers.Firstpackukrainegame.file111068038.name
             ],
-            url: "https://t.me/addstickers/ukrainegame",
+            url: "https://t.me/addstickers/firstpackukrainegame",
             apphudProduct: apphudProduct
         )
     }
     
     private func createSecondStickerPack(apphudProduct: ApphudProduct?) -> StickerPack {
         StickerPack(
-            id: Const.StoreProducts.ukraineGameProductId,
-            cover: Assets.Stickers.Gameukrainestickers.gameukrainestickersPromo.name,
+            id: Const.StoreProducts.slavaukraineappgameProductId,
+            cover: Assets.Stickers.Slavaukraineappgame.slavaukrainecover.name,
             stickers: [
-                Assets.Stickers.Gameukrainestickers.file111042826.name,
-                Assets.Stickers.Gameukrainestickers.file111042828.name,
-                Assets.Stickers.Gameukrainestickers.file111042829.name,
-                Assets.Stickers.Gameukrainestickers.file111042830.name,
-                Assets.Stickers.Gameukrainestickers.file111042831.name,
-                Assets.Stickers.Gameukrainestickers.file111042835.name,
-                Assets.Stickers.Gameukrainestickers.file111042836.name,
-                Assets.Stickers.Gameukrainestickers.file111042838.name,
-                Assets.Stickers.Gameukrainestickers.file111042847.name,
-                Assets.Stickers.Gameukrainestickers.file111042849.name,
-                Assets.Stickers.Gameukrainestickers.file111042851.name,
-                Assets.Stickers.Gameukrainestickers.file111042853.name,
-                Assets.Stickers.Gameukrainestickers.file111042854.name,
-                Assets.Stickers.Gameukrainestickers.file111042855.name,
-                Assets.Stickers.Gameukrainestickers.file111042857.name,
-                Assets.Stickers.Gameukrainestickers.file111042866.name,
-                Assets.Stickers.Gameukrainestickers.file111042867.name,
-                Assets.Stickers.Gameukrainestickers.file111042869.name,
-                Assets.Stickers.Gameukrainestickers.file111042871.name,
-                Assets.Stickers.Gameukrainestickers.file111042873.name,
-                Assets.Stickers.Gameukrainestickers.file111042881.name,
-                Assets.Stickers.Gameukrainestickers.file111042883.name
+                Assets.Stickers.Slavaukraineappgame.file111036333.name,
+                Assets.Stickers.Slavaukraineappgame.file111036336.name,
+                Assets.Stickers.Slavaukraineappgame.file111036341.name,
+                Assets.Stickers.Slavaukraineappgame.file111036343.name,
+                Assets.Stickers.Slavaukraineappgame.file111036357.name,
+                Assets.Stickers.Slavaukraineappgame.file111036363.name,
+                Assets.Stickers.Slavaukraineappgame.file111036365.name,
+                Assets.Stickers.Slavaukraineappgame.file111036378.name,
+                Assets.Stickers.Slavaukraineappgame.file111036382.name
             ],
-            url: "https://t.me/addstickers/gameukrainestickers",
+            url: "https://t.me/addstickers/slavaukraineappgame",
             apphudProduct: apphudProduct
         )
     }

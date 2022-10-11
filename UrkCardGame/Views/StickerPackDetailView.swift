@@ -40,10 +40,12 @@ struct StickerPackDetailView: View {
                                     HStack(spacing: 40) {
                                         Image(stickerPack.stickers[idx])
                                             .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                        Image(stickerPack.stickers[idx+1])
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 100, height: 100)
+                                        if self.stickerPack.stickers.count > idx+1 {
+                                            Image(stickerPack.stickers[idx+1])
+                                                .resizable()
+                                                .frame(width: 100, height: 100)
+                                        }
                                     }
                                 }
                             }

@@ -33,7 +33,7 @@ struct StickerPackLinkView: View {
                 CardCanvasView {
                     VStack {
                         VStack(spacing: 30) {
-                            Assets.Stickers.Ukrainegame.file111043264.swiftUIImage
+                            Assets.Stickers.slavaZsu.swiftUIImage
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                             VStack(spacing: 10) {

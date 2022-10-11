@@ -29,7 +29,7 @@ struct StickerPackStoreView: View {
                     }
                     CardCanvasView {
                         VStack(spacing: 40) {
-                            Assets.Stickers.Ukrainegame.file111043264.swiftUIImage
+                            Assets.Stickers.slavaZsu.swiftUIImage
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                             Text("**Гроші від купівлі стікерів йдуть до ЗСУ**")

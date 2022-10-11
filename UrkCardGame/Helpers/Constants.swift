@@ -19,8 +19,10 @@ enum Const {
     }
     
     enum StoreProducts {
-        static let ukraineGameProductId = "com.palianytsia.tgstickerpack.ukrainegame"
-        static let ukraineGameStickersProductId = "com.palianytsia.tgstickerpack.ukrainegamestickers"
+        static let firstpackukrainegameProductId = "com.palianytsia.tgstickerpack.ukrainegame"
+        static let slavaukraineappgameProductId = "com.palianytsia.tgstickerpack.ukrainegamestickers"
+//        static let ukraineGameProductId = "com.palianytsia.tgstickerpack.ukrainegame"
+//        static let ukraineGameStickersProductId = "com.palianytsia.tgstickerpack.ukrainegamestickers"
     }
     
     static let secondsInRound = 20
