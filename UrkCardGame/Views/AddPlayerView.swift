@@ -44,7 +44,9 @@ struct AddPlayerView: View {
                 
             }
             VStack {
-                Assets.PlayersScreen.traktor.swiftUIImage
+                Assets.PlayersScreen.traktorWithTank.swiftUIImage
+                    .resizable()
+                    .frame(width: 236, height: 134)
                 Button(action: createPlayerAction) {
                     ButtonLabel(text: "Обрати")
                 }

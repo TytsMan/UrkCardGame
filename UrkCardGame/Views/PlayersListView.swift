@@ -33,7 +33,7 @@ struct PlayersListView: View {
                     .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
                     .foregroundColor(Color.black)
                 
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading) {
                         ForEach((0..<players.count), id: \.self) { idx in
                             PlayerView(player: players[idx]) {
@@ -47,9 +47,12 @@ struct PlayersListView: View {
                         }
                     }
                 }
+                
             }
             Spacer()
-            Assets.PlayersScreen.traktor.swiftUIImage
+            Assets.PlayersScreen.traktorWithTank.swiftUIImage
+                .resizable()
+                .frame(width: 236, height: 134)
             /// to avoid creating vm without players
             if formIsValid {
                 NavigationLink(destination: GameView(rootIsActive: $rootIsActive, viewModel: GameViewModel(players: players))) {
