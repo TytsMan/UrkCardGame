@@ -9,16 +9,19 @@ import Foundation
 import SwiftUI
 
 struct GameView: View {
+     
+    @EnvironmentObject private var gameEngine: CardGameEngine
     
     @Binding var rootIsActive : Bool
-    @State var pushRateView = false
-    @State var pushStickerStoreView = false
     
-    @ObservedObject var viewModel: GameViewModel
+    @State private var pushRateView = false
+    @State private var pushStickerStoreView = false
+    @State private var countDownTimer: Int = Const.secondsInRound
+    @State private var timerRunning: Bool = false
     
-    @State var countDownTimer: Int = Const.secondsInRound
-    @State var timerRunning: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    var roundCounter = 0
     
     var body: some View {
         ZStack {
@@ -30,12 +33,14 @@ struct GameView: View {
                     }
                     Spacer()
                 }
-                CurrentPlayerView(player: viewModel.currentPlayer)
+                if let currentPlayer = gameEngine.currentPlayer {
+                    CurrentPlayerView(player: currentPlayer)
+                }
                 Assets.GameScreen.gameCanvas.swiftUIImage
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .overlay {
-                        content(for: viewModel.state)
+                        content(for: gameEngine.state)
                             .padding(.horizontal, 30)
                     }
             }
@@ -54,29 +59,26 @@ struct GameView: View {
                 }.hidden()
         }
         .ignoresSafeArea()
-        .onAppear {
-            viewModel.finishGame = {
-                rootIsActive = false
-            }
-            viewModel.openStickerStore = {
-                pushStickerStoreView = true
-            }
-        }
+        //        .onAppear {
+        //            viewModel.finishGame = {
+        //                rootIsActive = false
+        //            }
+        //            viewModel.openStickerStore = {
+        //                pushStickerStoreView = true
+        //            }
+        //        }
         .hiddenNavigationBarStyle()
         .hiddenStatusBarStyle()
     }
     
-    func content(for state: GameViewModel.GameState) -> AnyView {
+    func content(for state: CardGameEngine.State) -> AnyView {
         switch state {
         case .initial:
-            return AnyView(StartGameView {
-                viewModel.startNextRound()
-            })
-        case .question(let quiz):
+            return AnyView(StartGameView(action: gameEngine.start))
+        case let .question(question, hander):
             return AnyView(QuizView(
-                quiz: quiz,
-                correctAnswerAction: viewModel.correctAnswerSelected,
-                wrongAnswerAction: viewModel.wrongAnswerSelected,
+                quiz: question,
+                handler: hander,
                 timer: $countDownTimer
             )
                 .onAppear {
@@ -88,18 +90,23 @@ struct GameView: View {
                         countDownTimer -= 1
                     } else {
                         timerRunning = false
-                        viewModel.wrongAnswerSelected()
+                        hander(false)
                     }
                 }
             )
-        case .nextPlayer(let player):
+        case let .nextPlayer(player, handler):
             return AnyView(NextPlayerView(
                 player: player,
-                action: viewModel.startNextRound))
-        case .wrongAnswer:
-            return AnyView(FailView(action: viewModel.openPenaltyTask))
-        case .penaltyTask(let penaltyTask):
-            return AnyView(TaskView(penaltyTask: penaltyTask, action: viewModel.penaltyTaskDone))
+                action: handler))
+        case let .blame(blame, handler):
+            return AnyView(FailView(blame: blame, action: handler))
+        case let .penaltyTask(penalty, handler):
+            return AnyView(TaskView(penaltyTask: penalty, action: handler))
+        case .end:
+            DispatchQueue.main.async {
+                rootIsActive = false
+            }
+            return AnyView(EmptyView())
         }
     }
     
@@ -188,27 +195,8 @@ struct GameView: View {
     
     struct FailView: View {
         
+        let blame: Blame
         let action: () -> Void
-        
-        let titles: [String] = [
-            "А ти точно не сэпар?",
-            "Навіть Арестович в шоці",
-            "Знущаєшся?",
-            "Тобі не соромно?",
-            "Знову невдало!",
-            "Сідай Два!",
-            "Тримайся!"
-        ]
-        
-        let descriptions: [String] = [
-            "Виконай завдання щоб довести протилежне 🇺🇦",
-            "Виконай завдання зараз, а не через “2-3 недели”😂",
-            "Мені соромно за тебе, ану бігом виконувати завдання",
-            "Виконуй завдання скоріш!",
-            "Так виглядає полуниця? Виконуй завдання бігом!",
-            "Це нікуди не годиться, ану бігом завдання виконувать",
-            "Невдачі роблять тебе сильніше, а поки виконуй завдання"
-        ]
         
         let stickers: [String] = [
             Assets.Stickers.sticker5.name,
@@ -223,8 +211,8 @@ struct GameView: View {
         
         var body: some View {
             MemeView(
-                title: titles.randomElement()!,
-                description: descriptions.randomElement()!,
+                title: blame.title,
+                description: blame.text,
                 buttonTitle: "Завдання",
                 buttonAction: action,
                 sticker: stickers.randomElement()!
@@ -250,18 +238,21 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     
-    static let player = Player(nickname: "John", avatar: Assets.Avatars.avatarMale2.name)
-    static let quiz = Question(text: "Як прозвали російського солдата , який став мемом? Ч...")
-    static let viewModel = GameViewModel(players: [player]) {
-        
-    }
+//    static let player = Player(nickname: "John", avatar: Assets.Avatars.avatarMale2.name)
+//    static let quiz = Question(text: "Як прозвали російського солдата , який став мемом? Ч...")
+//    static let viewModel = GameViewModel(players: [player]) {
+//
+//    }
     static var previews: some View {
-        GameView(rootIsActive: .constant(false), viewModel: viewModel)
+        GameView(rootIsActive: .constant(false))
             .previewInterfaceOrientation(.portrait)
-        GameView(rootIsActive: .constant(false), viewModel: viewModel)
+            .environmentObject(CardGameEngine.stub)
+        GameView(rootIsActive: .constant(false))
             .previewDevice(PreviewDevice(rawValue: "iPhone 13 mini"))
-        GameView(rootIsActive: .constant(false),  viewModel: viewModel)
+            .environmentObject(CardGameEngine.stub)
+        GameView(rootIsActive: .constant(false))
             .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
+            .environmentObject(CardGameEngine.stub)
     }
 }
 
@@ -301,9 +292,7 @@ extension GameView {
     struct QuizView: View {
         
         let quiz: Question
-        
-        let correctAnswerAction: () -> Void
-        let wrongAnswerAction: () -> Void
+        let handler: CardGameEngine.AnswerHandler
         
         @Binding var timer: Int
         
@@ -317,10 +306,14 @@ extension GameView {
                     .foregroundColor(.black)
                 VStack(spacing: 25) {
                     VStack(spacing: 10) {
-                        Button(action: correctAnswerAction) {
+                        Button {
+                            handler(true)
+                        } label: {
                             ButtonLabel(text: "Зарахувати")
                         }
-                        Button(action: wrongAnswerAction) {
+                        Button {
+                            handler(false)
+                        } label: {
                             ButtonLabel(
                                 text: "Не знаю",
                                 backgroundColor: Assets.Colors.negativeColor.swiftUIColor

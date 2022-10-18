@@ -12,6 +12,7 @@ import ApphudSDK
 struct UrkCardGameApp: App {
     
     let storeManager: StoreManager = AppHudStoreManager()
+    let gameEngine = CardGameEngine(gameDataProvider: GameDataProvider())
     
     var body: some Scene {
         WindowGroup {
@@ -19,6 +20,12 @@ struct UrkCardGameApp: App {
                 HomeView()
             }
             .environmentObject(storeManager)
+            .environmentObject(gameEngine)
+            .onAppear {
+                Player.defaultPlayers.forEach { player in
+                    gameEngine.addPlayer(player)
+                }
+            }
         }
     }
     

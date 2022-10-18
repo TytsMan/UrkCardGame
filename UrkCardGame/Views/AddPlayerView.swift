@@ -11,21 +11,11 @@ import SwiftUI
 
 struct AddPlayerView: View {
     
-    @Environment(\.presentationMode) var presentationMode
-    
-    @Binding private(set) var players: [Player]
+    @Environment(\.presentationMode) private var presentationMode
+    @EnvironmentObject private var gameEngine: CardGameEngine
     
     @State private var selectedAvatarIdx: Int = 0
     @State private var nickname: String = ""
-    
-    private let avatars: [String] = [
-        Assets.Avatars.avatarMale1.name,
-        Assets.Avatars.avatarFemale1.name,
-        Assets.Avatars.avatarFemale2.name,
-        Assets.Avatars.avatarMale2.name,
-        Assets.Avatars.avatarMale3.name,
-        Assets.Avatars.avatarMale4.name
-    ]
     
     var formIsValid: Bool {
         !nickname.isEmpty
@@ -54,9 +44,7 @@ struct AddPlayerView: View {
                 .padding(.horizontal, 30)
             }
         }
-        .padding(.top, 60)
-        .padding(.bottom, 80)
-        .padding(.horizontal, 40)
+        .padding(EdgeInsets(top: 50, leading: 30, bottom: 80, trailing: 30))
         .background {
             MenuBackgroundView()
         }
@@ -72,14 +60,14 @@ struct AddPlayerView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(0..<avatars.count, id: \.self) { idx in
+                    ForEach(0..<Player.definedAvatars.count, id: \.self) { idx in
                         Button {
                             selectedAvatarIdx = idx
                         } label: {
                             if selectedAvatarIdx == idx {
-                                SelectedImage(image: Image(avatars[idx]))
+                                SelectedImage(image: Image(Player.definedAvatars[idx]))
                             } else {
-                                UnselectedImage(image: Image(avatars[idx]))
+                                UnselectedImage(image: Image(Player.definedAvatars[idx]))
                             }
                         }
                     }
@@ -94,7 +82,7 @@ struct AddPlayerView: View {
                 .font(FontFamily.SFCompactRounded.medium.swiftUIFont(size: 27))
                 .foregroundColor(.black)
             HStack {
-                Image(avatars[selectedAvatarIdx])
+                Image(Player.definedAvatars[selectedAvatarIdx])
                     .resizable()
                     .frame(width: 31, height: 31, alignment: .center)
                     .padding(.horizontal, 17)
@@ -112,9 +100,9 @@ struct AddPlayerView: View {
     func createPlayerAction() {
         let newPlayer = Player(
             nickname: self.nickname,
-            avatar: avatars[selectedAvatarIdx]
+            avatar: Player.definedAvatars[selectedAvatarIdx]
         )
-        $players.wrappedValue.append(newPlayer)
+        gameEngine.addPlayer(newPlayer)
         presentationMode.wrappedValue.dismiss()
     }
     
@@ -151,6 +139,7 @@ struct AddPlayerView: View {
 
 struct AddPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlayerView(players: .constant([]))
+        AddPlayerView()
+            .environmentObject(CardGameEngine.stub)
     }
 }

@@ -9,17 +9,18 @@ import SwiftUI
 
 struct PlayersListView: View {
     
+    @EnvironmentObject private var gameEngine: CardGameEngine
+    
     @Binding var rootIsActive: Bool
-    @State var players: [Player] = Player.defaultPlayers
+    
+    var formIsValid: Bool {
+        gameEngine.canStart
+    }
     
     let continueButtonLabel: some View = {
         ButtonLabel(text: "Продовжити")
             .padding(.horizontal, 30)
     }()
-    
-    var formIsValid: Bool {
-        players.count > 1
-    }
     
     var body: some View {
         VStack() {
@@ -35,13 +36,11 @@ struct PlayersListView: View {
                 
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading) {
-                        ForEach((0..<players.count), id: \.self) { idx in
-                            PlayerView(player: players[idx]) {
-                                players.remove(at: idx)
-                            }
+                        ForEach(gameEngine.players) { player in
+                            PlayerView(player: player)
                         }
                         NavigationLink(
-                            destination: AddPlayerView(players: $players)
+                            destination: AddPlayerView()
                         ) {
                             NewPlayerView()
                         }
@@ -54,8 +53,8 @@ struct PlayersListView: View {
                 .resizable()
                 .frame(width: 236, height: 134)
             /// to avoid creating vm without players
-            if formIsValid {
-                NavigationLink(destination: GameView(rootIsActive: $rootIsActive, viewModel: GameViewModel(players: players))) {
+            if gameEngine.canStart {
+                NavigationLink(destination: GameView(rootIsActive: $rootIsActive)) {
                     continueButtonLabel
                 }
             } else {
@@ -65,11 +64,12 @@ struct PlayersListView: View {
             }
             Spacer()
         }
-        .padding(.top, 50)
-        .padding(.horizontal, 30)
-        .padding(.bottom, 80)
+        .padding(EdgeInsets(top: 50, leading: 30, bottom: 80, trailing: 30))
         .background {
             MenuBackgroundView(sticker: Assets.PlayersScreen.uaFlagSign.name)
+        }
+        .onAppear {
+            gameEngine.restart()
         }
         .hiddenNavigationBarStyle()
         .hiddenStatusBarStyle()
@@ -77,8 +77,9 @@ struct PlayersListView: View {
     
     struct PlayerView: View {
         
+        @EnvironmentObject var gameEngine: CardGameEngine
+        
         let player: Player
-        let removeAction: () -> Void
         
         var body: some View {
             HStack {
@@ -102,6 +103,10 @@ struct PlayersListView: View {
             .background(Assets.Colors.accentColor.swiftUIColor)
             .cornerRadius(17)
         }
+        
+        private func removeAction() {
+            gameEngine.removePlayer(player)
+        }
     }
     
     struct NewPlayerView: View {
@@ -124,17 +129,8 @@ struct PlayersListView: View {
 
 struct PlayesListView_Previews: PreviewProvider {
     
-    static let players: [Player] = Player.defaultPlayers
-    
     static var previews: some View {
-        PlayersListView(rootIsActive: .constant(false),players: players)
+        PlayersListView(rootIsActive: .constant(false))
+            .environmentObject(CardGameEngine.stub)
     }
 }
-
-extension Player {
-    static let defaultPlayers = [
-        Player(nickname: "Назар", avatar: Assets.Avatars.avatarMale1.name),
-        Player(nickname: "Марійка", avatar: Assets.Avatars.avatarFemale1.name)
-    ]
-}
-

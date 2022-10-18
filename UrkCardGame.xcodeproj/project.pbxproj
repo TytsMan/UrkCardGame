@@ -36,7 +36,6 @@
 		2C48962528EB016F0010DFC7 /* Blame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962428EB016F0010DFC7 /* Blame.swift */; };
 		2C48962728EB09890010DFC7 /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962628EB09890010DFC7 /* AddPlayerView.swift */; };
 		2C48962928EB397C0010DFC7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962828EB397C0010DFC7 /* GameView.swift */; };
-		2C48962B28EB39A70010DFC7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962A28EB39A70010DFC7 /* GameViewModel.swift */; };
 		2C48962E28EB3A010010DFC7 /* GameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C48962D28EB3A010010DFC7 /* GameDataProvider.swift */; };
 		2C4CED2228EB3BE3000EE935 /* Questions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C4CED2028EB3BE2000EE935 /* Questions.txt */; };
 		2C4CED2328EB3BE3000EE935 /* Penalties.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C4CED2128EB3BE3000EE935 /* Penalties.txt */; };
@@ -56,6 +55,8 @@
 		2CA9D15528EF185E0036A3C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA9D15428EF185E0036A3C8 /* LaunchScreen.storyboard */; };
 		2CA9D15728EF1A300036A3C8 /* DeepLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15628EF1A300036A3C8 /* DeepLinks.swift */; };
 		2CA9D15928EF36070036A3C8 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15828EF36070036A3C8 /* Analytics.swift */; };
+		2CAC615728FB062500728DDA /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC615628FB062500728DDA /* GameEngine.swift */; };
+		2CAC615928FB3A2500728DDA /* Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC615828FB3A2500728DDA /* Iterator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +88,6 @@
 		2C48962428EB016F0010DFC7 /* Blame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blame.swift; sourceTree = "<group>"; };
 		2C48962628EB09890010DFC7 /* AddPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerView.swift; sourceTree = "<group>"; };
 		2C48962828EB397C0010DFC7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		2C48962A28EB39A70010DFC7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		2C48962D28EB3A010010DFC7 /* GameDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataProvider.swift; sourceTree = "<group>"; };
 		2C4CED2028EB3BE2000EE935 /* Questions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Questions.txt; path = Resources/Questions.txt; sourceTree = "<group>"; };
 		2C4CED2128EB3BE3000EE935 /* Penalties.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Penalties.txt; path = Resources/Penalties.txt; sourceTree = "<group>"; };
@@ -108,6 +108,8 @@
 		2CA9D15428EF185E0036A3C8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CA9D15628EF1A300036A3C8 /* DeepLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinks.swift; sourceTree = "<group>"; };
 		2CA9D15828EF36070036A3C8 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		2CAC615628FB062500728DDA /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		2CAC615828FB3A2500728DDA /* Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iterator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				2CA9D15828EF36070036A3C8 /* Analytics.swift */,
 				2C46C94328F0493100228D24 /* StoreKit+Extension.swift */,
 				2C0562D728F55BF800769C32 /* ViewModifiers.swift */,
+				2CAC615828FB3A2500728DDA /* Iterator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,7 +198,6 @@
 				2C48961B28EB00F50010DFC7 /* PlayersListView.swift */,
 				2C48962628EB09890010DFC7 /* AddPlayerView.swift */,
 				2C48962828EB397C0010DFC7 /* GameView.swift */,
-				2C48962A28EB39A70010DFC7 /* GameViewModel.swift */,
 				2CA9D14428EC22240036A3C8 /* GameRulesView.swift */,
 				2CA9D14628EC3ECC0036A3C8 /* RateView.swift */,
 				2CA9D14828EC420D0036A3C8 /* SettingsView.swift */,
@@ -224,6 +226,7 @@
 			children = (
 				2C48962D28EB3A010010DFC7 /* GameDataProvider.swift */,
 				2C46C94128F02C6B00228D24 /* StoreManager.swift */,
+				2CAC615628FB062500728DDA /* GameEngine.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				2C734B6D28E2E9F40091575B /* UrkCardGameApp.swift in Sources */,
 				2C48962128EB01460010DFC7 /* Question.swift in Sources */,
 				2C46C94228F02C6B00228D24 /* StoreManager.swift in Sources */,
+				2CAC615928FB3A2500728DDA /* Iterator.swift in Sources */,
 				2C78A21228F051FD000F96F7 /* LoadingView.swift in Sources */,
 				2CA9D15328EF11DA0036A3C8 /* CardCanvasView.swift in Sources */,
 				2C48961F28EB01310010DFC7 /* Player.swift in Sources */,
@@ -391,7 +395,7 @@
 				2CA9D14B28EC50430036A3C8 /* StickerPackStoreView.swift in Sources */,
 				2C4895E128EAF0810010DFC7 /* CustomEnvironmentProperties.swift in Sources */,
 				2C48961528EAFA160010DFC7 /* MenuBackgroundView.swift in Sources */,
-				2C48962B28EB39A70010DFC7 /* GameViewModel.swift in Sources */,
+				2CAC615728FB062500728DDA /* GameEngine.swift in Sources */,
 				2C48962328EB01600010DFC7 /* Penalty.swift in Sources */,
 				2C48962728EB09890010DFC7 /* AddPlayerView.swift in Sources */,
 				2C4895E428EAF0C70010DFC7 /* BackButton.swift in Sources */,
