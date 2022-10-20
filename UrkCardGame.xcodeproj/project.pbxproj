@@ -57,6 +57,7 @@
 		2CA9D15928EF36070036A3C8 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9D15828EF36070036A3C8 /* Analytics.swift */; };
 		2CAC615728FB062500728DDA /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC615628FB062500728DDA /* GameEngine.swift */; };
 		2CAC615928FB3A2500728DDA /* Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC615828FB3A2500728DDA /* Iterator.swift */; };
+		2CFF97792901802A0055B5B4 /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF97782901802A0055B5B4 /* UserDefaults+PropertyWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		2CA9D15828EF36070036A3C8 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		2CAC615628FB062500728DDA /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 		2CAC615828FB3A2500728DDA /* Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iterator.swift; sourceTree = "<group>"; };
+		2CFF97782901802A0055B5B4 /* UserDefaults+PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+PropertyWrapper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				2C46C94328F0493100228D24 /* StoreKit+Extension.swift */,
 				2C0562D728F55BF800769C32 /* ViewModifiers.swift */,
 				2CAC615828FB3A2500728DDA /* Iterator.swift */,
+				2CFF97782901802A0055B5B4 /* UserDefaults+PropertyWrapper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				2C46C94228F02C6B00228D24 /* StoreManager.swift in Sources */,
 				2CAC615928FB3A2500728DDA /* Iterator.swift in Sources */,
 				2C78A21228F051FD000F96F7 /* LoadingView.swift in Sources */,
+				2CFF97792901802A0055B5B4 /* UserDefaults+PropertyWrapper.swift in Sources */,
 				2CA9D15328EF11DA0036A3C8 /* CardCanvasView.swift in Sources */,
 				2C48961F28EB01310010DFC7 /* Player.swift in Sources */,
 				2C46C94428F0493200228D24 /* StoreKit+Extension.swift in Sources */,

@@ -18,32 +18,17 @@ protocol AnalyticsProtocol: ObservableObject {
 
 class Analytics: AnalyticsProtocol {
     
-    static private let numberAppLunchesKey = "numberAppLunchesKey"
-    static private let numberReviewRequests = "numberReviewRequestsKey"
+    static private let userDefaults: UserDefaults = UserDefaults(suiteName: "UrkCardGameApp.Analytics")!
+    static private let numberAppLunchesKey: String = "numberAppLunchesKey"
+    static private let numberReviewRequests: String = "numberReviewRequestsKey"
     
-    private let userDefaults: UserDefaults
-    
-    private(set) var numberAppLunches: Int {
-        get {
-            userDefaults.integer(forKey: Analytics.numberAppLunchesKey)
-        }
-        set {
-            userDefaults.set(newValue, forKey: Analytics.numberAppLunchesKey)
-        }
-    }
-    
-    private(set) var numberReviewRequests: Int {
-        get {
-            userDefaults.integer(forKey: Analytics.numberReviewRequests)
-        }
-        set {
-            userDefaults.set(newValue, forKey: Analytics.numberReviewRequests)
-        }
-    }
-    
-    init(userDefaults: UserDefaults) {
-        self.userDefaults = userDefaults
-        
+    @UserDefault(Analytics.numberAppLunchesKey, store: Analytics.userDefaults)
+    private(set) var numberAppLunches: Int = 0
+
+    @UserDefault(Analytics.numberReviewRequests, store: Analytics.userDefaults)
+    private(set) var numberReviewRequests: Int = 0
+
+    init() {
         incrementNumberAppLunches()
     }
     

@@ -13,7 +13,7 @@ struct UrkCardGameApp: App {
     
     let storeManager: StoreManager = AppHudStoreManager()
     let gameEngine = CardGameEngine(gameDataProvider: GameDataProvider())
-    let analytics = Analytics(userDefaults: Analytics.analyticsUserDefaults)
+    let analytics = Analytics()
     
     var body: some Scene {
         WindowGroup {
@@ -28,7 +28,6 @@ struct UrkCardGameApp: App {
             }
         }
     }
-    
 }
 
 fileprivate extension CardGameEngine {
@@ -37,12 +36,5 @@ fileprivate extension CardGameEngine {
         Player.defaultPlayers.forEach { player in
             addPlayer(player)
         }
-    }
-}
-
-fileprivate extension Analytics {
-    
-    static var analyticsUserDefaults: UserDefaults {
-        UserDefaults(suiteName: "UrkCardGameApp.Analytics")!
     }
 }
