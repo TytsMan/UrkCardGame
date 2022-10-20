@@ -6,24 +6,69 @@
 //
 
 import Foundation
+import StoreKit
 
-class Analytics {
+protocol AnalyticsProtocol: ObservableObject {
     
-    private let openRateViewHandler: (() -> Void)?
+    var numberAppLunches: Int { get }
+    var numberReviewRequests: Int { get }
     
-    init(openRateView: @escaping () -> Void) {
-        self.openRateViewHandler = openRateView
+    func requestReview() -> Bool
+}
+
+class Analytics: AnalyticsProtocol {
+    
+    static private let numberAppLunchesKey = "numberAppLunchesKey"
+    static private let numberReviewRequests = "numberReviewRequestsKey"
+    
+    private let userDefaults: UserDefaults
+    
+    private(set) var numberAppLunches: Int {
+        get {
+            userDefaults.integer(forKey: Analytics.numberAppLunchesKey)
+        }
+        set {
+            userDefaults.set(newValue, forKey: Analytics.numberAppLunchesKey)
+        }
     }
     
-    func openRateViewIfNeeded() {
-        var openingCount = UserDefaults.standard.integer(forKey: Const.UserDefaultsKeys.launchCountKey)
-        openingCount += 1
-        UserDefaults.standard.set(openingCount, forKey:Const.UserDefaultsKeys.launchCountKey)
-        
-        let numberToOpenRateView = [3, 9, 27]
-        
-        if numberToOpenRateView.contains(openingCount) {
-            openRateViewHandler?()
+    private(set) var numberReviewRequests: Int {
+        get {
+            userDefaults.integer(forKey: Analytics.numberReviewRequests)
         }
+        set {
+            userDefaults.set(newValue, forKey: Analytics.numberReviewRequests)
+        }
+    }
+    
+    init(userDefaults: UserDefaults) {
+        self.userDefaults = userDefaults
+        
+        incrementNumberAppLunches()
+    }
+    
+    @discardableResult
+    func requestReview() -> Bool {
+        guard numberReviewRequests < 4 else {
+            return false
+        }
+        
+        SKStoreReviewController.requestReview()
+        incrementNumberReviewRequests()
+        return true
+    }
+    
+    private func incrementNumberAppLunches() -> Void {
+        numberAppLunches += 1
+    }
+    
+    private func incrementNumberReviewRequests() -> Void {
+        numberReviewRequests += 1
+    }
+}
+
+extension Analytics {
+    var isNeedToOpenRateView: Bool {
+        [3, 9, 27].contains(numberAppLunches)
     }
 }

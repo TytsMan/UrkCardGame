@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
-import StoreKit
 
 struct RateView: View {
+    
+    @EnvironmentObject private var analytics: Analytics
     
     var body: some View {
         ScrollView {
@@ -34,7 +35,7 @@ struct RateView: View {
                         }
                         .multilineTextAlignment(.center)
                         Button {
-                            SKStoreReviewController.requestReview()
+                            analytics.requestReview()
                         } label: {
                             ButtonLabel(text: "Оцінити")
                         }

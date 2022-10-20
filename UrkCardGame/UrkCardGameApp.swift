@@ -13,6 +13,7 @@ struct UrkCardGameApp: App {
     
     let storeManager: StoreManager = AppHudStoreManager()
     let gameEngine = CardGameEngine(gameDataProvider: GameDataProvider())
+    let analytics = Analytics(userDefaults: Analytics.analyticsUserDefaults)
     
     var body: some Scene {
         WindowGroup {
@@ -21,12 +22,27 @@ struct UrkCardGameApp: App {
             }
             .environmentObject(storeManager)
             .environmentObject(gameEngine)
+            .environmentObject(analytics)
             .onAppear {
-                Player.defaultPlayers.forEach { player in
-                    gameEngine.addPlayer(player)
-                }
+                gameEngine.populateDefaultPlayers()
             }
         }
     }
     
+}
+
+fileprivate extension CardGameEngine {
+    
+    func populateDefaultPlayers() -> Void {
+        Player.defaultPlayers.forEach { player in
+            addPlayer(player)
+        }
+    }
+}
+
+fileprivate extension Analytics {
+    
+    static var analyticsUserDefaults: UserDefaults {
+        UserDefaults(suiteName: "UrkCardGameApp.Analytics")!
+    }
 }

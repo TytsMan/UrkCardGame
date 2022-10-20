@@ -9,8 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject private var analytics: Analytics
+    
     @State private var rootPresentation: Bool = false
-    @State var pushRateView = false
+    @State private var pushRateView: Bool = false
     
     var body: some View {
         ZStack {
@@ -60,11 +62,10 @@ struct HomeView: View {
             MenuBackgroundView(sticker: Assets.HomeScreen.shevchenkoWithRpg.name)
         }
         .onAppear {
-            let analytics = Analytics {
-                pushRateView = true
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                analytics.openRateViewIfNeeded()
+            if analytics.isNeedToOpenRateView {
+                Task {
+                    pushRateView = true
+                }
             }
         }
         .hiddenNavigationBarStyle()
