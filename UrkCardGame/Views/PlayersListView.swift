@@ -35,7 +35,7 @@ struct PlayersListView: View {
                     .foregroundColor(Color.black)
                 
                 ScrollView(showsIndicators: false) {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 8) {
                         ForEach(gameEngine.players) { player in
                             PlayerView(player: player)
                         }
@@ -85,8 +85,8 @@ struct PlayersListView: View {
             HStack {
                 Image("\(player.avatar)")
                     .resizable()
-                    .frame(width: 30, height: 30, alignment: .center)
-                    .padding(.vertical, 10)
+                    .frame(width: 32, height: 32, alignment: .center)
+                    .padding(.vertical, 8)
                     .padding(.horizontal, 17)
                 Text(player.nickname)
                     .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
@@ -113,13 +113,15 @@ struct PlayersListView: View {
         var body: some View {
             HStack {
                 Assets.Icons.plusCircleFill.swiftUIImage
+                    .resizable()
+                    .frame(width: 24, height: 24, alignment: .center)
                     .padding(.horizontal, 17)
                 Text("Додати гравця")
                     .font(FontFamily.SFCompactRounded.regular.swiftUIFont(size: 20))
                     .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
                     .padding(.trailing, 50)
             }
-            .padding(.vertical, 8)
+            .padding(.vertical, 12)
             .background(Assets.Colors.accentColor.swiftUIColor)
             .foregroundColor(Assets.Colors.secondaryColor.swiftUIColor)
             .cornerRadius(17)
